@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Saee Holidays</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white">
+
+  
+</head>
+<body class="bg-white">
+
+  <!-- Top Bar with Contact and Social -->
+  <div class="bg-gray-900 text-white py-2">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <!-- Phone Numbers -->
+        <div class="flex space-x-4 mb-2 md:mb-0">
+          <div class="flex items-center">
+            <i class="fas fa-phone-alt mr-2 text-orange-500"></i>
+            <span>+91 1234567890</span>
+          </div>
+          <div class="flex items-center">
+            <i class="fas fa-phone-alt mr-2 text-orange-500"></i>
+            <span>+91 9876543210</span>
+          </div>
+        </div>
+        
+        <!-- Social Icons -->
+        <div class="flex space-x-4">
+          <a href="#" class="text-white hover:text-orange-500 transition duration-300">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="text-white hover:text-orange-500 transition duration-300">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="text-white hover:text-orange-500 transition duration-300">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="text-white hover:text-orange-500 transition duration-300">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" class="text-white hover:text-orange-500 transition duration-300">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header - Fixed -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+          <img src="LOGO.png" alt="Logo" class="h-16 w-auto"> <!-- Slightly smaller logo for mobile -->
+        </div>
+
+        <!-- Desktop Navigation (hidden on mobile) -->
+        <nav class="hidden md:flex space-x-8 lg:space-x-12 text-lg text-gray-900">
+<a href="../INDIA/india.html" class="hover:text-orange-500 transition duration-300">India</a>
+          <a href="#" class="hover:text-orange-500 transition duration-300">World</a>
+          <a href="#" class="hover:text-orange-500 transition duration-300">Customisation</a>
+          <a href="#" class="hover:text-orange-500 transition duration-300">Travels</a>
+          <a href="#" class="hover:text-orange-500 transition duration-300">Cruise</a>
+          <a href="#" class="hover:text-orange-500 transition duration-300">About</a>
+          <a href="#" class="hover:text-orange-500 transition duration-300">Contact</a>
+        </nav>
+
+        <!-- Right side items -->
+        <div class="flex items-center space-x-4">
+          <!-- Desktop Sign In (hidden on mobile) -->
+          <a href="#" class="text-orange-500 hover:text-orange-600 text-2xl hidden md:block" title="Sign In">
+            <i class="fa-solid fa-user"></i>
+          </a>
+          
+          <!-- Mobile menu button (visible only on mobile) -->
+          <button id="mobile-menu-button" class="md:hidden text-gray-900 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu (hidden by default) -->
+      <div id="mobile-menu" class="mobile-menu md:hidden bg-white w-full">
+        <div class="px-2 py-4 space-y-3 border-t">
+          <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">India</a>
+          <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">World</a>
+          <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">Customisation</a>
+          <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">Travels</a>
+          <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">Cruise</a>
+          <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">About</a>
+          <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">Contact</a>
+          <a href="#" class="block px-3 py-2 rounded-md text-orange-500 font-medium">
+            <i class="fa-solid fa-user mr-2"></i> Sign In
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  
+
+ 
+  <section class="relative">
+    <!-- Banner Image -->
+    <div class="h-96 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+      <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center pt-20 pb-32">
+        <div class="text-center px-4 mb-8">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">Discover Your Perfect Holiday</h1>
+          <p class="text-xl md:text-2xl text-white mb-8">Explore the world with our exclusive travel packages</p>
+        </div>
+        
+        <!-- Search Bar with Suggestions -->
+        <div class="max-w-3xl w-full px-4 sm:px-6 lg:px-8 mt-1">
+          <div class="bg-white rounded-lg shadow-xl p-1 relative">
+            <form class="flex flex-col md:flex-row gap-4">
+              <div class="flex-1 relative">
+                <div class="relative">
+                  <input 
+                    type="text" 
+                    id="destination-search"
+                    placeholder="Search destinations, packages, hotels..." 
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    autocomplete="off"
+                  >
+                  <div id="search-suggestions" class="hidden absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg max-h-60 overflow-auto">
+                    <!-- Suggestions content remains the same -->
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <button class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 w-full md:w-auto">
+                  <i class="fas fa-search mr-2"></i> Search
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Cards Section -->
+  <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Top Destinations</h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">Explore our most sought-after travel destinations around the world</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Large Card (Full width on mobile, 2 cols on desktop) -->
+      <div class="md:col-span-2 rounded-xl overflow-hidden shadow-lg group">
+        <div class="relative h-80">
+          <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+               alt="Bali Vacation" 
+               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+            <div>
+              <h3 class="text-2xl font-bold text-white">Bali Vacation</h3>
+              <p class="text-orange-300">Starting from ₹45,999</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Medium Card -->
+      <div class="rounded-xl overflow-hidden shadow-lg group">
+        <div class="relative h-80">
+          <img src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+               alt="Maldives Honeymoon" 
+               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+            <div>
+              <h3 class="text-2xl font-bold text-white">Maldives Honeymoon</h3>
+              <p class="text-orange-300">Starting from ₹89,999</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+       <!-- Medium Card -->
+      <div class="rounded-xl overflow-hidden shadow-lg group">
+        <div class="relative h-80">
+          <img src="dubai.jpeg" 
+               alt="Dubai Tour" 
+               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+            <div>
+              <h3 class="text-2xl font-bold text-white">Dubai Adventure</h3>
+              <p class="text-orange-300">Starting from ₹65,999</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Medium Card -->
+      <div class="rounded-xl overflow-hidden shadow-lg group">
+        <div class="relative h-80">
+          <img src="goa1.jpg" 
+               alt="Dubai Tour" 
+               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+            <div>
+              <h3 class="text-2xl font-bold text-white">Goa Adventure</h3>
+              <p class="text-orange-300">Starting from ₹65,999</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+         <!-- Medium Card -->
+      <div class="rounded-xl overflow-hidden shadow-lg group">
+        <div class="relative h-80">
+          <img src="kashmir.jpg" 
+               alt="Dubai Tour" 
+               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+            <div>
+              <h3 class="text-2xl font-bold text-white">Kashmir Adventure</h3>
+              <p class="text-orange-300">Starting from ₹65,999</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <button class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg transition duration-300 inline-flex items-center">
+        View All Destinations
+        <i class="fas fa-arrow-right ml-2"></i>
+      </button>
+    </div>
+  </section>
+
+ 
+
+
+
+
+
+<!-- Why Choose Us Section with Border and Animations -->
+<section class="relative py-20 bg-gray-2 overflow-hidden border-t-2 border-b-2 border-orange-500/20">
+  <!-- Animated Background Elements -->
+  <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
+    <div class="absolute top-20 -left-20 w-80 h-80 bg-orange-100 rounded-full mix-blend-multiply opacity-2 animate-blob1"></div>
+    <div class="absolute top-1/3 right-0 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply opacity-2 animate-blob2"></div>
+    <div class="absolute bottom-0 left-1/4 w-64 h-64 bg-purple-100 rounded-full mix-blend-multiply opacity-2 animate-blob3"></div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Why Choose Saee Holidays</h2>
+      <p class="text-xl text-orange-600 max-w-2xl mx-auto">We go the extra mile to make your travel experience unforgettable</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Feature 1 -->
+      <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-3 border border-gray-100 animate-float">
+        <div class="text-orange-500 text-4xl mb-6">
+          <i class="fas fa-globe"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-3 text-gray-800">150+ Destinations</h3>
+        <p class="text-gray-600">Extensive selection of domestic and international destinations to choose from</p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-3 border border-gray-100 animate-float animate-delay-200">
+        <div class="text-orange-500 text-4xl mb-6">
+          <i class="fas fa-rupee-sign"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-3 text-gray-800">Best Price Guarantee</h3>
+        <p class="text-gray-600">We promise the best rates for all our packages with no hidden charges</p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-3 border border-gray-100 animate-float animate-delay-400">
+        <div class="text-orange-500 text-4xl mb-6">
+          <i class="fas fa-headset"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-3 text-gray-800">24/7 Support</h3>
+        <p class="text-gray-600">Dedicated travel experts available round the clock for assistance</p>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-3 border border-gray-100 animate-float animate-delay-600">
+        <div class="text-orange-500 text-4xl mb-6">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-3 text-gray-800">Safe & Secure</h3>
+        <p class="text-gray-600">Verified hotels and partners with secure payment options</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Floating Animation */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  /* Blob Background Animations */
+  @keyframes blob1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+  }
+  
+  @keyframes blob2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(20px, 20px) scale(0.9); }
+    66% { transform: translate(-30px, -30px) scale(1.1); }
+  }
+  
+  @keyframes blob3 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-40px, 10px) scale(1.1); }
+    66% { transform: translate(10px, -30px) scale(0.9); }
+  }
+  
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  .animate-blob1 {
+    animation: blob1 18s ease-in-out infinite;
+  }
+  
+  .animate-blob2 {
+    animation: blob2 22s ease-in-out infinite;
+  }
+  
+  .animate-blob3 {
+    animation: blob3 16s ease-in-out infinite;
+  }
+  
+  .animate-delay-200 {
+    animation-delay: 0.2s;
+  }
+  
+  .animate-delay-400 {
+    animation-delay: 0.4s;
+  }
+  
+  .animate-delay-600 {
+    animation-delay: 0.6s;
+  }
+</style>
+
+
+<!-- Tour Packages Section -->
+<section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+  <div class="text-center mb-12">
+    <h2 class="text-4xl font-bold text-gray-900 mb-6">Explore Our Tour Packages</h2>
+
+    <!-- Filter Buttons -->
+    <div class="flex justify-center gap-6">
+      <button onclick="filterPackages('india')" class="bg-orange-500 text-white px-8 py-3 rounded-md font-semibold hover:bg-orange-600 transition duration-300">India</button>
+      <button onclick="filterPackages('world')" class="bg-orange-500 text-white px-8 py-3 rounded-md font-semibold hover:bg-orange-600 transition duration-300">World</button>
+    </div>
+  </div>
+
+  <!-- Tour Cards Grid -->
+  <div id="tour-packages" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <!-- India Tour Card 1 -->
+    <div class="package-card india relative rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 h-[350px] group">
+      <img src="goa.jpg" alt="Goa" class="w-full h-full object-cover border-4 border-white rounded-lg">
+      
+      <!-- Package Name & Price (Always Visible) 
+      <div class="absolute top-4 left-0 right-0 text-center">
+<h3 class="text-xl font-bold text-white drop-shadow-md bg-orange-600/80 inline-block px-3 py-1 rounded-md">
+  Goa Beach Retreat
+  <p class="text-white font-medium drop-shadow-md">From ₹19,999</p>
+</h3>
+      </div>-->
+      
+      <!-- Bottom Section (Half of card) -->
+      <div class="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/70 to-transparent">
+        <!-- More Details Button (Always Visible) -->
+        <div class="absolute bottom-4 left-0 right-0 text-center">
+          <button class="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition">
+            More Details
+          </button>
+        </div>
+        
+        <!-- Hidden Details (Slides Up) -->
+<div class="absolute bottom-0 left-0 right-0">
+  <div class="bg-white/90 w-11/12 mx-auto rounded-t-xl p-4 transition-all duration-500 transform translate-y-full group-hover:translate-y-0">
+    <div class="text-sm text-black space-y-2">
+      <p>🗓️ 4 Nights / 5 Days</p>
+      <p>🏖️ Beach parties</p>
+      <p>🏖️ Cruise</p>
+      <p>🏖️ Water sports</p>
+      <p>🚗 Pickup & drop included</p>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <!-- India Tour Card 2 -->
+    <div class="package-card india relative rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 h-[350px] group">
+      <img src="kashmir2.png" alt="Kashmir" class="w-full h-full object-cover border-4 border-white rounded-lg">
+       <!-- Package Name & Price (Always Visible)
+      <div class="absolute top-4 left-0 right-0 text-center">
+<h3 class="text-xl font-bold text-white drop-shadow-md bg-orange-600/80 inline-block px-3 py-1 rounded-md">
+          Kashmir Paradise
+                <p class="text-white font-medium drop-shadow-md">From ₹24,999</p>
+
+        </h3>
+      </div>-->
+      
+      <div class="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/70 to-transparent">
+        <div class="absolute bottom-4 left-0 right-0 text-center">
+          <button class="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition">
+            More Details
+          </button>
+        </div>
+        
+       <div class="absolute bottom-0 left-0 right-0">
+  <div class="bg-white/90 w-11/12 mx-auto rounded-t-xl p-4 transition-all duration-500 transform translate-y-full group-hover:translate-y-0">
+    <div class="text-sm text-black space-y-2">
+
+            <p>🗓️ 6 Nights / 7 Days</p>
+            <p>❄️ Snow activities</p>
+                <p>🌳 Garden</p>
+                <p>⛵Houseboats </p>
+            <p>🚕 Transfers included</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- World Tour Card 1 -->
+    <div class="package-card world relative rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 h-[300px] group">
+      <img src="dubai3.jpg" alt="Dubai" class="w-full h-full object-cover border-4 border-white rounded-lg">
+      
+      <div class="absolute top-4 left-0 right-0 text-center">
+        <h3 class="text-xl font-bold text-white drop-shadow-md">Dubai Adventure</h3>
+        <p class="text-orange-300 font-medium drop-shadow-md">From ₹65,999</p>
+      </div>
+      
+      <div class="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/70 to-transparent">
+        <div class="absolute bottom-4 left-0 right-0 text-center">
+          <button class="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition">
+            More Details
+          </button>
+        </div>
+        
+     <div class="absolute bottom-0 left-0 right-0">
+  <div class="bg-white/90 w-11/12 mx-auto rounded-t-xl p-4 transition-all duration-500 transform translate-y-full group-hover:translate-y-0">
+    <div class="text-sm text-black space-y-2">
+
+            <p>🗓️ 5 Nights / 6 Days</p>
+            <p>🏜️ Desert safari</p>
+            <p>🏙️ Burj Khalifa</p>
+                <p>🛍️ shopping</p>
+            <p>🚌 Transfers + visa included</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Tour Package Section -->
+<section class="bg-white py-12 px-4 sm:px-6 lg:px-16 max-w-9xl mx-auto">
+  <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+
+    <!-- Featured Tour Slider (Spanning 2 Rows) - Size unchanged -->
+    <div class="col-span-1 lg:col-span-2 lg:row-span-2 relative overflow-hidden h-full">
+      <div class="slider-container h-full">
+        <!-- Slide 1 -->
+        <div class="slider-slide rounded-xl p-6 flex flex-col justify-between h-full relative overflow-hidden shadow-lg">
+          <!-- Background image (original size maintained) -->
+          <div class="absolute inset-0 bg-[url('https://i.pinimg.com/736x/1a/ca/36/1aca36ffdd2578d87ecf511e96d08cc8.jpg')] bg-cover bg-center"></div>
+          <!-- Dark overlay for text readability -->
+          <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+          
+          <div class="relative z-10 h-full flex flex-col">
+            <div>
+              <h2 class="text-xl font-bold text-white mb-2 drop-shadow-md">Saee Travels</h2>
+              <h3 class="text-2xl font-extrabold text-white drop-shadow-md">Durga Mata Tours – Divine Shakti Darshan Yatra</h3>
+              <p class="text-white text-sm mt-2 drop-shadow-md">
+                Vaishno Devi | Jwala Ji | Chamunda Devi | Chintpurni<br>
+                Naina Devi | Mansa Devi | Kamakhya Devi | Kalighat Kali
+              </p>
+            </div>
+            <div class="mt-auto">
+              <div class="bg-white text-black mt-4 px-3 py-1 inline-block rounded font-semibold">
+                6 to 17 Days | Starting ₹76,000
+              </div>
+              <p class="text-white text-xs mt-2 drop-shadow-md">Fly from Kolkata | All-inclusive with airfare</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slide 2 -->
+        <div class="slider-slide rounded-xl p-6 flex flex-col justify-between h-full relative overflow-hidden shadow-lg">
+          <div class="absolute inset-0 bg-[url('https://i.pinimg.com/736x/c9/dc/0f/c9dc0f5918a0a0a2fdc3e919cc6a18d7.jpg')] bg-cover bg-center"></div>
+          <div class="absolute inset-0 bg-blue-900 bg-opacity-30"></div>
+          
+          <div class="relative z-10 h-full flex flex-col">
+            <div>
+             <h2 class="text-xl font-bold text-white mb-2 drop-shadow-md">Saee Travels</h2>
+    <h3 class="text-2xl font-extrabold text-white drop-shadow-md">Paris Tours – Discover the City of Lights</h3>
+    <p class="text-white text-sm mt-2 drop-shadow-md">
+      Eiffel Tower | Louvre Museum | Notre-Dame | Versailles Palace<br>
+      Seine River Cruise | Disneyland Paris | Montmartre | Arc de Triomphe
+    </p>
+  </div>
+  <div class="mt-auto">
+    <div class="bg-white text-black mt-4 px-3 py-1 inline-block rounded font-semibold">
+      6 to 8 Days | Starting ₹89,999
+    </div>
+    <p class="text-white text-xs mt-2 drop-shadow-md">Fly from Delhi/Mumbai | All-inclusive with airfare</p>
+  </div>
+          </div>
+        </div>
+        
+        <!-- Slide 3 -->
+        <div class="slider-slide rounded-xl p-6 flex flex-col justify-between h-full relative overflow-hidden shadow-lg">
+          <div class="absolute inset-0 bg-[url('https://i.pinimg.com/736x/52/b5/9b/52b59b3a78c74138bcce95fe1505c764.jpg')] bg-cover bg-center"></div>
+          <div class="absolute inset-0 bg-purple-900 bg-opacity-30"></div>
+          
+          <div class="relative z-10 h-full flex flex-col">
+           <div>
+    <h2 class="text-xl font-bold text-white mb-2 drop-shadow-md">Saee Travels</h2>
+    <h3 class="text-2xl font-extrabold text-white drop-shadow-md">Char Dham Yatra – Sacred Journey to Moksha</h3>
+    <p class="text-white text-sm mt-2 drop-shadow-md">
+      Yamunotri | Gangotri | Kedarnath | Badrinath<br>
+      Haridwar | Rishikesh | Devprayag | Joshimath
+    </p>
+  </div>
+  <div class="mt-auto">
+    <div class="bg-white text-black mt-4 px-3 py-1 inline-block rounded font-semibold">
+      10 to 14 Days | Starting ₹58,000
+    </div>
+    <p class="text-white text-xs mt-2 drop-shadow-md">Departs from Haridwar | Meals, Stay & Transfers Included</p>
+  </div>
+</div>
+ </div>
+      </div>
+    </div>
+
+    <!-- Grid Tour Cards (Original sizes maintained exactly) -->
+
+
+    <div class="bg-white rounded-xl shadow-md overflow-hidden w-full max-w-sm">
+  <img src="https://i.pinimg.com/736x/0c/69/b1/0c69b1bbd788d9636bf52307f664d2a5.jpg" class="w-full h-40 object-cover" alt="Sikkim Darjeeling">
+  <div class="p-4">
+    <h4 class="text-lg font-semibold">Sikkim Darjeeling</h4>
+    <p class="text-sm text-gray-600 mt-1">14 tours | 35 departures</p>
+    <p class="text-sm text-gray-700 font-bold">19,781 guests travelled</p>
+  </div>
+</div>
+
+    <div class="bg-white rounded-xl shadow-md overflow-hidden w-full max-w-sm">
+  <img src="https://i.pinimg.com/736x/d2/8b/70/d28b70b9d4d3e205551078cac9fb1833.jpg" class="w-full h-40 object-cover" alt="Kerala">
+  <div class="p-4">
+    <h4 class="text-lg font-semibold">Kerala</h4>
+    <p class="text-sm text-gray-600 mt-1">18 tours | 40 departures</p>
+    <p class="text-sm text-gray-700 font-bold">12,928 guests travelled</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-xl shadow-md overflow-hidden w-full max-w-sm">
+  <img src="https://i.pinimg.com/736x/2d/0c/86/2d0c867e0b78617cd0ba970b4e3c4831.jpg" class="w-full h-40 object-cover" alt="North East">
+  <div class="p-4">
+    <h4 class="text-lg font-semibold">North East</h4>
+    <p class="text-sm text-gray-600 mt-1">20 tours | 46 departures</p>
+    <p class="text-sm text-gray-700 font-bold">15,164 guests travelled</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-xl shadow-md overflow-hidden w-full max-w-sm">
+  <img src="https://i.pinimg.com/736x/fe/c0/fb/fec0fb1c9a2a70f4812e3fe9ddc88d86.jpg" class="w-full h-40 object-cover" alt="Goa">
+  <div class="p-4">
+    <h4 class="text-lg font-semibold">Goa</h4>
+    <p class="text-sm text-gray-600 mt-1">10 tours | 25 departures</p>
+    <p class="text-sm text-gray-700 font-bold">9,374 guests travelled</p>
+  </div>
+</div>
+
+
+<div class="bg-white rounded-xl shadow-md overflow-hidden w-full max-w-sm">
+  <img src="https://i.pinimg.com/736x/a4/61/39/a4613973c972b7ad132eb358b7422c8e.jpg" class="w-full h-40 object-cover" alt="Wildlife Safari">
+  <div class="p-4">
+    <h4 class="text-lg font-semibold">Wildlife Safari Tour</h4>
+    <p class="text-sm text-gray-600 mt-1">Jim Corbett & Ranthambore</p>
+    <p class="text-sm text-gray-600">8 tours | 20 departures</p>
+    <p class="text-sm text-gray-700 font-bold">6,812 guests travelled</p>
+  </div>
+</div>
+
+
+<div class="bg-white rounded-xl shadow-md overflow-hidden w-full max-w-sm">
+  <img src="https://i.pinimg.com/736x/70/73/02/707302a2609d6818f411421c4ac98f8a.jpg" class="w-full h-40 object-cover" alt="Andaman Islands">
+  <div class="p-4">
+    <h4 class="text-lg font-semibold">Andaman Islands Tour</h4>
+    <p class="text-sm text-gray-600 mt-1">12 tours | 30 departures</p>
+    <p class="text-sm text-gray-700 font-bold">7,815 guests travelled</p>
+  </div>
+</div>
+
+
+<div class="bg-white rounded-xl shadow-md overflow-hidden w-full max-w-sm">
+  <img src="https://i.pinimg.com/736x/d6/ae/e6/d6aee6df49a0389f6d9fda434b6c4912.jpg" class="w-full h-40 object-cover" alt="Leh-Ladakh">
+  <div class="p-4">
+    <h4 class="text-lg font-semibold">Leh-Ladakh Adventure Tour</h4>
+    <p class="text-sm text-gray-600 mt-1">14 tours | 32 departures</p>
+    <p class="text-sm text-gray-700 font-bold">8,742 guests travelled</p>
+  </div>
+</div>
+
+
+
+<div class="bg-white rounded-xl shadow-md overflow-hidden w-full max-w-sm">
+  <img src="https://i.pinimg.com/736x/42/70/84/427084202c98ef9059c2a0edaff08814.jpg" class="w-full h-40 object-cover" alt="Kashmir">
+  <div class="p-4">
+    <h4 class="text-lg font-semibold">Kashmir</h4>
+    <p class="text-sm text-gray-600 mt-1">16 tours | 36 departures</p>
+    <p class="text-sm text-gray-700 font-bold">13,527 guests travelled</p>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<style>
+  .slider-container {
+    position: relative;
+    height: 100%;
+  }
+  
+  .slider-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .slider-slide:first-child {
+    opacity: 1;
+  }
+  
+  /* Text shadow for better readability */
+  .drop-shadow-md {
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  }
+</style>
+
+
+<footer class="bg-gray-900 text-white py-8">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Grid Layout -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      
+      <!-- Logo + Tagline -->
+      <div class="text-center md:text-left">
+        <h3 class="text-2xl font-bold text-orange-500 mb-2">Saee Holidays</h3>
+        <p class="text-gray-300">Discover Your Perfect Getaway</p>
+      </div>
+      
+      <!-- Quick Links (Hidden on mobile) -->
+      <div class="hidden md:block">
+        <h3 class="text-lg font-semibold mb-3">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-orange-500 transition">India Tours</a></li>
+          <li><a href="#" class="hover:text-orange-500 transition">International</a></li>
+          <li><a href="#" class="hover:text-orange-500 transition">Custom Packages</a></li>
+          <li><a href="#" class="hover:text-orange-500 transition">About Us</a></li>
+        </ul>
+      </div>
+      
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-lg font-semibold mb-3">Contact</h3>
+        <div class="space-y-2">
+          <p class="flex items-center gap-2">
+            <i class="fas fa-phone-alt text-orange-500"></i>
+            +91 1234567890
+          </p>
+          <p class="flex items-center gap-2">
+            <i class="fas fa-envelope text-orange-500"></i>
+            info@saeeholidays.com
+          </p>
+        </div>
+      </div>
+      
+      <!-- Social Media -->
+      <div>
+        <h3 class="text-lg font-semibold mb-3">Follow Us</h3>
+        <div class="flex space-x-4">
+          <a href="#" class="text-xl hover:text-blue-400 transition" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="text-xl hover:text-pink-500 transition" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="text-xl hover:text-blue-400 transition" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="text-xl hover:text-red-500 transition" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Quick Links (Accordion) -->
+    <div class="mt-6 md:hidden">
+      <details class="border-b border-gray-800 pb-4">
+        <summary class="font-semibold text-lg cursor-pointer focus:outline-none">
+          Quick Links
+        </summary>
+        <ul class="mt-3 space-y-2 pl-4">
+          <li><a href="#" class="hover:text-orange-500">India Tours</a></li>
+          <li><a href="#" class="hover:text-orange-500">International</a></li>
+          <li><a href="#" class="hover:text-orange-500">Custom Packages</a></li>
+          <li><a href="#" class="hover:text-orange-500">About Us</a></li>
+        </ul>
+      </details>
+    </div>
+
+    <!-- Copyright -->
+    <div class="mt-8 pt-6 border-t border-gray-800 text-center text-sm text-gray-400">
+      <p>© 2025 Saee Holidays. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>
