@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>North India Packages</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Navbar -->
+  <header class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-700">Incredible India</h1>
+      <nav class="space-x-4">
+        <a href="../index.html" class="text-gray-700 hover:text-blue-600">Home</a>
+        <a href="north-packages.html" class="text-blue-700 font-semibold">North India</a>
+        <a href="south-packages.html" class="text-gray-700 hover:text-blue-600">South India</a>
+        <a href="../contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Video Banner -->
+  <section class="relative h-[400px] overflow-hidden">
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+      <source src="../videos/india-banner.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center z-10">
+      <div class="text-center text-white px-6 md:px-12">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Discover the soul of India</h1>
+        <p class="text-lg md:text-2xl font-medium max-w-3xl mx-auto">
+          Where every journey tells a timeless story of culture, color, and unforgettable adventure.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- North India Packages -->
+  <section class="max-w-7xl mx-auto py-12 px-4">
+    <h2 class="text-3xl font-bold text-center mb-10 text-blue-800">Explore North India Tour Packages</h2>
+    <div id="packageContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Dynamic cards will appear here -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-6 mt-10">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p>&copy; 2025 Incredible India. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Dynamic Content -->
+  <script>
+    const packages = [
+      {
+        title: "Himachal Pradesh",
+        region: "himachal",
+        description: "Explore Shimla, Manali, Kasol & more.",
+        price: "₹9,999",
+        image: "../images/himachal.jpg",
+        color: "blue"
+      },
+      {
+        title: "Uttarakhand",
+        region: "uttarakhand",
+        description: "Rishikesh, Nainital, Mussoorie & Char Dham.",
+        price: "₹7,499",
+        image: "../images/uttarakhand.jpg",
+        color: "green"
+      },
+      {
+        title: "Delhi",
+        region: "delhi",
+        description: "Historic forts, street food, markets & more.",
+        price: "₹3,999",
+        image: "../images/delhi.jpg",
+        color: "red"
+      },
+      {
+        title: "Jammu & Kashmir",
+        region: "jammu",
+        description: "Gulmarg, Srinagar, Pahalgam & more.",
+        price: "₹11,999",
+        image: "../images/kashmir.jpg",
+        color: "purple"
+      },
+      {
+        title: "Punjab",
+        region: "punjab",
+        description: "Amritsar, Golden Temple, Wagah Border.",
+        price: "₹6,499",
+        image: "../images/punjab.jpg",
+        color: "yellow"
+      },
+      {
+        title: "Rajasthan",
+        region: "rajasthan",
+        description: "Jaipur, Udaipur, Jodhpur, desert safaris.",
+        price: "₹8,999",
+        image: "../images/rajasthan.jpg",
+        color: "indigo"
+      }
+    ];
+
+    const container = document.getElementById("packageContainer");
+
+    packages.forEach(pkg => {
+      const card = document.createElement("div");
+      card.className = "bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition";
+
+      card.innerHTML = `
+        <img src="${pkg.image}" alt="${pkg.title}" class="w-full h-52 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2 text-${pkg.color}-700">${pkg.title}</h3>
+          <p class="text-gray-600 mb-3">${pkg.description}</p>
+          <p class="font-bold text-lg mb-4">Starting at ${pkg.price}</p>
+          <div class="flex justify-between">
+            <button onclick="showDetails('${pkg.region}')" class="bg-${pkg.color}-600 text-white px-4 py-2 rounded hover:bg-${pkg.color}-700">Show Details</button>
+            <a href="../contact.html" class="text-${pkg.color}-700 font-medium hover:underline self-center">Contact Us</a>
+          </div>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+
+    function showDetails(region) {
+      window.location.href = `../packages/${region}.html`;
+    }
+  </script>
+</body>
+</html>

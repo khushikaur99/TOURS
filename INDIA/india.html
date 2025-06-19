@@ -1,69 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explore India</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#e67e22',
-                        secondary: '#2c3e50'
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .region-arrow {
-            transition: transform 0.3s ease;
-        }
-        .region-arrow.rotate-180 {
-            transform: rotate(180deg);
-        }
-        .package-card {
-            transition: all 0.3s ease;
-        }
-        .package-card:hover {
-            transform: translateY(-5px);
-        }
-        .itinerary-day {
-            position: relative;
-            padding-left: 2rem;
-        }
-        .itinerary-day::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 2px;
-            background: #e67e22;
-        }
-        .day-number {
-            position: absolute;
-            left: -0.75rem;
-            top: 0;
-            width: 1.5rem;
-            height: 1.5rem;
-            border-radius: 50%;
-            background: #e67e22;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 0.75rem;
-        }
-    </style>
-</head>
-<body class="bg-gray-50 font-sans text-gray-800">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <!-- Top Bar with Contact and Social -->
+<link rel="stylesheet" href="style.css">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Saee Holidays</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white">
+
+  
+
+
+  <!-- Top Bar with Contact and Social -->
   <div class="bg-gray-900 text-white py-2">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row justify-between items-center">
@@ -105,13 +57,10 @@
   <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center py-4">
-     <!-- Logo -->
-<div class="flex items-center space-x-2">
-  <a href="../index/index.html">
-    <img src="LOGO.png" alt="Logo" class="h-16 w-auto">
-  </a>
-</div>
-
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+          <img src="IMAGES/LOGO.png" alt="Logo" class="h-16 w-auto"> <!-- Slightly smaller logo for mobile -->
+        </div>
 
         <!-- Desktop Navigation (hidden on mobile) -->
         <nav class="hidden md:flex space-x-8 lg:space-x-12 text-lg text-gray-900">
@@ -155,247 +104,197 @@
       </div>
     </div>
   </header>
+<!-- India Travel Video Banner Section -->
+<section class="relative h-[500px] overflow-hidden">
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+    <source src="VIDEOS/VIDEO INDIA.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
 
-    <!-- Mobile Menu Button -->
-    <div class="md:hidden fixed top-4 left-4 z-40">
-        <button id="menuToggle" class="bg-primary text-white p-3 rounded-lg shadow-lg">
-            <i class="fas fa-bars text-xl"></i>
-        </button>
+  <!-- Dark overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+
+  <!-- Text Content -->
+  <div class="relative z-20 flex items-center justify-center h-full">
+    <div class="text-center text-white px-6 md:px-12">
+      <h1 class="text-3xl md:text-5xl font-bold mb-4">
+        Discover the soul of India
+      </h1>
+      <p class="text-lg md:text-2xl font-medium max-w-3xl mx-auto">
+        Where every journey tells a timeless story of culture, color, and unforgettable adventure.
+      </p>
     </div>
+  </div>
+</section>
 
-    <div class="flex min-h-screen">
-        <!-- Left Navigation - Sticky (unchanged as requested) -->
-        <div id="leftNav" class="w-64 bg-white h-screen fixed md:sticky top-0 -left-64 md:left-0 z-30 shadow-lg transition-all duration-300 overflow-y-auto">
-            <div class="p-5 h-full">
-                <div class="flex justify-between items-center mb-6">
-                    <h3 class="text-primary text-xl font-bold">India Tours</h3>
-                    <button id="closeMenu" class="md:hidden text-gray-500 hover:text-primary">
-                        <i class="fas fa-times text-xl"></i>
-                    </button>
-                </div>
-                
-                <h3 class="text-primary border-b border-gray-200 pb-2 mb-4 font-semibold">Tour Packages by Region</h3>
-                
-                <!-- All Packages -->
-                <div class="mb-2">
-                    <a href="#" class="block px-3 py-2 rounded bg-primary text-white hover:bg-orange-700 transition-colors">
-                        <i class="fas fa-map-marked-alt mr-2"></i> All Packages
-                    </a>
-                </div>
-                
-                <!-- North India -->
-                <div class="mb-2">
-                    <button class="region-toggle flex justify-between items-center w-full px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition-all">
-                        <span class="font-medium"><i class="fas fa-mountain mr-2 text-primary"></i> North India</span>
-                        <i class="fas fa-chevron-down region-arrow text-xs"></i>
-                    </button>
-                    <div class="region-content pl-4 mt-1 hidden">
-                        <ul class="space-y-1">
-                         <!-- Hill Stations -->
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Shimla (Himachal)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Manali (Himachal)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Dharamshala & McLeod Ganj</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Nainital (Uttarakhand)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Mussoorie (Uttarakhand)</a></li>
 
-<!-- Historical Sites -->
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Delhi (Red Fort, India Gate)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Agra (Taj Mahal)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Jaipur (Rajasthan)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Jodhpur (Rajasthan)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Udaipur (Rajasthan)</a></li>
+  <!-- Title -->
+  <section class="max-w-7xl mx-auto px-4 py-10">
+    <h2 class="text-3xl font-bold text-center mb-10">Domestic India Packages</h2>
 
-<!-- Religious / Spiritual Places -->
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Varanasi (U.P.)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Amritsar (Golden Temple)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Haridwar & Rishikesh</a></li>
+    <!-- Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 
-<!-- Adventure / Nature -->
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Leh-Ladakh (J&K)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Srinagar (Dal Lake)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Gulmarg (J&K)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Pahalgam (J&K)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Sonmarg (J&K)</a></li>
+      <!-- Card Template -->
+      <div onclick="openPackages('north')" class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+        <img src="IMAGES/kashmir.jpg" alt="North India" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+          <h3 class="text-white text-lg font-bold">NORTH INDIA</h3>
+          <p class="text-white text-sm">12 PACKAGES FOUND</p>
+        </div>
+      </div>
 
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- South India -->
-                <div class="mb-2">
-                    <button class="region-toggle flex justify-between items-center w-full px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition-all">
-                        <span class="font-medium"><i class="fas fa-umbrella-beach mr-2 text-primary"></i> South India</span>
-                        <i class="fas fa-chevron-down region-arrow text-xs"></i>
-                    </button>
-                    <div class="region-content pl-4 mt-1 hidden">
-                        <ul class="space-y-1">
-                          <!-- Hill Stations -->
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Ooty (Tamil Nadu)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Kodaikanal (Tamil Nadu)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Coorg (Karnataka)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Munnar (Kerala)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Wayanad (Kerala)</a></li>
+      <div onclick="openPackages('south')" class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+        <img src="IMAGES/kerala backwaters.jpg" alt="South India" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+          <h3 class="text-white text-lg font-bold">SOUTH INDIA</h3>
+          <p class="text-white text-sm">9 PACKAGES FOUND</p>
+        </div>
+      </div>
 
-<!-- Beach & Backwaters -->
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Alleppey (Backwaters)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Varkala Beach (Kerala)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Kovalam Beach (Kerala)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Gokarna (Karnataka)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Mahabalipuram (Tamil Nadu)</a></li>
+      <div onclick="openPackages('west')" class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+        <img src="IMAGES/CHATTISGARH.jpg" alt=""  class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+          <h3 class="text-white text-lg font-bold">WEST INDIA</h3>
+          <p class="text-white text-sm">7 PACKAGES FOUND</p>
+        </div>
+      </div>
 
-<!-- Historical & Cultural -->
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Hampi (Karnataka)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Badami & Pattadakal (Karnataka)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Thanjavur (Tamil Nadu)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Madurai (Tamil Nadu)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Mysuru Palace (Karnataka)</a></li>
+      <div onclick="openPackages('east')" class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+        <img src="IMAGES/himalayan.jpg" alt="East India" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+          <h3 class="text-white text-lg font-bold">EAST INDIA</h3>
+          <p class="text-white text-sm">6 PACKAGES FOUND</p>
+        </div>
+      </div>
 
-<!-- Religious / Pilgrimage -->
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Tirupati Balaji (Andhra Pradesh)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Sabarimala Temple (Kerala)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Rameswaram (Tamil Nadu)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Kanchipuram (Tamil Nadu)</a></li>
+      <div onclick="openPackages('northeast')" class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+        <img src="IMAGES/SEVEN SISTERS.jpg" alt="North East India" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+          <h3 class="text-white text-lg font-bold">NORTH EAST</h3>
+          <p class="text-white text-sm">8 PACKAGES FOUND</p>
+        </div>
+      </div>
 
-<!-- Cities & Modern Attractions -->
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Bangalore (Tech City)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Chennai (Marina Beach)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Hyderabad (Charminar, Ramoji Film City)</a></li>
+      <div onclick="openPackages('central')" class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+        <img src="images/karnataka heritage.jpg" alt="Central India" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+          <h3 class="text-white text-lg font-bold">CENTRAL INDIA</h3>
+          <p class="text-white text-sm">5 PACKAGES FOUND</p>
+        </div>
+      </div>
 
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- West & Central India -->
-                <div class="mb-2">
-                    <button class="region-toggle flex justify-between items-center w-full px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition-all">
-                        <span class="font-medium"><i class="fas fa-fort-awesome mr-2 text-primary"></i> West & Central India</span>
-                        <i class="fas fa-chevron-down region-arrow text-xs"></i>
-                    </button>
-                    <div class="region-content pl-4 mt-1 hidden">
-                        <ul class="space-y-1">
-                           <!-- Hill Stations & Nature -->
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Mount Abu (Rajasthan)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Lonavala & Khandala (Maharashtra)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Mahabaleshwar (Maharashtra)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Amboli (Maharashtra)</a></li>
+    </div>
+  </section>
 
-<!-- Beaches & Coastal Getaways -->
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Goa (Beaches & Nightlife)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Diu Island (Daman & Diu)</a></li>
 
-<!-- Historical & Cultural Heritage -->
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Ajanta & Ellora Caves (Maharashtra)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Chittorgarh Fort (Rajasthan)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Kumbhalgarh Fort (Rajasthan)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Ranthambore (Rajasthan)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Udaipur (City of Lakes)</a></li>
+  <!-- Script -->
+  <script>
+    function openPackages(region) {
+      window.location.href = region + "-packages.html";
+    }
+  </script>
 
-<!-- Pilgrimage & Spiritual Places -->
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Shirdi (Sai Baba Temple)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Nashik (Kumbh Mela City)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Somnath Temple (Gujarat)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Dwarka (Char Dham)</a></li>
-
-<!-- Cities & Urban Attractions -->
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Mumbai (Maharashtra)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Pune (Cultural Capital)</a></li>
-<li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all">
-  <i class="fas fa-map-marker-alt mr-2 text-xs"></i>Ahmedabad (Gujarat)</a></li>
-
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- East & North East India -->
-                <div class="mb-4">
-                    <button class="region-toggle flex justify-between items-center w-full px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition-all">
-                        <span class="font-medium"><i class="fas fa-pagoda mr-2 text-primary"></i> East & North East India</span>
-                        <i class="fas fa-chevron-down region-arrow text-xs"></i>
-                    </button>
-                    <div class="region-content pl-4 mt-1 hidden">
-                        <ul class="space-y-1">
-                            <li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all"><i class="fas fa-map-marker-alt mr-2 text-xs"></i>West Bengal</a></li>
-                            <li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all"><i class="fas fa-map-marker-alt mr-2 text-xs"></i>Odisha</a></li>
-                            <li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all"><i class="fas fa-map-marker-alt mr-2 text-xs"></i>Assam</a></li>
-                            <li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all"><i class="fas fa-map-marker-alt mr-2 text-xs"></i>Sikkim</a></li>
-                            <li><a href="#" class="block px-3 py-1 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all"><i class="fas fa-map-marker-alt mr-2 text-xs"></i>Seven Sisters</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3 class="text-primary border-b border-gray-200 pb-2 mt-6 mb-4 font-semibold">Filter By</h3>
-                <ul class="space-y-2">
-                    <li><a href="#" class="block px-3 py-2 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all"><i class="fas fa-calendar-day mr-2"></i>Duration</a></li>
-                    <li><a href="#" class="block px-3 py-2 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all"><i class="fas fa-tag mr-2"></i>Price Range</a></li>
-                    <li><a href="#" class="block px-3 py-2 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all"><i class="fas fa-theater-masks mr-2"></i>Theme</a></li>
-                    <li><a href="#" class="block px-3 py-2 rounded text-gray-600 hover:bg-gray-100 hover:text-primary transition-all"><i class="fas fa-sun mr-2"></i>Season</a></li>
-                </ul>
-            </div>
+<section class="relative h-[80vh] bg-cover bg-center flex items-center justify-end p-4 sm:p-8" 
+         style="background-image: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.1)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');">
+    
+    <!-- Form Container - Made more compact -->
+    <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-6 w-full max-w-md shadow-2xl">
+        <!-- Header - Made more compact -->
+        <div class="bg-slate-800 text-white p-3 rounded-t-xl -mx-6 -mt-6 mb-4">
+            <h2 class="text-lg font-semibold">Still didn't find what you were looking for?</h2>
+            <p class="text-orange-400 text-sm font-medium">Let our experts guide you!!</p>
         </div>
 
-        <!-- Main Content Area -->
-        <main id="mainContent" class="flex-1 md:ml-64 p-6 pt-20 md:pt-6">
-            <!-- Content will be dynamically inserted here -->
-        </main>
-    </div>
+        <!-- Compact Form -->
+        <form class="space-y-3">
+            <!-- Name Field -->
+            <div>
+                <input type="text" 
+                       placeholder="Name*" 
+                       class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                       required>
+            </div>
 
-    <script src="india.js"></script>
+            <!-- Phone and Date Row - Made more compact -->
+            <div class="flex gap-3">
+                <div class="flex-1">
+                    <div class="flex">
+                        <select class="px-2 py-2 text-sm border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+                            <option>+91</option>
+                        </select>
+                        <input type="tel" 
+                               placeholder="Your Number*" 
+                               class="flex-1 px-3 py-2 text-sm border-t border-r border-b border-gray-300 rounded-r-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                               required>
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <input type="text" 
+                           placeholder="Travel Date*" 
+                           class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                           required>
+                </div>
+            </div>
+
+            <!-- Email and Traveller Count Row -->
+            <div class="flex gap-3">
+                <div class="flex-1">
+                    <input type="email" 
+                           placeholder="Email*" 
+                           class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                           required>
+                </div>
+                <div class="flex-1">
+                    <input type="number" 
+                           placeholder="Travelers*" 
+                           class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                           required>
+                </div>
+            </div>
+
+            <!-- Trip Type Radio Buttons - Made more compact -->
+            <div>
+                <label class="block text-sm text-gray-700 font-medium mb-1">Trip Type:</label>
+                <div class="flex gap-4">
+                    <label class="flex items-center">
+                        <input type="radio" name="trip_type" value="international" class="mr-1 text-blue-600 scale-90">
+                        <span class="text-sm text-gray-700">International</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="trip_type" value="domestic" class="mr-1 text-blue-600 scale-90">
+                        <span class="text-sm text-gray-700">Domestic</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Message Field - Reduced height -->
+            <div>
+                <textarea placeholder="Message" 
+                          rows="3" 
+                          class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"></textarea>
+            </div>
+
+            <!-- Submit Button - Made more compact -->
+            <button type="submit" 
+                    class="w-full bg-slate-800 text-white py-2 px-4 rounded-lg text-sm font-semibold hover:bg-slate-700 transition-colors duration-200">
+                Submit
+            </button>
+        </form>
+    </div>
+</section>
+    <script>
+        // Simple form submission handler
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry! We will contact you soon.');
+        });
+
+        // WhatsApp button click handler
+        document.querySelector('.fixed').addEventListener('click', function() {
+            window.open('https://wa.me/919999999999', '_blank');
+        });
+    </script>
 </body>
 </html>

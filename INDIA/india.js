@@ -39,7 +39,7 @@ const packages = [
         title: 'Golden Triangle Tour',
         region: 'North India',
         duration: '7 Days / 6 Nights',
-        price: '$899',
+        price: '₹59,999',
         description: 'Explore India\'s most famous circuit covering Delhi, Agra, and Jaipur. Visit the iconic Taj Mahal, majestic Amber Fort, and experience the rich Mughal and Rajput heritage.',
         image: 'https://i.pinimg.com/736x/25/d1/7b/25d17bc2c463029cffa9d3d083ebb00d.jpg',
         highlights: ['Taj Mahal at sunrise', 'Red Fort in Delhi', 'Amber Fort elephant ride', 'City Palace in Jaipur'],
@@ -110,7 +110,7 @@ const packages = [
         title: 'Kerala Backwaters Cruise',
         region: 'South India',
         duration: '5 Days / 4 Nights',
-        price: '$699',
+        price: '₹42,999',
         description: 'Experience the serene backwaters of Kerala with houseboat cruises, spice plantations, and pristine beaches. Perfect blend of nature and culture.',
         image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
         highlights: ['Houseboat cruise in Alleppey', 'Spice plantation visit', 'Munnar tea gardens', 'Cochin cultural tour'],
@@ -169,7 +169,7 @@ const packages = [
         title: 'Rajasthan Royal Heritage',
         region: 'West India',
         duration: '10 Days / 9 Nights',
-        price: '$1299',
+        price: '₹89,999',
         description: 'Journey through the royal state of Rajasthan visiting magnificent palaces, desert landscapes, and experiencing the rich cultural heritage.',
         image: 'https://images.unsplash.com/photo-1609920658906-8223bd289001?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
         highlights: ['Udaipur City Palace', 'Jaisalmer desert safari', 'Jodhpur Mehrangarh Fort', 'Pushkar holy city'],
@@ -344,8 +344,6 @@ function renderPackageList() {
                     <span class="text-sm text-gray-600">${pkg.rating} (${pkg.reviews} reviews)</span>
                 </div>
                 
-                <p class="text-gray-600 mb-4 flex-grow">${pkg.description}</p>
-                
                 <div class="mb-4">
                     <h4 class="font-semibold text-gray-800 mb-2">Tour Highlights:</h4>
                     <ul class="space-y-1 text-sm">
@@ -377,6 +375,9 @@ function renderPackageList() {
             renderPackageDetails(packageId);
         });
     });
+
+    // Initialize search and sorting
+    initializeInteractions();
 }
 
 // Render package details view
@@ -400,7 +401,7 @@ function renderPackageDetails(packageId) {
     backButton.addEventListener('click', renderPackageList);
     mainContent.appendChild(backButton);
     
-    // Package header
+    // Package header with contact button
     const header = document.createElement('div');
     header.className = 'bg-white rounded-xl shadow-md overflow-hidden mb-8';
     header.innerHTML = `
@@ -413,20 +414,58 @@ function renderPackageDetails(packageId) {
                     <span class="text-white"><i class="fas fa-clock mr-1"></i> ${pkg.duration}</span>
                 </div>
             </div>
+            <button id="contactPackageBtn" class="absolute top-4 right-4 bg-white hover:bg-white text-orange-700 py-2 px-4 rounded-lg shadow-md transition-colors duration-300">
+                <i class="fas fa-envelope mr-2"></i> Contact Us
+            </button>
         </div>
-        <div class="p-6">
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-                <div class="mb-4 md:mb-0">
-                    <span class="text-3xl font-bold text-primary">${pkg.price}</span>
-                    <span class="text-gray-600 ml-2">per person</span>
-                </div>
-                <button class="bg-primary hover:bg-orange-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors duration-300">
-                    <i class="fas fa-calendar-check mr-2"></i> Book Now
-                </button>
-            </div>
+        
         </div>
     `;
     mainContent.appendChild(header);
+    
+    // Contact form overlay
+    const contactOverlay = document.createElement('div');
+    contactOverlay.id = 'contactOverlay';
+    contactOverlay.className = 'fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 opacity-0 invisible transition-opacity duration-300';
+    contactOverlay.innerHTML = `
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-md mx-4">
+            <div class="relative p-6">
+                <button id="closeContactForm" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+                <h3 class="text-2xl font-bold text-primary mb-4">Contact Us About ${pkg.title}</h3>
+                <form id="packageContactForm" class="space-y-4">
+                    <div>
+                        <label for="contactName" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                        <input type="text" id="contactName" required 
+                               class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                    </div>
+                    <div>
+                        <label for="contactEmail" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <input type="email" id="contactEmail" required 
+                               class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                    </div>
+                    <div>
+                        <label for="contactPhone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                        <input type="tel" id="contactPhone" 
+                               class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                    </div>
+                    <div>
+                        <label for="contactMessage" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
+                        <textarea id="contactMessage" rows="4" required
+                                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" 
+                                class="w-full bg-primary hover:bg-orange-700 text-white py-2 px-4 rounded-md transition-colors duration-300">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    `;
+    mainContent.appendChild(contactOverlay);
     
     // Package tabs
     const tabs = document.createElement('div');
@@ -475,6 +514,58 @@ function renderPackageDetails(packageId) {
                     break;
             }
         });
+    });
+
+    // Contact form toggle functionality
+    const contactBtn = document.getElementById('contactPackageBtn');
+    const closeContactForm = document.getElementById('closeContactForm');
+    const contactForm = document.getElementById('packageContactForm');
+
+    contactBtn.addEventListener('click', () => {
+        contactOverlay.classList.remove('invisible', 'opacity-0');
+        contactOverlay.classList.add('opacity-100');
+    });
+
+    closeContactForm.addEventListener('click', () => {
+        contactOverlay.classList.remove('opacity-100');
+        contactOverlay.classList.add('invisible', 'opacity-0');
+    });
+
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('contactName').value;
+        const email = document.getElementById('contactEmail').value;
+        const phone = document.getElementById('contactPhone').value;
+        const message = document.getElementById('contactMessage').value;
+        
+        // Here you would typically send this data to your server
+        console.log('Contact form submitted:', { 
+            package: pkg.title, 
+            name, 
+            email, 
+            phone, 
+            message 
+        });
+        
+        // Show success message
+        alert(`Thank you for your inquiry about ${pkg.title}! We'll contact you soon at ${email}.`);
+        
+        // Close the form
+        contactOverlay.classList.remove('opacity-100');
+        contactOverlay.classList.add('invisible', 'opacity-0');
+        
+        // Reset form
+        contactForm.reset();
+    });
+
+    // Close form when clicking outside
+    contactOverlay.addEventListener('click', (e) => {
+        if (e.target === contactOverlay) {
+            contactOverlay.classList.remove('opacity-100');
+            contactOverlay.classList.add('invisible', 'opacity-0');
+        }
     });
 }
 
@@ -610,14 +701,10 @@ function renderGalleryTab(pkg) {
                 <img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Tour image" class="w-full h-32 object-cover hover:scale-105 transition-transform duration-300 cursor-pointer">
             </div>
             <div class="overflow-hidden rounded-lg">
-                <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Tour image" class="w-full h-32 object-cover hover:scale-105 transition-transform duration-// Completion of renderGalleryTab function
-300 cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Tour image" class="w-full h-32 object-cover hover:scale-105 transition-transform duration-300 cursor-pointer">
             </div>
             <div class="overflow-hidden rounded-lg">
                 <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Tour image" class="w-full h-32 object-cover hover:scale-105 transition-transform duration-300 cursor-pointer">
-            </div>
-            <div class="overflow-hidden rounded-lg">
-                <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Tour image" class="w-full h-32 object-cover hover:scale-105 transition-transform duration-300 cursor-pointer">
             </div>
         </div>
         
@@ -694,7 +781,7 @@ function renderFilteredPackages(filteredPackages, query) {
         const stars = Array.from({ length: 5 }, (_, i) => 
             i < Math.floor(pkg.rating) ? 
             '<i class="fas fa-star text-yellow-400"></i>' : 
-            (i < pkg.rating ? '<i class="fas fa-star-half-alt text-yellow-400"></i>' : '<i class="far fa-star text-yellow-400"></i>')
+            (i < pkg.rating ? '<i class="fas fa-star-half-alt text-yellow-400"></i>' : '            <i class="far fa-star text-yellow-400"></i>')
         ).join('');
         
         packageCard.innerHTML = `
@@ -743,7 +830,7 @@ function renderFilteredPackages(filteredPackages, query) {
         packagesContainer.appendChild(packageCard);
     });
     
-    // Re-add event listeners to view buttons
+    // Add event listeners to view buttons
     document.querySelectorAll('.view-package-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const packageId = parseInt(e.target.getAttribute('data-id'));
@@ -752,153 +839,35 @@ function renderFilteredPackages(filteredPackages, query) {
     });
 }
 
-// Sort functionality
-function setupSorting() {
+// Initialize search and sorting functionality
+function initializeInteractions() {
+    setupSearch();
+    
+    // Sorting functionality
     const sortSelect = document.querySelector('select');
     sortSelect.addEventListener('change', (e) => {
-        const sortBy = e.target.value;
+        const value = e.target.value;
         let sortedPackages = [...packages];
         
-        switch(sortBy) {
+        switch(value) {
             case 'Price: Low to High':
-                sortedPackages.sort((a, b) => parseInt(a.price.replace('$', '')) - parseInt(b.price.replace('$', '')));
+                sortedPackages.sort((a, b) => parseFloat(a.price.replace('$', '')) - parseFloat(b.price.replace('$', '')));
                 break;
             case 'Price: High to Low':
-                sortedPackages.sort((a, b) => parseInt(b.price.replace('$', '')) - parseInt(a.price.replace('$', '')));
+                sortedPackages.sort((a, b) => parseFloat(b.price.replace('$', '')) - parseFloat(a.price.replace('$', '')));
                 break;
             case 'Duration: Short to Long':
                 sortedPackages.sort((a, b) => parseInt(a.duration) - parseInt(b.duration));
                 break;
-            default: // Most Popular
+            default:
+                // Most Popular (default) - sort by rating
                 sortedPackages.sort((a, b) => b.rating - a.rating);
         }
         
-        renderSortedPackages(sortedPackages);
+        renderFilteredPackages(sortedPackages, 'sorted packages');
     });
 }
 
-// Render sorted packages
-function renderSortedPackages(sortedPackages) {
-    const packagesContainer = document.getElementById('packagesContainer');
-    packagesContainer.innerHTML = '';
-    
-    sortedPackages.forEach(pkg => {
-        const packageCard = document.createElement('div');
-        packageCard.className = 'package-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col';
-        
-        const stars = Array.from({ length: 5 }, (_, i) => 
-            i < Math.floor(pkg.rating) ? 
-            '<i class="fas fa-star text-yellow-400"></i>' : 
-            (i < pkg.rating ? '<i class="fas fa-star-half-alt text-yellow-400"></i>' : '<i class="far fa-star text-yellow-400"></i>')
-        ).join('');
-        
-        packageCard.innerHTML = `
-            <div class="relative flex-shrink-0">
-                <img src="${pkg.image}" alt="${pkg.title}" class="w-full h-48 object-cover">
-                <span class="absolute top-3 right-3 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
-                    ${pkg.region}
-                </span>
-            </div>
-            <div class="p-5 flex flex-col flex-grow">
-                <div class="flex justify-between items-start mb-2">
-                    <h3 class="text-xl font-bold text-gray-800 flex-grow">${pkg.title}</h3>
-                    <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded font-semibold ml-2 flex-shrink-0">${pkg.duration}</span>
-                </div>
-                
-                <div class="flex items-center mb-3">
-                    <div class="mr-2 flex">
-                        ${stars}
-                    </div>
-                    <span class="text-sm text-gray-600">${pkg.rating} (${pkg.reviews} reviews)</span>
-                </div>
-                
-                <p class="text-gray-600 mb-4 flex-grow">${pkg.description}</p>
-                
-                <div class="mb-4">
-                    <h4 class="font-semibold text-gray-800 mb-2">Tour Highlights:</h4>
-                    <ul class="space-y-1 text-sm">
-                        ${pkg.highlights.slice(0, 4).map(highlight => `
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-primary mr-2 text-xs mt-1 flex-shrink-0"></i>
-                                <span class="leading-tight">${highlight}</span>
-                            </li>
-                        `).join('')}
-                    </ul>
-                </div>
-                
-                <div class="flex justify-between items-center mt-auto pt-4">
-                    <span class="text-2xl font-bold text-primary">${pkg.price}</span>
-                    <button class="view-package-btn bg-primary hover:bg-orange-700 text-white py-2 px-4 rounded-lg transition-colors duration-300" data-id="${pkg.id}">
-                        View Details
-                    </button>
-                </div>
-            </div>
-        `;
-        
-        packagesContainer.appendChild(packageCard);
-    });
-    
-    // Re-add event listeners
-    document.querySelectorAll('.view-package-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const packageId = parseInt(e.target.getAttribute('data-id'));
-            renderPackageDetails(packageId);
-        });
-    });
-}
-
-// Initialize search and sorting when package list is rendered
-function initializeInteractions() {
-    setTimeout(() => {
-        setupSearch();
-        setupSorting();
-    }, 100);
-}
-
-// Update the renderPackageList function to include interactions
-const originalRenderPackageList = renderPackageList;
-renderPackageList = function() {
-    originalRenderPackageList();
-    initializeInteractions();
-};
-
-// Browser back/forward navigation
-window.addEventListener('popstate', (e) => {
-    if (e.state && e.state.view === 'package') {
-        renderPackageDetails(e.state.packageId);
-    } else {
-        renderPackageList();
-    }
-});
-
-// Update browser history when navigating
-function updateHistory(view, packageId = null) {
-    const state = { view };
-    if (packageId) state.packageId = packageId;
-    
-    const url = packageId ? `#package-${packageId}` : '#packages';
-    history.pushState(state, '', url);
-}
-
-// Smooth scrolling for better UX
-function smoothScrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
-
-// Add smooth scroll to navigation functions
-const originalRenderPackageDetails = renderPackageDetails;
-renderPackageDetails = function(packageId) {
-    originalRenderPackageDetails(packageId);
-    updateHistory('package', packageId);
-    smoothScrollToTop();
-};
-
-const updatedRenderPackageList = renderPackageList;
-renderPackageList = function() {
-    updatedRenderPackageList();
-    updateHistory('list');
-    smoothScrollToTop();
-};
+// Make functions available globally
+window.renderPackageList = renderPackageList;
+window.renderPackageDetails = renderPackageDetails;
