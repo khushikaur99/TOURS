@@ -67,7 +67,6 @@
         <nav class="hidden md:flex space-x-8 lg:space-x-12 text-lg text-gray-900">
 <a href="../INDIA/india.html" class="hover:text-orange-500 transition duration-300">India</a>
           <a href="#" class="hover:text-orange-500 transition duration-300">World</a>
-          <a href="#" class="hover:text-orange-500 transition duration-300">Customisation</a>
           <a href="#" class="hover:text-orange-500 transition duration-300">Travels</a>
           <a href="#" class="hover:text-orange-500 transition duration-300">Cruise</a>
           <a href="#" class="hover:text-orange-500 transition duration-300">About</a>
@@ -750,7 +749,15 @@
     </div>
   </div>
 </footer>
+<script>
+  // Toggle mobile menu visibility
+  const mobileMenuBtn = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
 
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
 
 <script src="script.js"></script>
 </body>

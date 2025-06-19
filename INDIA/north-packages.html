@@ -5,38 +5,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>North India Packages</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Add Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-gray-100 text-gray-800">
+  <!-- Top Bar with Contact and Social -->
+  <div class="bg-gray-900 text-white py-2">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <!-- Phone Numbers -->
+        <div class="flex space-x-4 mb-2 md:mb-0">
+          <div class="flex items-center">
+            <i class="fas fa-phone-alt mr-2 text-orange-500"></i>
+            <span>+91 1234567890</span>
+          </div>
+          <div class="flex items-center">
+            <i class="fas fa-phone-alt mr-2 text-orange-500"></i>
+            <span>+91 9876543210</span>
+          </div>
+        </div>
+        
+        <!-- Social Icons -->
+        <div class="flex space-x-4">
+          <a href="#" class="text-white hover:text-orange-500 transition duration-300">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="text-white hover:text-orange-500 transition duration-300">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="text-white hover:text-orange-500 transition duration-300">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="text-white hover:text-orange-500 transition duration-300">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" class="text-white hover:text-orange-500 transition duration-300">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Main Header - Fixed -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <!-- Logo - points to root IMAGES folder -->
+        <div class="flex items-center space-x-2">
+          <img src="../INDIA/IMAGES/LOGO.png" alt="Logo" class="h-16 w-auto">
+        </div>
 
-  <!-- Navbar -->
-  <header class="bg-white shadow-md">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-blue-700">Incredible India</h1>
-      <nav class="space-x-4">
-        <a href="../index.html" class="text-gray-700 hover:text-blue-600">Home</a>
-        <a href="north-packages.html" class="text-blue-700 font-semibold">North India</a>
-        <a href="south-packages.html" class="text-gray-700 hover:text-blue-600">South India</a>
-        <a href="../contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
-      </nav>
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-8 lg:space-x-12 text-lg text-gray-900">
+          <a href="india.html" class="hover:text-orange-500 transition duration-300">India</a>
+          <a href="#" class="hover:text-orange-500 transition duration-300">World</a>
+          <a href="#" class="hover:text-orange-500 transition duration-300">Travels</a>
+          <a href="#" class="hover:text-orange-500 transition duration-300">Cruise</a>
+          <a href="#" class="hover:text-orange-500 transition duration-300">About</a>
+          <a href="#" class="hover:text-orange-500 transition duration-300">Contact</a>
+        </nav>
+
+        <div class="flex items-center space-x-4">
+          <a href="#" class="text-orange-500 hover:text-orange-600 text-2xl hidden md:block">
+            <i class="fa-solid fa-user"></i>
+          </a>
+          <button id="mobile-menu-button" class="md:hidden text-gray-900 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="mobile-menu hidden md:hidden bg-white w-full">
+        <div class="px-2 py-4 space-y-3 border-t">
+          <a href="india.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">India</a>
+          <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">World</a>
+          <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">Travels</a>
+          <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">Cruise</a>
+          <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">About</a>
+          <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">Contact</a>
+          <a href="#" class="block px-3 py-2 rounded-md text-orange-500 font-medium">
+            <i class="fa-solid fa-user mr-2"></i> Sign In
+          </a>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- Video Banner -->
-  <section class="relative h-[400px] overflow-hidden">
+  <!-- Video Banner - points to root videos folder -->
+  <section class="relative h-[500px] overflow-hidden">
     <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
-      <source src="../videos/india-banner.mp4" type="video/mp4" />
+      <source src="../INDIA/VIDEOS/north.mp4" type="video/mp4" />
     </video>
-    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center z-10">
+    <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center z-10">
       <div class="text-center text-white px-6 md:px-12">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Discover the soul of India</h1>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Discover North India</h1>
         <p class="text-lg md:text-2xl font-medium max-w-3xl mx-auto">
-          Where every journey tells a timeless story of culture, color, and unforgettable adventure.
+          Explore the majestic Himalayas, vibrant cultures, and rich heritage.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- North India Packages -->
+  <!-- North India Packages - images in INDIA/images folder -->
   <section class="max-w-7xl mx-auto py-12 px-4">
     <h2 class="text-3xl font-bold text-center mb-10 text-blue-800">Explore North India Tour Packages</h2>
     <div id="packageContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -51,7 +122,6 @@
     </div>
   </footer>
 
-  <!-- JavaScript for Dynamic Content -->
   <script>
     const packages = [
       {
@@ -59,7 +129,7 @@
         region: "himachal",
         description: "Explore Shimla, Manali, Kasol & more.",
         price: "₹9,999",
-        image: "../images/himachal.jpg",
+        image: "images/himachal.jpg", // Now in INDIA/images folder
         color: "blue"
       },
       {
@@ -67,7 +137,7 @@
         region: "uttarakhand",
         description: "Rishikesh, Nainital, Mussoorie & Char Dham.",
         price: "₹7,499",
-        image: "../images/uttarakhand.jpg",
+        image: "images/uttarakhand.jpg",
         color: "green"
       },
       {
@@ -75,7 +145,7 @@
         region: "delhi",
         description: "Historic forts, street food, markets & more.",
         price: "₹3,999",
-        image: "../images/delhi.jpg",
+        image: "images/delhi.jpg",
         color: "red"
       },
       {
@@ -83,7 +153,7 @@
         region: "jammu",
         description: "Gulmarg, Srinagar, Pahalgam & more.",
         price: "₹11,999",
-        image: "../images/kashmir.jpg",
+        image: "images/kashmir.jpg",
         color: "purple"
       },
       {
@@ -91,7 +161,7 @@
         region: "punjab",
         description: "Amritsar, Golden Temple, Wagah Border.",
         price: "₹6,499",
-        image: "../images/punjab.jpg",
+        image: "images/punjab.jpg",
         color: "yellow"
       },
       {
@@ -99,7 +169,7 @@
         region: "rajasthan",
         description: "Jaipur, Udaipur, Jodhpur, desert safaris.",
         price: "₹8,999",
-        image: "../images/rajasthan.jpg",
+        image: "images/rajasthan.jpg",
         color: "indigo"
       }
     ];
@@ -126,8 +196,15 @@
     });
 
     function showDetails(region) {
+      // Points to packages folder in root directory
       window.location.href = `../packages/${region}.html`;
     }
+
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
   </script>
 </body>
 </html>
