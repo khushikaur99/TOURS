@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Saee Holidays</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Alpine.js for interaction -->
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </head>
 <body class="bg-white">
 
@@ -90,7 +92,7 @@
       <!-- Mobile Menu (hidden by default) -->
       <div id="mobile-menu" class="mobile-menu md:hidden bg-white w-full">
         <div class="px-2 py-4 space-y-3 border-t">
-          <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">India</a>
+<a href="../INDIA/india.html" class="hover:text-orange-500 transition duration-300">India</a>
           <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">World</a>
           <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">Customisation</a>
           <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">Travels</a>
@@ -480,166 +482,159 @@
 
 
 
-<!-- Tour Package Section -->
-<section class="bg-white py-12 px-4 sm:px-6 lg:px-16 max-w-9xl mx-auto">
-  <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+<!-- Tour Package Section - Mobile Optimized -->
+<section class="bg-white py-8 px-4 sm:px-6 lg:px-16 max-w-9xl mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
 
-    <!-- Featured Tour Slider (Spanning 2 Rows) - Size unchanged -->
-    <div class="col-span-1 lg:col-span-2 lg:row-span-2 relative overflow-hidden h-full">
+    <!-- Featured Tour Slider (Full width on mobile) -->
+    <div class="col-span-1 md:col-span-2 lg:col-span-2 lg:row-span-2 relative overflow-hidden h-[350px] md:h-[400px] lg:h-full">
       <div class="slider-container h-full">
         <!-- Slide 1 -->
-        <div class="slider-slide rounded-xl p-6 flex flex-col justify-between h-full relative overflow-hidden shadow-lg">
-          <!-- Background image (original size maintained) -->
+        <div class="slider-slide rounded-xl p-4 md:p-6 flex flex-col justify-between h-full relative overflow-hidden shadow-lg">
+          <!-- Background image -->
           <div class="absolute inset-0 bg-[url('https://i.pinimg.com/736x/1a/ca/36/1aca36ffdd2578d87ecf511e96d08cc8.jpg')] bg-cover bg-center"></div>
-          <!-- Dark overlay for text readability -->
+          <!-- Dark overlay -->
           <div class="absolute inset-0 bg-black bg-opacity-30"></div>
           
           <div class="relative z-10 h-full flex flex-col">
             <div>
-              <h2 class="text-xl font-bold text-white mb-2 drop-shadow-md">Saee Travels</h2>
-              <h3 class="text-2xl font-extrabold text-white drop-shadow-md">Durga Mata Tours – Divine Shakti Darshan Yatra</h3>
-              <p class="text-white text-sm mt-2 drop-shadow-md">
-                Vaishno Devi | Jwala Ji | Chamunda Devi | Chintpurni<br>
-                Naina Devi | Mansa Devi | Kamakhya Devi | Kalighat Kali
+              <h2 class="text-lg md:text-xl font-bold text-white mb-1 md:mb-2 drop-shadow-md">Saee Travels</h2>
+              <h3 class="text-xl md:text-2xl font-extrabold text-white drop-shadow-md">Durga Mata Tours – Divine Shakti Darshan Yatra</h3>
+              <p class="text-white text-xs md:text-sm mt-1 md:mt-2 drop-shadow-md">
+                Vaishno Devi | Jwala Ji | Chamunda Devi<br>
+                Naina Devi | Mansa Devi | Kalighat Kali
               </p>
             </div>
             <div class="mt-auto">
-              <div class="bg-white text-black mt-4 px-3 py-1 inline-block rounded font-semibold">
+              <div class="bg-white text-black mt-2 md:mt-4 px-2 py-1 md:px-3 md:py-1 inline-block rounded font-semibold text-xs md:text-sm">
                 6 to 17 Days | Starting ₹76,000
               </div>
-              <p class="text-white text-xs mt-2 drop-shadow-md">Fly from Kolkata | All-inclusive with airfare</p>
+              <p class="text-white text-[10px] md:text-xs mt-1 md:mt-2 drop-shadow-md">Fly from Kolkata | All-inclusive</p>
             </div>
           </div>
         </div>
         
         <!-- Slide 2 -->
-        <div class="slider-slide rounded-xl p-6 flex flex-col justify-between h-full relative overflow-hidden shadow-lg">
+        <div class="slider-slide rounded-xl p-4 md:p-6 flex flex-col justify-between h-full relative overflow-hidden shadow-lg">
           <div class="absolute inset-0 bg-[url('https://i.pinimg.com/736x/c9/dc/0f/c9dc0f5918a0a0a2fdc3e919cc6a18d7.jpg')] bg-cover bg-center"></div>
           <div class="absolute inset-0 bg-blue-900 bg-opacity-30"></div>
           
           <div class="relative z-10 h-full flex flex-col">
             <div>
-             <h2 class="text-xl font-bold text-white mb-2 drop-shadow-md">Saee Travels</h2>
-    <h3 class="text-2xl font-extrabold text-white drop-shadow-md">Paris Tours – Discover the City of Lights</h3>
-    <p class="text-white text-sm mt-2 drop-shadow-md">
-      Eiffel Tower | Louvre Museum | Notre-Dame | Versailles Palace<br>
-      Seine River Cruise | Disneyland Paris | Montmartre | Arc de Triomphe
-    </p>
-  </div>
-  <div class="mt-auto">
-    <div class="bg-white text-black mt-4 px-3 py-1 inline-block rounded font-semibold">
-      6 to 8 Days | Starting ₹89,999
-    </div>
-    <p class="text-white text-xs mt-2 drop-shadow-md">Fly from Delhi/Mumbai | All-inclusive with airfare</p>
-  </div>
+              <h2 class="text-lg md:text-xl font-bold text-white mb-1 md:mb-2 drop-shadow-md">Saee Travels</h2>
+              <h3 class="text-xl md:text-2xl font-extrabold text-white drop-shadow-md">Paris Tours – City of Lights</h3>
+              <p class="text-white text-xs md:text-sm mt-1 md:mt-2 drop-shadow-md">
+                Eiffel Tower | Louvre Museum | Notre-Dame<br>
+                Seine River Cruise | Disneyland Paris
+              </p>
+            </div>
+            <div class="mt-auto">
+              <div class="bg-white text-black mt-2 md:mt-4 px-2 py-1 md:px-3 md:py-1 inline-block rounded font-semibold text-xs md:text-sm">
+                6 to 8 Days | Starting ₹89,999
+              </div>
+              <p class="text-white text-[10px] md:text-xs mt-1 md:mt-2 drop-shadow-md">Fly from Delhi/Mumbai | All-inclusive</p>
+            </div>
           </div>
         </div>
         
         <!-- Slide 3 -->
-        <div class="slider-slide rounded-xl p-6 flex flex-col justify-between h-full relative overflow-hidden shadow-lg">
+        <div class="slider-slide rounded-xl p-4 md:p-6 flex flex-col justify-between h-full relative overflow-hidden shadow-lg">
           <div class="absolute inset-0 bg-[url('https://i.pinimg.com/736x/52/b5/9b/52b59b3a78c74138bcce95fe1505c764.jpg')] bg-cover bg-center"></div>
           <div class="absolute inset-0 bg-purple-900 bg-opacity-30"></div>
           
           <div class="relative z-10 h-full flex flex-col">
-           <div>
-    <h2 class="text-xl font-bold text-white mb-2 drop-shadow-md">Saee Travels</h2>
-    <h3 class="text-2xl font-extrabold text-white drop-shadow-md">Char Dham Yatra – Sacred Journey to Moksha</h3>
-    <p class="text-white text-sm mt-2 drop-shadow-md">
-      Yamunotri | Gangotri | Kedarnath | Badrinath<br>
-      Haridwar | Rishikesh | Devprayag | Joshimath
-    </p>
-  </div>
-  <div class="mt-auto">
-    <div class="bg-white text-black mt-4 px-3 py-1 inline-block rounded font-semibold">
-      10 to 14 Days | Starting ₹58,000
-    </div>
-    <p class="text-white text-xs mt-2 drop-shadow-md">Departs from Haridwar | Meals, Stay & Transfers Included</p>
-  </div>
-</div>
- </div>
+            <div>
+              <h2 class="text-lg md:text-xl font-bold text-white mb-1 md:mb-2 drop-shadow-md">Saee Travels</h2>
+              <h3 class="text-xl md:text-2xl font-extrabold text-white drop-shadow-md">Char Dham Yatra – Sacred Journey</h3>
+              <p class="text-white text-xs md:text-sm mt-1 md:mt-2 drop-shadow-md">
+                Yamunotri | Gangotri | Kedarnath<br>
+                Badrinath | Haridwar | Rishikesh
+              </p>
+            </div>
+            <div class="mt-auto">
+              <div class="bg-white text-black mt-2 md:mt-4 px-2 py-1 md:px-3 md:py-1 inline-block rounded font-semibold text-xs md:text-sm">
+                10 to 14 Days | Starting ₹58,000
+              </div>
+              <p class="text-white text-[10px] md:text-xs mt-1 md:mt-2 drop-shadow-md">Departs from Haridwar | All-inclusive</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- Grid Tour Cards (Original sizes maintained exactly) -->
+    <!-- Grid Tour Cards - Mobile Optimized -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <img src="https://i.pinimg.com/736x/0c/69/b1/0c69b1bbd788d9636bf52307f664d2a5.jpg" class="w-full h-32 md:h-40 object-cover" alt="Sikkim Darjeeling">
+      <div class="p-3 md:p-4">
+        <h4 class="text-base md:text-lg font-semibold">Sikkim Darjeeling</h4>
+        <p class="text-xs md:text-sm text-gray-600 mt-1">14 tours | 35 departures</p>
+        <p class="text-xs md:text-sm text-gray-700 font-bold">19,781 guests</p>
+      </div>
+    </div>
 
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <img src="https://i.pinimg.com/736x/d2/8b/70/d28b70b9d4d3e205551078cac9fb1833.jpg" class="w-full h-32 md:h-40 object-cover" alt="Kerala">
+      <div class="p-3 md:p-4">
+        <h4 class="text-base md:text-lg font-semibold">Kerala</h4>
+        <p class="text-xs md:text-sm text-gray-600 mt-1">18 tours | 40 departures</p>
+        <p class="text-xs md:text-sm text-gray-700 font-bold">12,928 guests</p>
+      </div>
+    </div>
 
-    <div class="bg-white rounded-xl shadow-md overflow-hidden w-full max-w-sm">
-  <img src="https://i.pinimg.com/736x/0c/69/b1/0c69b1bbd788d9636bf52307f664d2a5.jpg" class="w-full h-40 object-cover" alt="Sikkim Darjeeling">
-  <div class="p-4">
-    <h4 class="text-lg font-semibold">Sikkim Darjeeling</h4>
-    <p class="text-sm text-gray-600 mt-1">14 tours | 35 departures</p>
-    <p class="text-sm text-gray-700 font-bold">19,781 guests travelled</p>
-  </div>
-</div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <img src="https://i.pinimg.com/736x/2d/0c/86/2d0c867e0b78617cd0ba970b4e3c4831.jpg" class="w-full h-32 md:h-40 object-cover" alt="North East">
+      <div class="p-3 md:p-4">
+        <h4 class="text-base md:text-lg font-semibold">North East</h4>
+        <p class="text-xs md:text-sm text-gray-600 mt-1">20 tours | 46 departures</p>
+        <p class="text-xs md:text-sm text-gray-700 font-bold">15,164 guests</p>
+      </div>
+    </div>
 
-    <div class="bg-white rounded-xl shadow-md overflow-hidden w-full max-w-sm">
-  <img src="https://i.pinimg.com/736x/d2/8b/70/d28b70b9d4d3e205551078cac9fb1833.jpg" class="w-full h-40 object-cover" alt="Kerala">
-  <div class="p-4">
-    <h4 class="text-lg font-semibold">Kerala</h4>
-    <p class="text-sm text-gray-600 mt-1">18 tours | 40 departures</p>
-    <p class="text-sm text-gray-700 font-bold">12,928 guests travelled</p>
-  </div>
-</div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <img src="https://i.pinimg.com/736x/fe/c0/fb/fec0fb1c9a2a70f4812e3fe9ddc88d86.jpg" class="w-full h-32 md:h-40 object-cover" alt="Goa">
+      <div class="p-3 md:p-4">
+        <h4 class="text-base md:text-lg font-semibold">Goa</h4>
+        <p class="text-xs md:text-sm text-gray-600 mt-1">10 tours | 25 departures</p>
+        <p class="text-xs md:text-sm text-gray-700 font-bold">9,374 guests</p>
+      </div>
+    </div>
 
-<div class="bg-white rounded-xl shadow-md overflow-hidden w-full max-w-sm">
-  <img src="https://i.pinimg.com/736x/2d/0c/86/2d0c867e0b78617cd0ba970b4e3c4831.jpg" class="w-full h-40 object-cover" alt="North East">
-  <div class="p-4">
-    <h4 class="text-lg font-semibold">North East</h4>
-    <p class="text-sm text-gray-600 mt-1">20 tours | 46 departures</p>
-    <p class="text-sm text-gray-700 font-bold">15,164 guests travelled</p>
-  </div>
-</div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <img src="https://i.pinimg.com/736x/a4/61/39/a4613973c972b7ad132eb358b7422c8e.jpg" class="w-full h-32 md:h-40 object-cover" alt="Wildlife Safari">
+      <div class="p-3 md:p-4">
+        <h4 class="text-base md:text-lg font-semibold">Wildlife Safari</h4>
+        <p class="text-xs md:text-sm text-gray-600 mt-1">Jim Corbett & Ranthambore</p>
+        <p class="text-xs md:text-sm text-gray-600">8 tours | 20 departures</p>
+        <p class="text-xs md:text-sm text-gray-700 font-bold">6,812 guests</p>
+      </div>
+    </div>
 
-<div class="bg-white rounded-xl shadow-md overflow-hidden w-full max-w-sm">
-  <img src="https://i.pinimg.com/736x/fe/c0/fb/fec0fb1c9a2a70f4812e3fe9ddc88d86.jpg" class="w-full h-40 object-cover" alt="Goa">
-  <div class="p-4">
-    <h4 class="text-lg font-semibold">Goa</h4>
-    <p class="text-sm text-gray-600 mt-1">10 tours | 25 departures</p>
-    <p class="text-sm text-gray-700 font-bold">9,374 guests travelled</p>
-  </div>
-</div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <img src="https://i.pinimg.com/736x/70/73/02/707302a2609d6818f411421c4ac98f8a.jpg" class="w-full h-32 md:h-40 object-cover" alt="Andaman Islands">
+      <div class="p-3 md:p-4">
+        <h4 class="text-base md:text-lg font-semibold">Andaman Islands</h4>
+        <p class="text-xs md:text-sm text-gray-600 mt-1">12 tours | 30 departures</p>
+        <p class="text-xs md:text-sm text-gray-700 font-bold">7,815 guests</p>
+      </div>
+    </div>
 
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <img src="https://i.pinimg.com/736x/d6/ae/e6/d6aee6df49a0389f6d9fda434b6c4912.jpg" class="w-full h-32 md:h-40 object-cover" alt="Leh-Ladakh">
+      <div class="p-3 md:p-4">
+        <h4 class="text-base md:text-lg font-semibold">Leh-Ladakh</h4>
+        <p class="text-xs md:text-sm text-gray-600 mt-1">14 tours | 32 departures</p>
+        <p class="text-xs md:text-sm text-gray-700 font-bold">8,742 guests</p>
+      </div>
+    </div>
 
-<div class="bg-white rounded-xl shadow-md overflow-hidden w-full max-w-sm">
-  <img src="https://i.pinimg.com/736x/a4/61/39/a4613973c972b7ad132eb358b7422c8e.jpg" class="w-full h-40 object-cover" alt="Wildlife Safari">
-  <div class="p-4">
-    <h4 class="text-lg font-semibold">Wildlife Safari Tour</h4>
-    <p class="text-sm text-gray-600 mt-1">Jim Corbett & Ranthambore</p>
-    <p class="text-sm text-gray-600">8 tours | 20 departures</p>
-    <p class="text-sm text-gray-700 font-bold">6,812 guests travelled</p>
-  </div>
-</div>
-
-
-<div class="bg-white rounded-xl shadow-md overflow-hidden w-full max-w-sm">
-  <img src="https://i.pinimg.com/736x/70/73/02/707302a2609d6818f411421c4ac98f8a.jpg" class="w-full h-40 object-cover" alt="Andaman Islands">
-  <div class="p-4">
-    <h4 class="text-lg font-semibold">Andaman Islands Tour</h4>
-    <p class="text-sm text-gray-600 mt-1">12 tours | 30 departures</p>
-    <p class="text-sm text-gray-700 font-bold">7,815 guests travelled</p>
-  </div>
-</div>
-
-
-<div class="bg-white rounded-xl shadow-md overflow-hidden w-full max-w-sm">
-  <img src="https://i.pinimg.com/736x/d6/ae/e6/d6aee6df49a0389f6d9fda434b6c4912.jpg" class="w-full h-40 object-cover" alt="Leh-Ladakh">
-  <div class="p-4">
-    <h4 class="text-lg font-semibold">Leh-Ladakh Adventure Tour</h4>
-    <p class="text-sm text-gray-600 mt-1">14 tours | 32 departures</p>
-    <p class="text-sm text-gray-700 font-bold">8,742 guests travelled</p>
-  </div>
-</div>
-
-
-
-<div class="bg-white rounded-xl shadow-md overflow-hidden w-full max-w-sm">
-  <img src="https://i.pinimg.com/736x/42/70/84/427084202c98ef9059c2a0edaff08814.jpg" class="w-full h-40 object-cover" alt="Kashmir">
-  <div class="p-4">
-    <h4 class="text-lg font-semibold">Kashmir</h4>
-    <p class="text-sm text-gray-600 mt-1">16 tours | 36 departures</p>
-    <p class="text-sm text-gray-700 font-bold">13,527 guests travelled</p>
-  </div>
-</div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <img src="https://i.pinimg.com/736x/42/70/84/427084202c98ef9059c2a0edaff08814.jpg" class="w-full h-32 md:h-40 object-cover" alt="Kashmir">
+      <div class="p-3 md:p-4">
+        <h4 class="text-base md:text-lg font-semibold">Kashmir</h4>
+        <p class="text-xs md:text-sm text-gray-600 mt-1">16 tours | 36 departures</p>
+        <p class="text-xs md:text-sm text-gray-700 font-bold">13,527 guests</p>
+      </div>
+    </div>
 
   </div>
 </section>
@@ -670,6 +665,25 @@
   }
 </style>
 
+<!-- Add this script for slider functionality -->
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slider-slide');
+  const totalSlides = slides.length;
+
+  function showSlide(index) {
+    slides.forEach(slide => slide.style.opacity = 0);
+    slides[index].style.opacity = 1;
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    showSlide(currentSlide);
+  }
+
+  // Auto-rotate slides every 5 seconds
+  setInterval(nextSlide, 5000);
+</script>
 
 <section class="py-16 bg-gray-50">
   <div class="container mx-auto px-4">
@@ -833,15 +847,7 @@
     </div>
   </div>
 </footer>
-<script>
-  // Toggle mobile menu visibility
-  const mobileMenuBtn = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
 
-  mobileMenuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
-</script>
 
 <script src="script.js"></script>
 </body>

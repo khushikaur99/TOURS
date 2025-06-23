@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Saee Holidays</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in': 'fadeIn 1.5s ease-in',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/css">
+        .hero-pattern {
+            background-image: radial-gradient(rgba(0, 0, 0, 0.1) 2px, transparent 2px);
+            background-size: 32px 32px;
+        }
+    </style>
+</head>
+<body class="font-poppins bg-gray-50">
+    <!-- Hero Section -->
+<section class="relative bg-gradient-to-r from-blue-800 to-cyan-600 text-white py-12 md:py-8 overflow-hidden">
+    <div class="absolute inset-0 hero-pattern"></div>
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 animate-fade-in">
+                <h1 class="text-3xl md:text-5xl font-playfair font-bold mb-4">Welcome to <span class="text-yellow-300">Saee Holidays</span></h1>
+                <p class="text-lg mb-6">We offer the best... Forget the rest... you deserve the best!</p>
+             
+            </div>
+            <div class="md:w-1/2 mt-8 md:mt-0 animate-float">
+                <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                     alt="Travel Adventure" 
+                     class="rounded-lg shadow-2xl border-6 border-white transform rotate-3 w-full max-w-md">
+            </div>
+        </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-white transform skew-y-1 -mb-8 z-0"></div>
+</section>
+
+    <!-- Brand Promise Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-playfair font-bold text-gray-800 mb-4">Our Brand Promise</h2>
+                <div class="w-20 h-1 bg-yellow-400 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="text-blue-600 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Trust & Value</h3>
+                    <p class="text-gray-600">We've built our reputation on delivering trustworthy services that provide real value to our customers. Your satisfaction is our brand's foundation.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="text-blue-600 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Global Expertise</h3>
+                    <p class="text-gray-600">With knowledge spanning over 100 countries, we handle all complexities so you can simply enjoy your perfectly planned journey.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="text-blue-600 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">24/7 Support</h3>
+                    <p class="text-gray-600">Our industry-leading support is available round-the-clock. Wherever you are, we're just a call away to ensure your peace of mind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personalized Travel Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                         alt="Personalized Travel" 
+                         class="rounded-lg shadow-xl transform -rotate-2 border-8 border-white">
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h2 class="text-3xl md:text-4xl font-playfair font-bold text-gray-800 mb-6">See the World, Your Way</h2>
+                    <p class="text-gray-600 mb-6 text-lg">We create personalized trips based on your preferences, meaning no two trips are the same. Whether you're looking for culturally immersive experiences, relaxation, culinary delights, or unique places to stay - we make it happen.</p>
+                    <div class="flex items-center space-x-4 animate-pulse">
+                        <div class="w-3 h-3 bg-blue-600 rounded-full"></div>
+                        <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                        <span class="text-gray-600 italic">Every journey begins with a conversation...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    <!-- Mission & Vision Section -->
+    <section class="py-20 bg-gradient-to-br from-blue-900 to-cyan-800 text-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-white bg-opacity-10 p-8 rounded-xl backdrop-filter backdrop-blur-sm border border-white border-opacity-20">
+                    <div class="flex items-center mb-6">
+                        <div class="mr-4 p-3 bg-yellow-400 bg-opacity-20 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-playfair font-bold">Our Mission</h3>
+                    </div>
+                    <p class="text-gray-200">To serve our clients with enhanced travel experience by providing quality services that address their Travel needs, through the most efficient arrangements so that customer loyalty, superior financial results, and excellent customer satisfaction can be achieved.</p>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 p-8 rounded-xl backdrop-filter backdrop-blur-sm border border-white border-opacity-20">
+                    <div class="flex items-center mb-6">
+                        <div class="mr-4 p-3 bg-yellow-400 bg-opacity-20 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-playfair font-bold">Our Vision</h3>
+                    </div>
+                    <p class="text-gray-200">To be the most trusted and respected Travel Agency recognized by our clients for delivering excellence, to be a leading provider of Travel Solution. And to continuously create new opportunities for growth in our strategic business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commitment Section -->
+<section class="py-10 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <div class="max-w-6xl mx-auto text-center">
+          
+            <h2 class="text-3xl md:text-4xl font-playfair font-bold text-gray-800 mb-6">Our Commitment</h2>
+            <p class="text-xl text-gray-600 mb-10">We create an unparalleled experience that our customers could rely on. We aim to maintain our high-class travel services at reasonable prices through consistent leadership, controlled growth, and excellent commitment.</p>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Happy Travelers" 
+                         class="rounded-xl shadow-2xl w-full h-auto object-cover">
+                    <div class="absolute -bottom-4 -right-4 bg-white p-3 rounded-lg shadow-lg hidden md:block">
+                        <p class="font-bold text-blue-800 text-sm">Personalized travel experiences</p>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Beautiful Destination" 
+                         class="rounded-xl shadow-2xl w-full h-auto object-cover">
+                    <div class="absolute -bottom-4 -right-4 bg-white p-3 rounded-lg shadow-lg hidden md:block">
+                        <p class="font-bold text-blue-800 text-sm">Discover hidden gems worldwide</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-blue-100 p-6 rounded-xl max-w-3xl mx-auto">
+                <p class="font-playfair text-2xl text-blue-800 italic">"Travel once with us and you will never travel with anyone else!"</p>
+            </div>
+        </div>
+    </div>
+</section>
+        </div>
+    </section>
+
+ <!-- CTA Section -->
+<section class="py-16 bg-blue-700 text-white">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-playfair font-bold mb-6">Ready to Begin Your Journey?</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">Let's create your perfect travel experience together. Our experts are waiting to hear from you.</p>
+        <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <a href="contact.html" class="bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg inline-block">
+                Contact Our Experts
+            </a>
+            <a href="index.html" class="bg-transparent hover:bg-white hover:text-blue-800 text-white font-bold py-3 px-8 border-2 border-white rounded-full transition-all duration-300 transform hover:scale-105 inline-block">
+                Browse Destinations
+            </a>
+        </div>
+    </div>
+</section>
+
+    <script>
+        // Simple animation trigger on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
