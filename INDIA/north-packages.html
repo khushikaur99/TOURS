@@ -129,8 +129,9 @@
         region: "himachal",
         description: "Explore Shimla, Manali, Kasol & more.",
         price: "₹19,999",
-        image: "../INDIA/IMAGES/himachal.jpg", // Now in INDIA/images folder
-        color: "blue"
+        image: "../INDIA/IMAGES/himachal.jpg",
+        color: "blue",
+        page: "himachalpack.html"  // Custom page for Himachal
       },
       {
         title: "Uttarakhand",
@@ -138,7 +139,8 @@
         description: "Rishikesh, Nainital, Mussoorie & Char Dham.",
         price: "₹17,499",
         image: "../INDIA/IMAGES/uttarakhand.jpg",
-        color: "green"
+        color: "green",
+        page: "uttarakhandpkg.html"
       },
       {
         title: "Delhi",
@@ -146,7 +148,8 @@
         description: "Historic forts, street food, markets & more.",
         price: "₹13,999",
         image: "../INDIA/IMAGES/delhi.jpg",
-        color: "red"
+        color: "red",
+        page: "delhipkg.html"
       },
       {
         title: "Jammu & Kashmir",
@@ -154,7 +157,8 @@
         description: "Gulmarg, Srinagar, Pahalgam & more.",
         price: "₹16,999",
         image: "../INDIA/IMAGES/kashmir.jpg",
-        color: "purple"
+        color: "purple",
+        page: "jammu.html"
       },
       {
         title: "Punjab",
@@ -162,7 +166,8 @@
         description: "Amritsar, Golden Temple, Wagah Border.",
         price: "₹26,499",
         image: "../INDIA/IMAGES/punjab.jpg",
-        color: "yellow"
+        color: "yellow",
+        page: "punjab.html"
       },
       {
         title: "Rajasthan",
@@ -170,7 +175,8 @@
         description: "Jaipur, Udaipur, Jodhpur, desert safaris.",
         price: "₹28,999",
         image: "../INDIA/IMAGES/rajasthan.jpg",
-        color: "indigo"
+        color: "indigo",
+        page: "rajasthan.html"
       }
     ];
 
@@ -196,8 +202,10 @@
     });
 
     function showDetails(region) {
-      // Points to packages folder in root directory
-      window.location.href = `../packages/${region}.html`;
+      const pkg = packages.find(p => p.region === region);
+      if (pkg) {
+        window.location.href = `../packages/${pkg.page}`;
+      }
     }
 
     // Mobile menu toggle

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>North East India Packages</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- Top Bar -->
+  <div class="bg-gray-900 text-white py-2">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+      <div class="flex space-x-4 mb-2 md:mb-0">
+        <div class="flex items-center"><i class="fas fa-phone-alt mr-2 text-orange-500"></i>+91 1234567890</div>
+        <div class="flex items-center"><i class="fas fa-phone-alt mr-2 text-orange-500"></i>+91 9876543210</div>
+      </div>
+      <div class="flex space-x-4">
+        <a href="#" class="hover:text-orange-500"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="hover:text-orange-500"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="hover:text-orange-500"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="hover:text-orange-500"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="hover:text-orange-500"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <img src="../INDIA/IMAGES/LOGO.png" alt="Logo" class="h-16 w-auto">
+        <nav class="hidden md:flex space-x-8 text-lg text-gray-900">
+          <a href="india.html" class="hover:text-orange-500">India</a>
+          <a href="#" class="hover:text-orange-500">World</a>
+          <a href="#" class="hover:text-orange-500">Travels</a>
+          <a href="#" class="hover:text-orange-500">Cruise</a>
+          <a href="#" class="hover:text-orange-500">About</a>
+          <a href="#" class="hover:text-orange-500">Contact</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+          <a href="#" class="text-orange-500 hidden md:block text-2xl"><i class="fa-solid fa-user"></i></a>
+          <button id="mobile-menu-button" class="md:hidden text-gray-900"><i class="fas fa-bars text-2xl"></i></button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white w-full border-t">
+        <div class="px-4 py-4 space-y-3">
+          <a href="india.html" class="block hover:text-orange-500">India</a>
+          <a href="#" class="block hover:text-orange-500">World</a>
+          <a href="#" class="block hover:text-orange-500">Travels</a>
+          <a href="#" class="block hover:text-orange-500">Cruise</a>
+          <a href="#" class="block hover:text-orange-500">About</a>
+          <a href="#" class="block hover:text-orange-500">Contact</a>
+          <a href="#" class="block text-orange-500 font-medium"><i class="fa-solid fa-user mr-2"></i>Sign In</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Video Banner -->
+  <section class="relative h-[500px] overflow-hidden">
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+      <source src="../INDIA/VIDEOS/northeast.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+      <div class="text-white text-center px-6 md:px-12">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Discover North East India</h1>
+        <p class="text-lg md:text-2xl font-medium max-w-3xl mx-auto">
+          Explore scenic hills, tribal culture, waterfalls, and unexplored gems of India.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Package Section -->
+  <section class="max-w-7xl mx-auto py-12 px-4">
+    <h2 class="text-3xl font-bold text-center mb-10 text-green-700">Explore North East Tour Packages</h2>
+    <div id="packageContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Dynamic Cards Appear Here -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-6 mt-10">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p>&copy; 2025 Incredible India. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const packages = [
+      {
+        title: "Sikkim",
+        region: "sikkim",
+        description: "Gangtok, Tsomgo Lake, Nathula Pass & monasteries.",
+        price: "₹19,999",
+        image: "../INDIA/IMAGES/sikkim.jpg",
+        color: "green",
+        page: "sikkimpkg.html"
+      },
+      {
+        title: "Assam",
+        region: "assam",
+        description: "Kaziranga, Guwahati, Majuli & tea estates.",
+        price: "₹18,499",
+        image: "../INDIA/IMAGES/assam.jpg",
+        color: "yellow",
+        page: "assampkg.html"
+      },
+      {
+        title: "Meghalaya",
+        region: "meghalaya",
+        description: "Shillong, Cherrapunji, caves & waterfalls.",
+        price: "₹20,499",
+        image: "../INDIA/IMAGES/meghalaya.jpg",
+        color: "blue",
+        page: "meghalayapkg.html"
+      },
+      {
+        title: "Arunachal Pradesh",
+        region: "arunachal",
+        description: "Tawang, Ziro Valley, tribal culture & mountains.",
+        price: "₹22,999",
+        image: "../INDIA/IMAGES/arunachal.jpg",
+        color: "red",
+        page: "arunachalpkg.html"
+      },
+      {
+        title: "Nagaland",
+        region: "nagaland",
+        description: "Kohima, Hornbill Festival & tribal life.",
+        price: "₹21,499",
+        image: "../INDIA/IMAGES/nagaland.jpg",
+        color: "purple",
+        page: "nagalandpkg.html"
+      },
+      {
+        title: "Manipur & Tripura",
+        region: "manipurtripura",
+        description: "Imphal, Ujjayanta Palace, Loktak Lake & temples.",
+        price: "₹20,999",
+        image: "../INDIA/IMAGES/manipurtripura.jpg",
+        color: "orange",
+        page: "manipurpkg.html"
+      }
+    ];
+
+    const container = document.getElementById("packageContainer");
+
+    packages.forEach(pkg => {
+      const card = document.createElement("div");
+      card.className = "bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition";
+
+      card.innerHTML = `
+        <img src="${pkg.image}" alt="${pkg.title}" class="w-full h-52 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2 text-${pkg.color}-700">${pkg.title}</h3>
+          <p class="text-gray-600 mb-3">${pkg.description}</p>
+          <p class="font-bold text-lg mb-4">Starting at ${pkg.price}</p>
+          <div class="flex justify-between">
+            <button onclick="showDetails('${pkg.region}')" class="bg-${pkg.color}-600 text-white px-4 py-2 rounded hover:bg-${pkg.color}-700">Show Details</button>
+            <a href="../contact.html" class="text-${pkg.color}-700 font-medium hover:underline self-center">Contact Us</a>
+          </div>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+
+    function showDetails(region) {
+      const pkg = packages.find(p => p.region === region);
+      if (pkg) {
+        window.location.href = `../northeastpkg/${pkg.page}`;
+      }
+    }
+
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
