@@ -23,6 +23,1034 @@
   .rotate-45 {
     transform: rotate(45deg);
   }
+
+
+  /* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Container and Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  width: 100%;
+}
+
+/* Grid System */
+.grid {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+}
+
+.lg\:grid-cols-3 {
+  grid-template-columns: 1fr;
+}
+
+.lg\:col-span-2 {
+  grid-column: span 1;
+}
+
+/* Prevent overflow on all elements */
+.bg-white,
+.bg-gray-50,
+.tab-content,
+.itinerary-content,
+.space-y-1,
+.space-y-2,
+.space-y-3,
+.space-y-4 {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Card Styles */
+.bg-white {
+  background-color: white;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
+.shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+/* Typography */
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-xxs {
+  font-size: 0.625rem;
+  line-height: 1rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+/* Colors */
+.text-dark {
+  color: #1a1a1a;
+}
+
+.text-primary {
+  color: #3b82f6;
+}
+
+.text-secondary {
+  color: #6b7280;
+}
+
+.text-gray-600 {
+  color: #6b7280;
+}
+
+.text-gray-500 {
+  color: #6b7280;
+}
+
+.text-green-500 {
+  color: #10b981;
+}
+
+.text-red-500 {
+  color: #ef4444;
+}
+
+.text-yellow-400 {
+  color: #fbbf24;
+}
+
+.text-white {
+  color: white;
+}
+
+.bg-primary {
+  background-color: #3b82f6;
+}
+
+.bg-gray-50 {
+  background-color: #f9fafb;
+}
+
+.bg-gray-100 {
+  background-color: #f3f4f6;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+/* Spacing */
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+.mr-3 {
+  margin-right: 0.75rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+.pl-1 {
+  padding-left: 0.25rem;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
+}
+
+.pl-3 {
+  padding-left: 0.75rem;
+}
+
+.pl-4 {
+  padding-left: 1rem;
+}
+
+.pl-5 {
+  padding-left: 1.25rem;
+}
+
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.py-0\.5 {
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
+
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
+.pb-5 {
+  padding-bottom: 1.25rem;
+}
+
+/* Flexbox */
+.flex {
+  display: flex;
+  max-width: 100%;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+.min-w-0 {
+  min-width: 0;
+}
+
+.min-w-max {
+  min-width: max-content;
+}
+
+/* Grid for lists */
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.gap-1 {
+  gap: 0.25rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-3 {
+  gap: 0.75rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  margin-left: 1rem;
+}
+
+.space-x-6 > :not([hidden]) ~ :not([hidden]) {
+  margin-left: 1.5rem;
+}
+
+.space-y-1 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 0.25rem;
+}
+
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 0.5rem;
+}
+
+.space-y-3 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 0.75rem;
+}
+
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 1rem;
+}
+
+/* Borders */
+.border {
+  border-width: 1px;
+  border-color: #e5e7eb;
+}
+
+.border-b {
+  border-bottom-width: 1px;
+  border-bottom-color: #e5e7eb;
+}
+
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+
+.border-l-4 {
+  border-left-width: 4px;
+}
+
+.border-primary {
+  border-color: #3b82f6;
+}
+
+.border-gray-200 {
+  border-color: #e5e7eb;
+}
+
+.border-transparent {
+  border-color: transparent;
+}
+
+/* Positioning */
+.relative {
+  position: relative;
+}
+
+.w-full {
+  width: 100%;
+  max-width: 100%;
+}
+
+.w-3 {
+  width: 0.75rem;
+}
+
+.w-4 {
+  width: 1rem;
+}
+
+.h-3 {
+  height: 0.75rem;
+}
+
+.h-4 {
+  height: 1rem;
+}
+
+.h-48 {
+  height: 12rem;
+}
+
+.h-56 {
+  height: 14rem;
+}
+
+.object-cover {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Miscellaneous */
+.hidden {
+  display: none;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  max-width: 100%;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.list-disc {
+  list-style-type: disc;
+}
+
+.list-decimal {
+  list-style-type: decimal;
+}
+
+/* Tab navigation overflow fix */
+nav.flex {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+nav.flex .tab-btn {
+  flex-shrink: 0;
+  min-width: fit-content;
+}
+
+/* Transitions */
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-200 {
+  transition-duration: 200ms;
+}
+
+.transform {
+  transform: translateX(0) translateY(0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+}
+
+/* Hover Effects */
+.hover\:text-primary:hover {
+  color: #3b82f6;
+}
+
+/* Tab Styles */
+.tab-btn {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  min-width: fit-content;
+  max-width: 100%;
+}
+
+.tab-btn:hover {
+  color: #3b82f6;
+}
+
+.tab-content {
+  animation: fadeIn 0.3s ease-in-out;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Itinerary Toggle */
+.itinerary-toggle {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.itinerary-toggle:hover {
+  background-color: #f3f4f6;
+}
+
+.itinerary-toggle svg {
+  transition: transform 0.3s ease;
+}
+
+.itinerary-toggle.active svg {
+  transform: rotate(45deg);
+}
+
+.itinerary-content {
+  transition: all 0.3s ease;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Responsive Design */
+
+/* Small Mobile Phones (320px - 480px) */
+@media (max-width: 480px) {
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .container {
+    padding: 0.5rem;
+    margin: 0;
+    max-width: 100vw;
+    width: 100%;
+  }
+  
+  .grid {
+    gap: 0.75rem;
+  }
+  
+  .p-4 {
+    padding: 0.75rem;
+  }
+  
+  .p-6 {
+    padding: 1rem;
+  }
+  
+  .text-lg {
+    font-size: 1rem;
+  }
+  
+  .text-xl {
+    font-size: 1.125rem;
+  }
+  
+  .gap-6 {
+    gap: 1rem;
+  }
+  
+  .gap-8 {
+    gap: 1.25rem;
+  }
+  
+  .mt-6 {
+    margin-top: 1rem;
+  }
+  
+  .mt-8 {
+    margin-top: 1.5rem;
+  }
+  
+  .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+    margin-left: 0.5rem;
+  }
+  
+  .space-x-6 > :not([hidden]) ~ :not([hidden]) {
+    margin-left: 0.75rem;
+  }
+  
+  .h-48 {
+    height: 10rem;
+  }
+  
+  .h-56 {
+    height: 12rem;
+  }
+  
+  /* Fix overflow on mobile */
+  .flex {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .grid {
+    max-width: 100%;
+  }
+  
+  .itinerary-toggle {
+    padding: 0.5rem;
+  }
+  
+  .tab-btn {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.75rem;
+  }
+  
+  nav.flex {
+    padding: 0 0.5rem;
+  }
+}
+
+/* Small Devices (481px - 768px) */
+@media (min-width: 481px) {
+  .sm\:gap-8 {
+    gap: 2rem;
+  }
+  
+  .sm\:p-6 {
+    padding: 1.5rem;
+  }
+  
+  .sm\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  
+  .sm\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  
+  .sm\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  
+  .sm\:text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+  
+  .sm\:mb-4 {
+    margin-bottom: 1rem;
+  }
+  
+  .sm\:mt-1 {
+    margin-top: 0.25rem;
+  }
+  
+  .sm\:mt-2 {
+    margin-top: 0.5rem;
+  }
+  
+  .sm\:mt-3 {
+    margin-top: 0.75rem;
+  }
+  
+  .sm\:mt-4 {
+    margin-top: 1rem;
+  }
+  
+  .sm\:mt-8 {
+    margin-top: 2rem;
+  }
+  
+  .sm\:mr-3 {
+    margin-right: 0.75rem;
+  }
+  
+  .sm\:pl-2 {
+    padding-left: 0.5rem;
+  }
+  
+  .sm\:pl-3 {
+    padding-left: 0.75rem;
+  }
+  
+  .sm\:pl-4 {
+    padding-left: 1rem;
+  }
+  
+  .sm\:px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  .sm\:py-1 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+  
+  .sm\:py-3 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+  
+  .sm\:pb-4 {
+    padding-bottom: 1rem;
+  }
+  
+  .sm\:pb-5 {
+    padding-bottom: 1.25rem;
+  }
+  
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  .sm\:gap-2 {
+    gap: 0.5rem;
+  }
+  
+  .sm\:gap-3 {
+    gap: 0.75rem;
+  }
+  
+  .sm\:gap-4 {
+    gap: 1rem;
+  }
+  
+  .sm\:space-y-3 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 0.75rem;
+  }
+  
+  .sm\:space-y-4 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 1rem;
+  }
+  
+  .sm\:rounded-xl {
+    border-radius: 0.75rem;
+  }
+  
+  .sm\:w-4 {
+    width: 1rem;
+  }
+  
+  .sm\:h-4 {
+    height: 1rem;
+  }
+  
+  .sm\:h-56 {
+    height: 14rem;
+  }
+  
+  .sm\:inline {
+    display: inline;
+  }
+  
+  .sm\:hidden {
+    display: none;
+  }
+  
+  .sm\:min-w-0 {
+    min-width: 0;
+  }
+}
+
+/* Medium Devices (769px - 1024px) */
+@media (min-width: 769px) {
+  .md\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  
+  .md\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  
+  .md\:p-5 {
+    padding: 1.25rem;
+  }
+  
+  .md\:pl-5 {
+    padding-left: 1.25rem;
+  }
+  
+  .md\:pb-5 {
+    padding-bottom: 1.25rem;
+  }
+}
+
+/* Large Devices (1025px and above) */
+@media (min-width: 1025px) {
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  
+  .lg\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+  
+  .container {
+    padding: 1.5rem;
+    max-width: 1200px;
+  }
+}
+
+/* Extra Large Devices (1440px and above) */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1400px;
+    padding: 2rem;
+  }
+}
+
+/* Additional overflow prevention */
+.bg-gray-50,
+.bg-white {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.itinerary-toggle .flex {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.itinerary-toggle h4 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+/* Ensure images don't overflow */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Fix for grid items */
+.grid > * {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Fix for flex items */
+.flex > * {
+  max-width: 100%;
+}
+
+/* Space utility overflow fix */
+.space-x-4,
+.space-x-6 {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Print Styles */
+@media print {
+  .tab-btn {
+    display: none;
+  }
+  
+  .tab-content {
+    display: block !important;
+  }
+  
+  .itinerary-content {
+    display: block !important;
+  }
+  
+  .bg-gray-50 {
+    background-color: #f9fafb !important;
+    -webkit-print-color-adjust: exact;
+  }
+  
+  .shadow-md {
+    box-shadow: none;
+  }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .text-xs {
+    font-size: 0.8rem;
+  }
+  
+  .text-sm {
+    font-size: 0.9rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .transition-transform,
+  .duration-200,
+  .tab-content,
+  .itinerary-toggle,
+  .itinerary-content {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1f2937;
+    color: #f9fafb;
+  }
+  
+  .bg-white {
+    background-color: #374151;
+  }
+  
+  .bg-gray-50 {
+    background-color: #4b5563;
+  }
+  
+  .text-dark {
+    color: #f9fafb;
+  }
+  
+  .text-gray-600 {
+    color: #d1d5db;
+  }
+  
+  .border {
+    border-color: #4b5563;
+  }
+  
+  .border-gray-200 {
+    border-color: #4b5563;
+  }
+}
+
+/* Focus states for accessibility */
+.tab-btn:focus,
+.itinerary-toggle:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar for webkit browsers */
+.overflow-x-auto::-webkit-scrollbar {
+  height: 4px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 2px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
 </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
@@ -75,7 +1103,7 @@
 
         <!-- Desktop Navigation (hidden on mobile) -->
         <nav class="hidden md:flex space-x-8 lg:space-x-12 text-lg text-gray-900">
-<a href="./images/LOGO.png" class="hover:text-orange-500 transition duration-300">India</a>
+<a href="../INDIA/india.html" class="hover:text-orange-500 transition duration-300">India</a>
           <a href="#" class="hover:text-orange-500 transition duration-300">World</a>
           <a href="#" class="hover:text-orange-500 transition duration-300">Travels</a>
           <a href="#" class="hover:text-orange-500 transition duration-300">Cruise</a>
@@ -100,7 +1128,7 @@
       <!-- Mobile Menu (hidden by default) -->
       <div id="mobile-menu" class="mobile-menu md:hidden bg-white w-full">
         <div class="px-2 py-4 space-y-3 border-t">
-          <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">India</a>
+          <a href="../INDIA/india.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">India</a>
           <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">World</a>
           <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">Customisation</a>
           <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">Travels</a>
@@ -279,138 +1307,138 @@
 
 
 <!-- Package Highlights -->
-<section class="container mx-auto px-4 mt-16">
-  <div class="grid lg:grid-cols-3 gap-8">
+<section class="container mx-auto px-4 sm:px-6 lg:px-8 mt-8 sm:mt-12 lg:mt-16">
+  <div class="grid lg:grid-cols-3 gap-6 sm:gap-8">
     <!-- Main Package Info -->
     <div class="lg:col-span-2">
-      <div class="bg-white rounded-xl shadow-md p-6">
-        <h2 class="text-xl font-bold text-dark mb-4">Package Highlights</h2>
-        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div class="bg-white rounded-lg sm:rounded-xl shadow-md p-4 sm:p-6">
+        <h2 class="text-lg sm:text-xl font-bold text-dark mb-3 sm:mb-4">Package Highlights</h2>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
           <li class="flex items-start">
-            <i class="fas fa-mountain text-secondary mt-1 mr-3 flex-shrink-0"></i>
-            <span class="text-sm sm:text-base">Trek to the mystical Kheerganga hot springs</span>
+            <i class="fas fa-mountain text-secondary mt-0.5 sm:mt-1 mr-2 sm:mr-3 flex-shrink-0"></i>
+            <span class="text-xs sm:text-sm md:text-base">Trek to the mystical Kheerganga hot springs</span>
           </li>
           <li class="flex items-start">
-            <i class="fas fa-campground text-secondary mt-1 mr-3 flex-shrink-0"></i>
-            <span class="text-sm sm:text-base">Camping under the stars in Kasol</span>
+            <i class="fas fa-campground text-secondary mt-0.5 sm:mt-1 mr-2 sm:mr-3 flex-shrink-0"></i>
+            <span class="text-xs sm:text-sm md:text-base">Camping under the stars in Kasol</span>
           </li>
           <li class="flex items-start">
-            <i class="fas fa-water text-secondary mt-1 mr-3 flex-shrink-0"></i>
-            <span class="text-sm sm:text-base">Relax in natural hot water springs</span>
+            <i class="fas fa-water text-secondary mt-0.5 sm:mt-1 mr-2 sm:mr-3 flex-shrink-0"></i>
+            <span class="text-xs sm:text-sm md:text-base">Relax in natural hot water springs</span>
           </li>
           <li class="flex items-start">
-            <i class="fas fa-hiking text-secondary mt-1 mr-3 flex-shrink-0"></i>
-            <span class="text-sm sm:text-base">Moderate trek through pine forests</span>
+            <i class="fas fa-hiking text-secondary mt-0.5 sm:mt-1 mr-2 sm:mr-3 flex-shrink-0"></i>
+            <span class="text-xs sm:text-sm md:text-base">Moderate trek through pine forests</span>
           </li>
           <li class="flex items-start">
-            <i class="fas fa-temple text-secondary mt-1 mr-3 flex-shrink-0"></i>
-            <span class="text-sm sm:text-base">Visit Manikaran Sahib Gurudwara</span>
+            <i class="fas fa-temple text-secondary mt-0.5 sm:mt-1 mr-2 sm:mr-3 flex-shrink-0"></i>
+            <span class="text-xs sm:text-sm md:text-base">Visit Manikaran Sahib Gurudwara</span>
           </li>
           <li class="flex items-start">
-            <i class="fas fa-utensils text-secondary mt-1 mr-3 flex-shrink-0"></i>
-            <span class="text-sm sm:text-base">Enjoy Israeli cuisine in Kasol cafes</span>
+            <i class="fas fa-utensils text-secondary mt-0.5 sm:mt-1 mr-2 sm:mr-3 flex-shrink-0"></i>
+            <span class="text-xs sm:text-sm md:text-base">Enjoy Israeli cuisine in Kasol cafes</span>
           </li>
         </ul>
       </div>
 
       <!-- Tabs Navigation -->
-      <div class="mt-8 border-b border-gray-200 overflow-x-auto">
-        <nav class="flex space-x-4 sm:space-x-8 min-w-max sm:min-w-0">
-          <button onclick="showTab('itinerary')" class="tab-btn py-3 px-2 sm:px-1 font-medium text-xs sm:text-sm border-b-2 border-primary text-primary whitespace-nowrap">
+      <div class="mt-6 sm:mt-8 border-b border-gray-200 overflow-x-auto">
+        <nav class="flex space-x-4 sm:space-x-6 min-w-max sm:min-w-0">
+          <button onclick="showTab('itinerary')" class="tab-btn py-2 sm:py-3 px-1 sm:px-2 font-medium text-xs sm:text-sm border-b-2 border-primary text-primary whitespace-nowrap">
             Itinerary
           </button>
-          <button onclick="showTab('inclusions')" class="tab-btn py-3 px-2 sm:px-1 font-medium text-xs sm:text-sm border-b-2 border-transparent hover:text-primary whitespace-nowrap">
+          <button onclick="showTab('inclusions')" class="tab-btn py-2 sm:py-3 px-1 sm:px-2 font-medium text-xs sm:text-sm border-b-2 border-transparent hover:text-primary whitespace-nowrap">
             Inclusions
           </button>
-          <button onclick="showTab('exclusions')" class="tab-btn py-3 px-2 sm:px-1 font-medium text-xs sm:text-sm border-b-2 border-transparent hover:text-primary whitespace-nowrap">
+          <button onclick="showTab('exclusions')" class="tab-btn py-2 sm:py-3 px-1 sm:px-2 font-medium text-xs sm:text-sm border-b-2 border-transparent hover:text-primary whitespace-nowrap">
             Exclusions
           </button>
-          <button onclick="showTab('hotels')" class="tab-btn py-3 px-2 sm:px-1 font-medium text-xs sm:text-sm border-b-2 border-transparent hover:text-primary whitespace-nowrap">
+          <button onclick="showTab('hotels')" class="tab-btn py-2 sm:py-3 px-1 sm:px-2 font-medium text-xs sm:text-sm border-b-2 border-transparent hover:text-primary whitespace-nowrap">
             Accommodation
           </button>
-          <button onclick="showTab('terms')" class="tab-btn py-3 px-2 sm:px-1 font-medium text-xs sm:text-sm border-b-2 border-transparent hover:text-primary whitespace-nowrap">
+          <button onclick="showTab('terms')" class="tab-btn py-2 sm:py-3 px-1 sm:px-2 font-medium text-xs sm:text-sm border-b-2 border-transparent hover:text-primary whitespace-nowrap">
             Terms
           </button>
         </nav>
       </div>
 
       <!-- Tab Contents -->
-      <div class="mt-4">
+      <div class="mt-3 sm:mt-4">
         <!-- Itinerary -->
         <div id="itinerary" class="tab-content">
-          <h3 class="text-lg font-semibold text-dark mb-4">Detailed Day Wise Itinerary</h3>
+          <h3 class="text-base sm:text-lg font-semibold text-dark mb-3 sm:mb-4">Detailed Day Wise Itinerary</h3>
           
-          <div class="space-y-4">
+          <div class="space-y-3 sm:space-y-4">
             <!-- Day 1 -->
             <div class="bg-gray-50 rounded-lg overflow-hidden border-l-4 border-primary">
-              <button class="itinerary-toggle w-full flex justify-between items-center p-3 sm:p-5 text-left">
+              <button class="itinerary-toggle w-full flex justify-between items-center p-3 sm:p-4 md:p-5 text-left">
                 <div class="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
-                  <span class="text-primary font-bold text-sm sm:text-base flex-shrink-0">Day 1</span>
-                  <h4 class="font-bold text-dark text-sm sm:text-base truncate">Delhi to Kasol</h4>
+                  <span class="text-primary font-bold text-xs sm:text-sm md:text-base flex-shrink-0">Day 1</span>
+                  <h4 class="font-bold text-dark text-xs sm:text-sm md:text-base truncate">Delhi to Kasol</h4>
                 </div>
                 <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-                  <span class="bg-primary text-white text-xs px-2 py-1 rounded hidden sm:inline">Travel Day</span>
-                  <span class="bg-primary text-white text-xs px-1 py-1 rounded sm:hidden">Travel</span>
-                  <svg class="w-4 h-4 text-gray-500 transition-transform duration-200 transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <span class="bg-primary text-white text-xxs sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded hidden sm:inline">Travel Day</span>
+                  <span class="bg-primary text-white text-xxs sm:text-xs px-1 py-0.5 rounded sm:hidden">Travel</span>
+                  <svg class="w-3 h-3 sm:w-4 sm:h-4 text-gray-500 transition-transform duration-200 transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                   </svg>
                 </div>
               </button>
-              <div class="itinerary-content px-3 sm:px-5 pb-3 sm:pb-5 hidden">
-                <div class="pl-2">
-                  <p class="text-gray-600 text-sm sm:text-base">Depart from Delhi in the evening by Volvo bus (approx 8:30 PM). Overnight journey to Bhuntar.</p>
+              <div class="itinerary-content px-3 sm:px-4 md:px-5 pb-3 sm:pb-4 md:pb-5 hidden">
+                <div class="pl-1 sm:pl-2">
+                  <p class="text-gray-600 text-xs sm:text-sm md:text-base">Depart from Delhi in the evening by Volvo bus (approx 8:30 PM). Overnight journey to Bhuntar.</p>
                 </div>
               </div>
             </div>
             
             <!-- Day 2 -->
             <div class="bg-gray-50 rounded-lg overflow-hidden border-l-4 border-primary">
-              <button class="itinerary-toggle w-full flex justify-between items-center p-3 sm:p-5 text-left">
+              <button class="itinerary-toggle w-full flex justify-between items-center p-3 sm:p-4 md:p-5 text-left">
                 <div class="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
-                  <span class="text-primary font-bold text-sm sm:text-base flex-shrink-0">Day 2</span>
-                  <h4 class="font-bold text-dark text-sm sm:text-base truncate">Arrival in Kasol</h4>
+                  <span class="text-primary font-bold text-xs sm:text-sm md:text-base flex-shrink-0">Day 2</span>
+                  <h4 class="font-bold text-dark text-xs sm:text-sm md:text-base truncate">Arrival in Kasol</h4>
                 </div>
                 <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-                  <span class="bg-primary text-white text-xs px-2 py-1 rounded hidden sm:inline">Sightseeing</span>
-                  <span class="bg-primary text-white text-xs px-1 py-1 rounded sm:hidden">Sight</span>
-                  <svg class="w-4 h-4 text-gray-500 transition-transform duration-200 transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <span class="bg-primary text-white text-xxs sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded hidden sm:inline">Sightseeing</span>
+                  <span class="bg-primary text-white text-xxs sm:text-xs px-1 py-0.5 rounded sm:hidden">Sight</span>
+                  <svg class="w-3 h-3 sm:w-4 sm:h-4 text-gray-500 transition-transform duration-200 transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                   </svg>
                 </div>
               </button>
-              <div class="itinerary-content px-3 sm:px-5 pb-3 sm:pb-5 hidden">
-                <div class="pl-2">
-                  <p class="text-gray-600 text-sm sm:text-base">Arrive in Bhuntar in the morning. Transfer to Kasol (approx 2 hours). Check into camps/hotel. After some rest:</p>
-                  <ul class="mt-2 space-y-1 pl-3 sm:pl-5 list-disc text-gray-600 text-sm sm:text-base">
+              <div class="itinerary-content px-3 sm:px-4 md:px-5 pb-3 sm:pb-4 md:pb-5 hidden">
+                <div class="pl-1 sm:pl-2">
+                  <p class="text-gray-600 text-xs sm:text-sm md:text-base">Arrive in Bhuntar in the morning. Transfer to Kasol (approx 2 hours). Check into camps/hotel. After some rest:</p>
+                  <ul class="mt-1 sm:mt-2 space-y-1 pl-2 sm:pl-3 md:pl-5 list-disc text-gray-600 text-xs sm:text-sm md:text-base">
                     <li>Explore the hippie town of Kasol</li>
                     <li>Visit the famous Israeli cafes</li>
                     <li>Short walk along the Parvati River</li>
                     <li>Visit Manikaran Sahib Gurudwara and hot springs</li>
                   </ul>
-                  <p class="mt-2 text-gray-600 text-sm sm:text-base">Overnight stay in Kasol.</p>
+                  <p class="mt-1 sm:mt-2 text-gray-600 text-xs sm:text-sm md:text-base">Overnight stay in Kasol.</p>
                 </div>
               </div>
             </div>
             
             <!-- Day 3 -->
             <div class="bg-gray-50 rounded-lg overflow-hidden border-l-4 border-primary">
-              <button class="itinerary-toggle w-full flex justify-between items-center p-3 sm:p-5 text-left">
+              <button class="itinerary-toggle w-full flex justify-between items-center p-3 sm:p-4 md:p-5 text-left">
                 <div class="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
-                  <span class="text-primary font-bold text-sm sm:text-base flex-shrink-0">Day 3</span>
-                  <h4 class="font-bold text-dark text-sm sm:text-base truncate">Kasol to Kheerganga Trek</h4>
+                  <span class="text-primary font-bold text-xs sm:text-sm md:text-base flex-shrink-0">Day 3</span>
+                  <h4 class="font-bold text-dark text-xs sm:text-sm md:text-base truncate">Kasol to Kheerganga Trek</h4>
                 </div>
                 <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-                  <span class="bg-primary text-white text-xs px-2 py-1 rounded hidden sm:inline">Trekking Day</span>
-                  <span class="bg-primary text-white text-xs px-1 py-1 rounded sm:hidden">Trek</span>
-                  <svg class="w-4 h-4 text-gray-500 transition-transform duration-200 transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <span class="bg-primary text-white text-xxs sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded hidden sm:inline">Trekking Day</span>
+                  <span class="bg-primary text-white text-xxs sm:text-xs px-1 py-0.5 rounded sm:hidden">Trek</span>
+                  <svg class="w-3 h-3 sm:w-4 sm:h-4 text-gray-500 transition-transform duration-200 transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                   </svg>
                 </div>
               </button>
-              <div class="itinerary-content px-3 sm:px-5 pb-3 sm:pb-5 hidden">
-                <div class="pl-2">
-                  <p class="text-gray-600 text-sm sm:text-base">After breakfast, drive to Barshaini (1 hour), the starting point of the trek. Begin your trek to Kheerganga:</p>
-                  <ul class="mt-2 space-y-1 pl-3 sm:pl-5 list-disc text-gray-600 text-sm sm:text-base">
+              <div class="itinerary-content px-3 sm:px-4 md:px-5 pb-3 sm:pb-4 md:pb-5 hidden">
+                <div class="pl-1 sm:pl-2">
+                  <p class="text-gray-600 text-xs sm:text-sm md:text-base">After breakfast, drive to Barshaini (1 hour), the starting point of the trek. Begin your trek to Kheerganga:</p>
+                  <ul class="mt-1 sm:mt-2 space-y-1 pl-2 sm:pl-3 md:pl-5 list-disc text-gray-600 text-xs sm:text-sm md:text-base">
                     <li>Moderate 12 km trek through pine forests</li>
                     <li>Pass through beautiful waterfalls and villages</li>
                     <li>Reach Kheerganga by evening</li>
@@ -423,23 +1451,23 @@
             
             <!-- Day 4 -->
             <div class="bg-gray-50 rounded-lg overflow-hidden border-l-4 border-primary">
-              <button class="itinerary-toggle w-full flex justify-between items-center p-3 sm:p-5 text-left">
+              <button class="itinerary-toggle w-full flex justify-between items-center p-3 sm:p-4 md:p-5 text-left">
                 <div class="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
-                  <span class="text-primary font-bold text-sm sm:text-base flex-shrink-0">Day 4</span>
-                  <h4 class="font-bold text-dark text-sm sm:text-base truncate">Kheerganga to Kasol</h4>
+                  <span class="text-primary font-bold text-xs sm:text-sm md:text-base flex-shrink-0">Day 4</span>
+                  <h4 class="font-bold text-dark text-xs sm:text-sm md:text-base truncate">Kheerganga to Kasol</h4>
                 </div>
                 <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-                  <span class="bg-primary text-white text-xs px-2 py-1 rounded hidden sm:inline">Trekking Day</span>
-                  <span class="bg-primary text-white text-xs px-1 py-1 rounded sm:hidden">Trek</span>
-                  <svg class="w-4 h-4 text-gray-500 transition-transform duration-200 transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <span class="bg-primary text-white text-xxs sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded hidden sm:inline">Trekking Day</span>
+                  <span class="bg-primary text-white text-xxs sm:text-xs px-1 py-0.5 rounded sm:hidden">Trek</span>
+                  <svg class="w-3 h-3 sm:w-4 sm:h-4 text-gray-500 transition-transform duration-200 transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                   </svg>
                 </div>
               </button>
-              <div class="itinerary-content px-3 sm:px-5 pb-3 sm:pb-5 hidden">
-                <div class="pl-2">
-                  <p class="text-gray-600 text-sm sm:text-base">Wake up to breathtaking views. After breakfast, trek down to Barshaini:</p>
-                  <ul class="mt-2 space-y-1 pl-3 sm:pl-5 list-disc text-gray-600 text-sm sm:text-base">
+              <div class="itinerary-content px-3 sm:px-4 md:px-5 pb-3 sm:pb-4 md:pb-5 hidden">
+                <div class="pl-1 sm:pl-2">
+                  <p class="text-gray-600 text-xs sm:text-sm md:text-base">Wake up to breathtaking views. After breakfast, trek down to Barshaini:</p>
+                  <ul class="mt-1 sm:mt-2 space-y-1 pl-2 sm:pl-3 md:pl-5 list-disc text-gray-600 text-xs sm:text-sm md:text-base">
                     <li>Descend through different route for varied views</li>
                     <li>Drive back to Kasol</li>
                     <li>Free time to explore Kasol market</li>
@@ -451,58 +1479,56 @@
             
             <!-- Day 5 -->
             <div class="bg-gray-50 rounded-lg overflow-hidden border-l-4 border-primary">
-              <button class="itinerary-toggle w-full flex justify-between items-center p-3 sm:p-5 text-left">
+              <button class="itinerary-toggle w-full flex justify-between items-center p-3 sm:p-4 md:p-5 text-left">
                 <div class="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
-                  <span class="text-primary font-bold text-sm sm:text-base flex-shrink-0">Day 5</span>
-                  <h4 class="font-bold text-dark text-sm sm:text-base truncate">Kasol to Delhi</h4>
+                  <span class="text-primary font-bold text-xs sm:text-sm md:text-base flex-shrink-0">Day 5</span>
+                  <h4 class="font-bold text-dark text-xs sm:text-sm md:text-base truncate">Kasol to Delhi</h4>
                 </div>
                 <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-                  <span class="bg-primary text-white text-xs px-2 py-1 rounded hidden sm:inline">Departure Day</span>
-                  <span class="bg-primary text-white text-xs px-1 py-1 rounded sm:hidden">Departure</span>
-                  <svg class="w-4 h-4 text-gray-500 transition-transform duration-200 transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <span class="bg-primary text-white text-xxs sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded hidden sm:inline">Departure Day</span>
+                  <span class="bg-primary text-white text-xxs sm:text-xs px-1 py-0.5 rounded sm:hidden">Departure</span>
+                  <svg class="w-3 h-3 sm:w-4 sm:h-4 text-gray-500 transition-transform duration-200 transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                   </svg>
                 </div>
               </button>
-              <div class="itinerary-content px-3 sm:px-5 pb-3 sm:pb-5 hidden">
-                <div class="pl-2">
-                  <p class="text-gray-600 text-sm sm:text-base">Morning free for last minute shopping. After lunch, drive to Bhuntar to catch Volvo bus to Delhi. Overnight journey.</p>
+              <div class="itinerary-content px-3 sm:px-4 md:px-5 pb-3 sm:pb-4 md:pb-5 hidden">
+                <div class="pl-1 sm:pl-2">
+                  <p class="text-gray-600 text-xs sm:text-sm md:text-base">Morning free for last minute shopping. After lunch, drive to Bhuntar to catch Volvo bus to Delhi. Overnight journey.</p>
                 </div>
               </div>
             </div>
-            
-            
           </div>
         </div>
 
         <!-- Inclusions -->
         <div id="inclusions" class="tab-content hidden">
-          <h3 class="text-lg font-semibold text-dark mb-4">What's Included</h3>
-          <div class="bg-gray-50 rounded-lg p-4 sm:p-5">
-            <ul class="space-y-3">
+          <h3 class="text-base sm:text-lg font-semibold text-dark mb-3 sm:mb-4">What's Included</h3>
+          <div class="bg-gray-50 rounded-lg p-3 sm:p-4 md:p-5">
+            <ul class="space-y-2 sm:space-y-3">
               <li class="flex items-start">
-                <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
-                <span class="text-sm sm:text-base">Delhi to Kasol and return Volvo bus tickets</span>
+                <i class="fas fa-check-circle text-green-500 mt-0.5 sm:mt-1 mr-2 sm:mr-3 flex-shrink-0"></i>
+                <span class="text-xs sm:text-sm md:text-base">Delhi to Kasol and return Volvo bus tickets</span>
               </li>
               <li class="flex items-start">
-                <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
-                <span class="text-sm sm:text-base">2 nights accommodation in Kasol (hotel/camps)</span>
+                <i class="fas fa-check-circle text-green-500 mt-0.5 sm:mt-1 mr-2 sm:mr-3 flex-shrink-0"></i>
+                <span class="text-xs sm:text-sm md:text-base">2 nights accommodation in Kasol (hotel/camps)</span>
               </li>
               <li class="flex items-start">
-                <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
-                <span class="text-sm sm:text-base">1 night camping at Kheerganga with sleeping bags</span>
+                <i class="fas fa-check-circle text-green-500 mt-0.5 sm:mt-1 mr-2 sm:mr-3 flex-shrink-0"></i>
+                <span class="text-xs sm:text-sm md:text-base">1 night camping at Kheerganga with sleeping bags</span>
               </li>
               <li class="flex items-start">
-                <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
-                <span class="text-sm sm:text-base">All transfers from Bhuntar to Kasol and trek points</span>
+                <i class="fas fa-check-circle text-green-500 mt-0.5 sm:mt-1 mr-2 sm:mr-3 flex-shrink-0"></i>
+                <span class="text-xs sm:text-sm md:text-base">All transfers from Bhuntar to Kasol and trek points</span>
               </li>
               <li class="flex items-start">
-                <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
-                <span class="text-sm sm:text-base">Meals during trek (day 3 breakfast, packed lunch, dinner; day 4 breakfast)</span>
+                <i class="fas fa-check-circle text-green-500 mt-0.5 sm:mt-1 mr-2 sm:mr-3 flex-shrink-0"></i>
+                <span class="text-xs sm:text-sm md:text-base">Meals during trek (day 3 breakfast, packed lunch, dinner; day 4 breakfast)</span>
               </li>
               <li class="flex items-start">
-                <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
-                <span class="text-sm sm:text-base">Trekking guide and permits</span>
+                <i class="fas fa-check-circle text-green-500 mt-0.5 sm:mt-1 mr-2 sm:mr-3 flex-shrink-0"></i>
+                <span class="text-xs sm:text-sm md:text-base">Trekking guide and permits</span>
               </li>
             </ul>
           </div>
@@ -510,28 +1536,28 @@
 
         <!-- Exclusions -->
         <div id="exclusions" class="tab-content hidden">
-          <h3 class="text-lg font-semibold text-dark mb-4">What's Not Included</h3>
-          <div class="bg-gray-50 rounded-lg p-4 sm:p-5">
-            <ul class="space-y-3">
+          <h3 class="text-base sm:text-lg font-semibold text-dark mb-3 sm:mb-4">What's Not Included</h3>
+          <div class="bg-gray-50 rounded-lg p-3 sm:p-4 md:p-5">
+            <ul class="space-y-2 sm:space-y-3">
               <li class="flex items-start">
-                <i class="fas fa-times-circle text-red-500 mt-1 mr-3 flex-shrink-0"></i>
-                <span class="text-sm sm:text-base">Meals not mentioned in inclusions</span>
+                <i class="fas fa-times-circle text-red-500 mt-0.5 sm:mt-1 mr-2 sm:mr-3 flex-shrink-0"></i>
+                <span class="text-xs sm:text-sm md:text-base">Meals not mentioned in inclusions</span>
               </li>
               <li class="flex items-start">
-                <i class="fas fa-times-circle text-red-500 mt-1 mr-3 flex-shrink-0"></i>
-                <span class="text-sm sm:text-base">Personal expenses like snacks, beverages, tips etc.</span>
+                <i class="fas fa-times-circle text-red-500 mt-0.5 sm:mt-1 mr-2 sm:mr-3 flex-shrink-0"></i>
+                <span class="text-xs sm:text-sm md:text-base">Personal expenses like snacks, beverages, tips etc.</span>
               </li>
               <li class="flex items-start">
-                <i class="fas fa-times-circle text-red-500 mt-1 mr-3 flex-shrink-0"></i>
-                <span class="text-sm sm:text-base">Any additional activities not mentioned</span>
+                <i class="fas fa-times-circle text-red-500 mt-0.5 sm:mt-1 mr-2 sm:mr-3 flex-shrink-0"></i>
+                <span class="text-xs sm:text-sm md:text-base">Any additional activities not mentioned</span>
               </li>
               <li class="flex items-start">
-                <i class="fas fa-times-circle text-red-500 mt-1 mr-3 flex-shrink-0"></i>
-                <span class="text-sm sm:text-base">Travel insurance</span>
+                <i class="fas fa-times-circle text-red-500 mt-0.5 sm:mt-1 mr-2 sm:mr-3 flex-shrink-0"></i>
+                <span class="text-xs sm:text-sm md:text-base">Travel insurance</span>
               </li>
               <li class="flex items-start">
-                <i class="fas fa-times-circle text-red-500 mt-1 mr-3 flex-shrink-0"></i>
-                <span class="text-sm sm:text-base">Anything not mentioned under 'Inclusions'</span>
+                <i class="fas fa-times-circle text-red-500 mt-0.5 sm:mt-1 mr-2 sm:mr-3 flex-shrink-0"></i>
+                <span class="text-xs sm:text-sm md:text-base">Anything not mentioned under 'Inclusions'</span>
               </li>
             </ul>
           </div>
@@ -539,57 +1565,57 @@
 
         <!-- Hotels -->
         <div id="hotels" class="tab-content hidden">
-          <h3 class="text-lg font-semibold text-dark mb-4">Accommodation Included</h3>
-          <div class="space-y-4">
+          <h3 class="text-base sm:text-lg font-semibold text-dark mb-3 sm:mb-4">Accommodation Included</h3>
+          <div class="space-y-3 sm:space-y-4">
             <div class="bg-white border rounded-lg overflow-hidden">
-              <div class="flex flex-col sm:flex-row">
-                <div class="w-full sm:w-1/3">
-                  <img src="https://i.pinimg.com/736x/4a/9e/8c/4a9e8c1f8a9e1b8e8e1f8a9e1b8e8e1f.jpg" class="w-full h-48 sm:h-full object-cover" alt="Kasol Camps">
+              <div class="flex flex-col">
+                <div class="w-full">
+                  <img src="https://i.pinimg.com/736x/4a/9e/8c/4a9e8c1f8a9e1b8e8e1f8a9e1b8e8e1f.jpg" class="w-full h-48 sm:h-56 object-cover" alt="Kasol Camps">
                 </div>
-                <div class="p-4 sm:w-2/3">
-                  <h4 class="font-bold text-dark text-base sm:text-lg">Parvati Kuteer Camps (or similar)</h4>
-                  <div class="flex items-center mt-1">
+                <div class="p-3 sm:p-4">
+                  <h4 class="font-bold text-dark text-sm sm:text-base md:text-lg">Parvati Kuteer Camps (or similar)</h4>
+                  <div class="flex items-center mt-1">Parvati Kuteer Camps (or similar)
                     <div class="flex text-yellow-400">
-                      <i class="fas fa-star text-sm"></i>
-                      <i class="fas fa-star text-sm"></i>
-                      <i class="fas fa-star text-sm"></i>
-                      <i class="far fa-star text-sm"></i>
-                      <i class="far fa-star text-sm"></i>
+                      <i class="fas fa-star text-xs sm:text-sm"></i>
+                      <i class="fas fa-star text-xs sm:text-sm"></i>
+                      <i class="fas fa-star text-xs sm:text-sm"></i>
+                      <i class="far fa-star text-xs sm:text-sm"></i>
+                      <i class="far fa-star text-xs sm:text-sm"></i>
                     </div>
-                    <span class="text-gray-600 text-xs sm:text-sm ml-2">Basic | Kasol</span>
+                    <span class="text-gray-600 text-xxs sm:text-xs md:text-sm ml-2">Basic | Kasol</span>
                   </div>
-                  <p class="mt-2 text-gray-600 text-sm sm:text-base">Riverside camps with basic amenities including attached bathrooms. Beautiful views of Parvati Valley.</p>
-                  <div class="mt-3 flex flex-wrap gap-2">
-                    <span class="text-xs bg-gray-100 px-2 py-1 rounded">Riverside Location</span>
-                    <span class="text-xs bg-gray-100 px-2 py-1 rounded">Bonfire</span>
-                    <span class="text-xs bg-gray-100 px-2 py-1 rounded">Common Dining</span>
+                  <p class="mt-1 sm:mt-2 text-gray-600 text-xs sm:text-sm md:text-base">Riverside camps with basic amenities including attached bathrooms. Beautiful views of Parvati Valley.</p>
+                  <div class="mt-2 sm:mt-3 flex flex-wrap gap-1 sm:gap-2">
+                    <span class="text-xxs sm:text-xs bg-gray-100 px-1.5 sm:px-2 py-0.5 rounded">Riverside Location</span>
+                    <span class="text-xxs sm:text-xs bg-gray-100 px-1.5 sm:px-2 py-0.5 rounded">Bonfire</span>
+                    <span class="text-xxs sm:text-xs bg-gray-100 px-1.5 sm:px-2 py-0.5 rounded">Common Dining</span>
                   </div>
                 </div>
               </div>
             </div>
             
             <div class="bg-white border rounded-lg overflow-hidden">
-              <div class="flex flex-col sm:flex-row">
-                <div class="w-full sm:w-1/3">
-                  <img src="https://i.pinimg.com/736x/8c/1f/9a/8c1f9a8e8c1f9a8e8c1f9a8e8c1f9a8e.jpg" class="w-full h-48 sm:h-full object-cover" alt="Kheerganga Camping">
+              <div class="flex flex-col">
+                <div class="w-full">
+                  <img src="./images/Hotel Ganga Kinare (or similar).jpg" class="w-full h-48 sm:h-56 object-cover" alt="Kheerganga Camping">
                 </div>
-                <div class="p-4 sm:w-2/3">
-                  <h4 class="font-bold text-dark text-base sm:text-lg">Kheerganga Campsite</h4>
+                <div class="p-3 sm:p-4">
+                  <h4 class="font-bold text-dark text-sm sm:text-base md:text-lg">Kheerganga Campsite</h4>
                   <div class="flex items-center mt-1">
                     <div class="flex text-yellow-400">
-                      <i class="fas fa-star text-sm"></i>
-                      <i class="fas fa-star text-sm"></i>
-                      <i class="far fa-star text-sm"></i>
-                      <i class="far fa-star text-sm"></i>
-                      <i class="far fa-star text-sm"></i>
+                      <i class="fas fa-star text-xs sm:text-sm"></i>
+                      <i class="fas fa-star text-xs sm:text-sm"></i>
+                      <i class="far fa-star text-xs sm:text-sm"></i>
+                      <i class="far fa-star text-xs sm:text-sm"></i>
+                      <i class="far fa-star text-xs sm:text-sm"></i>
                     </div>
-                    <span class="text-gray-600 text-xs sm:text-sm ml-2">Basic | Kheerganga</span>
+                    <span class="text-gray-600 text-xxs sm:text-xs md:text-sm ml-2">Basic | Kheerganga</span>
                   </div>
-                  <p class="mt-2 text-gray-600 text-sm sm:text-base">Shared tents with sleeping bags at the summit of Kheerganga. Basic toilet facilities available.</p>
-                  <div class="mt-3 flex flex-wrap gap-2">
-                    <span class="text-xs bg-gray-100 px-2 py-1 rounded">Hot Springs Access</span>
-                    <span class="text-xs bg-gray-100 px-2 py-1 rounded">Mountain Views</span>
-                    <span class="text-xs bg-gray-100 px-2 py-1 rounded">Common Dining</span>
+                  <p class="mt-1 sm:mt-2 text-gray-600 text-xs sm:text-sm md:text-base">Shared tents with sleeping bags at the summit of Kheerganga. Basic toilet facilities available.</p>
+                  <div class="mt-2 sm:mt-3 flex flex-wrap gap-1 sm:gap-2">
+                    <span class="text-xxs sm:text-xs bg-gray-100 px-1.5 sm:px-2 py-0.5 rounded">Hot Springs Access</span>
+                    <span class="text-xxs sm:text-xs bg-gray-100 px-1.5 sm:px-2 py-0.5 rounded">Mountain Views</span>
+                    <span class="text-xxs sm:text-xs bg-gray-100 px-1.5 sm:px-2 py-0.5 rounded">Common Dining</span>
                   </div>
                 </div>
               </div>
@@ -599,18 +1625,18 @@
 
         <!-- Terms -->
         <div id="terms" class="tab-content hidden">
-          <h3 class="text-lg font-semibold text-dark mb-4">Terms & Conditions</h3>
-          <div class="bg-gray-50 rounded-lg p-4 sm:p-5">
-            <ul class="space-y-3 list-decimal pl-4 sm:pl-5">
-              <li class="text-gray-600 text-sm sm:text-base">50% advance to be paid at the time of booking confirmation.</li>
-              <li class="text-gray-600 text-sm sm:text-base">Balance payment to be made 7 days before departure.</li>
-              <li class="text-gray-600 text-sm sm:text-base">Cancellation made 15 days prior to departure - 25% deduction.</li>
-              <li class="text-gray-600 text-sm sm:text-base">Cancellation made 7-15 days prior to departure - 50% deduction.</li>
-              <li class="text-gray-600 text-sm sm:text-base">Cancellation made less than 7 days prior to departure - No refund.</li>
-              <li class="text-gray-600 text-sm sm:text-base">Trek route may change based on weather conditions.</li>
-              <li class="text-gray-600 text-sm sm:text-base">Participants must carry valid ID proof.</li>
-              <li class="text-gray-600 text-sm sm:text-base">The company is not responsible for loss/theft of personal belongings.</li>
-              <li class="text-gray-600 text-sm sm:text-base">Participants must declare any medical conditions beforehand.</li>
+          <h3 class="text-base sm:text-lg font-semibold text-dark mb-3 sm:mb-4">Terms & Conditions</h3>
+          <div class="bg-gray-50 rounded-lg p-3 sm:p-4 md:p-5">
+            <ul class="space-y-2 sm:space-y-3 list-decimal pl-3 sm:pl-4 md:pl-5">
+              <li class="text-gray-600 text-xs sm:text-sm md:text-base">50% advance to be paid at the time of booking confirmation.</li>
+              <li class="text-gray-600 text-xs sm:text-sm md:text-base">Balance payment to be made 7 days before departure.</li>
+              <li class="text-gray-600 text-xs sm:text-sm md:text-base">Cancellation made 15 days prior to departure - 25% deduction.</li>
+              <li class="text-gray-600 text-xs sm:text-sm md:text-base">Cancellation made 7-15 days prior to departure - 50% deduction.</li>
+              <li class="text-gray-600 text-xs sm:text-sm md:text-base">Cancellation made less than 7 days prior to departure - No refund.</li>
+              <li class="text-gray-600 text-xs sm:text-sm md:text-base">Trek route may change based on weather conditions.</li>
+              <li class="text-gray-600 text-xs sm:text-sm md:text-base">Participants must carry valid ID proof.</li>
+              <li class="text-gray-600 text-xs sm:text-sm md:text-base">The company is not responsible for loss/theft of personal belongings.</li>
+              <li class="text-gray-600 text-xs sm:text-sm md:text-base">Participants must declare any medical conditions beforehand.</li>
             </ul>
           </div>
         </div>
@@ -619,7 +1645,7 @@
 
     <!-- Video Section -->
     <div class="flex justify-center lg:justify-start">
-      <div class="w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[400px] aspect-[9/16] bg-black rounded-xl overflow-hidden shadow-lg">
+      <div class="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[400px] aspect-[9/16] bg-black rounded-lg sm:rounded-xl overflow-hidden shadow-lg">
         <video 
           class="w-full h-full object-cover"
           autoplay 
@@ -674,11 +1700,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
-    
 });
 </script>
-
 
 <!-- Photo Gallery -->
 <section class="container mx-auto px-4 mt-16">

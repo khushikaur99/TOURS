@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login / Signup - Saee Holidays</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    .banner-transition {
+      transition: background-image 0.5s ease-in-out;
+    }
+    .password-strength {
+      height: 4px;
+      transition: width 0.3s ease;
+    }
+    .password-requirement {
+      transition: all 0.3s ease;
+    }
+    .requirement-met {
+      color: #10B981;
+    }
+    .requirement-unmet {
+      color: #EF4444;
+    }
+    .error-message {
+      color: #EF4444;
+      font-size: 0.75rem;
+      margin-top: 0.25rem;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <!-- Top Bar with Contact and Social -->
+  <div class="bg-gray-900 text-white py-2">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <!-- Phone Numbers -->
+        <div class="flex space-x-4 mb-2 md:mb-0">
+          <div class="flex items-center">
+            <i class="fas fa-phone-alt mr-2 text-orange-500"></i>
+            <span>+91 1234567890</span>
+          </div>
+          <div class="flex items-center">
+            <i class="fas fa-phone-alt mr-2 text-orange-500"></i>
+            <span>+91 9876543210</span>
+          </div>
+        </div>
+        
+        <!-- Social Icons -->
+        <div class="flex space-x-4">
+          <a href="#" class="text-white hover:text-orange-500 transition duration-300">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="text-white hover:text-orange-500 transition duration-300">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="text-white hover:text-orange-500 transition duration-300">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="text-white hover:text-orange-500 transition duration-300">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" class="text-white hover:text-orange-500 transition duration-300">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header - Fixed -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+          <img src="IMAGES/LOGO.png" alt="Logo" class="h-16 w-auto">
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-8 lg:space-x-12 text-xl text-gray-900">
+          <a href="../INDIA/india.html" class="hover:text-orange-500 transition duration-300">India</a>
+          <a href="#" class="hover:text-orange-500 transition duration-300">World</a>
+          <a href="#" class="hover:text-orange-500 transition duration-300">Travels</a>
+          <a href="about.html" class="hover:text-orange-500 transition duration-300">About</a>
+          <a href="../contact.html" class="hover:text-orange-500 transition duration-300">Contact</a>
+        </nav>
+
+        <!-- Right side items -->
+        <div class="flex items-center space-x-4">
+          <a href="login.html" class="text-orange-500 hover:text-orange-600 text-2xl hidden md:block" title="Sign In">
+            <i class="fa-solid fa-user"></i>
+          </a>
+          <button id="mobile-menu-button" class="md:hidden text-gray-900 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="mobile-menu md:hidden bg-white w-full hidden">
+        <div class="px-2 py-4 space-y-3 border-t">
+          <a href="../INDIA/india.html" class="hover:text-orange-500 transition duration-300">India</a>
+          <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">World</a>
+          <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">Customisation</a>
+          <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">Travels</a>
+          <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">About</a>
+          <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">Contact</a>
+          <a href="#" class="block px-3 py-2 rounded-md text-orange-500 font-medium">
+            <i class="fa-solid fa-user mr-2"></i> Sign In
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <section class="container mx-auto my-10 px-4">
+    <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden md:flex">
+      
+      <!-- Tabs & Form -->
+      <div class="w-full md:w-1/2 p-8 md:p-12">
+        <div class="flex mb-6 border-b border-gray-300">
+          <button id="loginTab" class="w-1/2 text-center py-2 font-semibold text-orange-500 border-b-2 border-orange-500">Login</button>
+          <button id="signupTab" class="w-1/2 text-center py-2 font-semibold text-gray-500">Sign-up</button>
+        </div>
+
+        <!-- Login Form -->
+        <form id="loginForm" class="space-y-4">
+          <div>
+            <label class="block mb-1 text-sm font-medium">Email <span class="text-red-500">*</span></label>
+            <div class="flex items-center border rounded px-3 py-2">
+              <i class="fa-solid fa-envelope text-gray-400 mr-2"></i>
+              <input type="email" id="loginEmail" class="w-full outline-none" placeholder="Enter your email" required>
+            </div>
+            <div id="loginEmailError" class="error-message hidden">Please enter a valid email address</div>
+          </div>
+
+          <div>
+            <label class="block mb-1 text-sm font-medium">Password <span class="text-red-500">*</span></label>
+            <div class="flex items-center border rounded px-3 py-2">
+              <i class="fa-solid fa-lock text-gray-400 mr-2"></i>
+              <input type="password" id="loginPassword" class="w-full outline-none" placeholder="Enter password" required>
+              <button type="button" class="text-gray-400 hover:text-gray-600 focus:outline-none toggle-password">
+                <i class="fa-solid fa-eye-slash"></i>
+              </button>
+            </div>
+            <div id="loginPasswordError" class="error-message hidden">Password is required</div>
+          </div>
+
+          <div class="flex items-center justify-between text-sm">
+            <label class="flex items-center">
+              <input type="checkbox" class="mr-2 toggle-show-password"> Show Password
+            </label>
+            <a href="#" class="text-blue-500 hover:underline">Forgot Password?</a>
+          </div>
+
+          <button type="submit" class="w-full bg-orange-500 text-white py-2 rounded hover:bg-orange-600 transition duration-300">Login</button>
+        </form>
+
+        <!-- Signup Form -->
+        <form id="signupForm" class="space-y-4 hidden">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block mb-1 text-sm font-medium">First Name <span class="text-red-500">*</span></label>
+              <div class="flex items-center border rounded px-3 py-2">
+                <i class="fa-solid fa-user text-gray-400 mr-2"></i>
+                <input type="text" id="firstName" class="w-full outline-none" placeholder="First name" required>
+              </div>
+              <div id="firstNameError" class="error-message hidden">First name is required</div>
+            </div>
+            <div>
+              <label class="block mb-1 text-sm font-medium">Last Name</label>
+              <div class="flex items-center border rounded px-3 py-2">
+                <i class="fa-solid fa-user text-gray-400 mr-2"></i>
+                <input type="text" id="lastName" class="w-full outline-none" placeholder="Last name">
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block mb-1 text-sm font-medium">Email <span class="text-red-500">*</span></label>
+              <div class="flex items-center border rounded px-3 py-2">
+                <i class="fa-solid fa-envelope text-gray-400 mr-2"></i>
+                <input type="email" id="signupEmail" class="w-full outline-none" placeholder="Enter email" required>
+              </div>
+              <div id="signupEmailError" class="error-message hidden">Please enter a valid email address</div>
+            </div>
+            <div>
+              <label class="block mb-1 text-sm font-medium">Mobile No. <span class="text-red-500">*</span></label>
+              <div class="flex items-center border rounded px-3 py-2">
+                <i class="fa-solid fa-phone text-gray-400 mr-2"></i>
+                <input type="tel" id="mobile" class="w-full outline-none" placeholder="Mobile number" required>
+              </div>
+              <div id="mobileError" class="error-message hidden">Please enter a valid 10-digit mobile number</div>
+            </div>
+          </div>
+
+          <div>
+            <label class="block mb-1 text-sm font-medium">Password <span class="text-red-500">*</span></label>
+            <div class="flex items-center border rounded px-3 py-2">
+              <i class="fa-solid fa-lock text-gray-400 mr-2"></i>
+              <input type="password" id="signupPassword" class="w-full outline-none" placeholder="Create password" required>
+              <button type="button" class="text-gray-400 hover:text-gray-600 focus:outline-none toggle-password">
+                <i class="fa-solid fa-eye-slash"></i>
+              </button>
+            </div>
+            
+            <!-- Password strength meter -->
+            <div class="mt-2">
+              <div class="flex justify-between mb-1">
+              
+              </div>
+              
+            </div>
+           
+          </div>
+
+          <div>
+            <label class="block mb-1 text-sm font-medium">Confirm Password <span class="text-red-500">*</span></label>
+            <div class="flex items-center border rounded px-3 py-2">
+              <i class="fa-solid fa-lock text-gray-400 mr-2"></i>
+              <input type="password" id="confirmPassword" class="w-full outline-none" placeholder="Confirm password" required>
+              <button type="button" class="text-gray-400 hover:text-gray-600 focus:outline-none toggle-password">
+                <i class="fa-solid fa-eye-slash"></i>
+              </button>
+            </div>
+            <div id="confirmPasswordError" class="error-message hidden">Passwords do not match</div>
+          </div>
+
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" id="terms" class="w-4 h-4" required>
+            <label for="terms" class="text-sm text-gray-600">I agree to the <a href="#" class="text-blue-500 hover:underline">Terms & Conditions</a> <span class="text-red-500">*</span></label>
+          </div>
+          <div id="termsError" class="error-message hidden">You must agree to the terms</div>
+
+          <button type="submit" class="w-full bg-orange-500 text-white py-2 rounded hover:bg-orange-600 transition duration-300">Create Account</button>
+        </form>
+      </div>
+
+      <!-- Banner with dynamic background -->
+      <div id="banner" class="hidden md:flex md:w-1/2 bg-cover bg-center bg-no-repeat items-center justify-center p-10 text-white banner-transition" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+        <div class="text-center bg-black bg-opacity-40 p-6 rounded-lg transition-all duration-500">
+          <h2 class="text-3xl font-bold mb-4" id="bannerHeading">LIVE YOUR DREAM NOW</h2>
+          <p class="text-lg" id="bannerSubtext">Never stop exploring</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // DOM Elements
+    const loginTab = document.getElementById('loginTab');
+    const signupTab = document.getElementById('signupTab');
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+    const banner = document.getElementById('banner');
+    const bannerHeading = document.getElementById('bannerHeading');
+    const bannerSubtext = document.getElementById('bannerSubtext');
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // Banner content
+    const bannerContent = {
+      login: {
+        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        heading: "LIVE YOUR DREAM NOW",
+        subtext: "Never stop exploring"
+      },
+      signup: {
+        image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        heading: "JOIN OUR COMMUNITY",
+        subtext: "Start your journey with us"
+      }
+    };
+
+    // Tab switching
+    loginTab.addEventListener('click', () => {
+      // Update tabs
+      loginTab.classList.add('text-orange-500', 'border-orange-500');
+      signupTab.classList.remove('text-orange-500', 'border-orange-500');
+      signupTab.classList.add('text-gray-500');
+      
+      // Update forms
+      loginForm.classList.remove('hidden');
+      signupForm.classList.add('hidden');
+      
+      // Update banner
+      banner.style.backgroundImage = `url('${bannerContent.login.image}')`;
+      bannerHeading.textContent = bannerContent.login.heading;
+      bannerSubtext.textContent = bannerContent.login.subtext;
+    });
+
+    signupTab.addEventListener('click', () => {
+      // Update tabs
+      signupTab.classList.add('text-orange-500', 'border-orange-500');
+      loginTab.classList.remove('text-orange-500', 'border-orange-500');
+      loginTab.classList.add('text-gray-500');
+      
+      // Update forms
+      signupForm.classList.remove('hidden');
+      loginForm.classList.add('hidden');
+      
+      // Update banner
+      banner.style.backgroundImage = `url('${bannerContent.signup.image}')`;
+      bannerHeading.textContent = bannerContent.signup.heading;
+      bannerSubtext.textContent = bannerContent.signup.subtext;
+    });
+
+    // Mobile menu toggle
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Password visibility toggle
+    document.querySelectorAll('.toggle-password').forEach(button => {
+      button.addEventListener('click', function() {
+        const input = this.parentElement.querySelector('input');
+        const icon = this.querySelector('i');
+        if (input.type === 'password') {
+          input.type = 'text';
+          icon.classList.replace('fa-eye-slash', 'fa-eye');
+        } else {
+          input.type = 'password';
+          icon.classList.replace('fa-eye', 'fa-eye-slash');
+        }
+      });
+    });
+
+    // Show password checkbox
+    document.querySelectorAll('.toggle-show-password').forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+        const form = this.closest('form');
+        const passwordInputs = form.querySelectorAll('input[type="password"]');
+        passwordInputs.forEach(input => {
+          input.type = this.checked ? 'text' : 'password';
+        });
+      });
+    });
+
+    // Password strength checker
+    const signupPassword = document.getElementById('signupPassword');
+    const confirmPassword = document.getElementById('confirmPassword');
+    const passwordStrengthBar = document.getElementById('passwordStrengthBar');
+    const passwordStrengthText = document.getElementById('passwordStrengthText');
+
+    signupPassword.addEventListener('input', function() {
+      const password = this.value;
+      checkPasswordStrength(password);
+      validatePasswordMatch();
+    });
+
+    confirmPassword.addEventListener('input', validatePasswordMatch);
+
+    function checkPasswordStrength(password) {
+      // Requirements
+      const hasMinLength = password.length >= 8;
+      const hasUpperCase = /[A-Z]/.test(password);
+      const hasLowerCase = /[a-z]/.test(password);
+      const hasNumber = /[0-9]/.test(password);
+      const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+      
+      // Update requirement indicators
+      updateRequirement('reqLength', hasMinLength);
+      updateRequirement('reqUpper', hasUpperCase);
+      updateRequirement('reqLower', hasLowerCase);
+      updateRequirement('reqNumber', hasNumber);
+      updateRequirement('reqSpecial', hasSpecialChar);
+      
+      // Calculate strength score (0-5)
+      let strength = 0;
+      if (hasMinLength) strength++;
+      if (hasUpperCase) strength++;
+      if (hasLowerCase) strength++;
+      if (hasNumber) strength++;
+      if (hasSpecialChar) strength++;
+      
+      // Update strength meter
+      const width = strength * 20;
+      passwordStrengthBar.style.width = `${width}%`;
+      
+      // Update strength text and color
+      let color, text;
+      switch(strength) {
+        case 0:
+        case 1:
+          color = 'bg-red-500';
+          text = 'Very Weak';
+          break;
+        case 2:
+          color = 'bg-orange-500';
+          text = 'Weak';
+          break;
+        case 3:
+          color = 'bg-yellow-500';
+          text = 'Medium';
+          break;
+        case 4:
+          color = 'bg-blue-500';
+          text = 'Strong';
+          break;
+        case 5:
+          color = 'bg-green-500';
+          text = 'Very Strong';
+          break;
+      }
+      
+      // Remove all color classes and add the new one
+      passwordStrengthBar.className = `password-strength h-1.5 rounded-full ${color}`;
+      passwordStrengthText.textContent = text;
+      passwordStrengthText.className = `text-xs ${color.replace('bg', 'text')}`;
+    }
+
+    function updateRequirement(elementId, isMet) {
+      const element = document.getElementById(elementId);
+      if (isMet) {
+        element.classList.add('requirement-met');
+        element.classList.remove('requirement-unmet');
+      } else {
+        element.classList.add('requirement-unmet');
+        element.classList.remove('requirement-met');
+      }
+    }
+
+    function validatePasswordMatch() {
+      const password = signupPassword.value;
+      const confirm = confirmPassword.value;
+      const errorElement = document.getElementById('confirmPasswordError');
+      
+      if (confirm && password !== confirm) {
+        errorElement.classList.remove('hidden');
+        confirmPassword.classList.add('border-red-500');
+      } else {
+        errorElement.classList.add('hidden');
+        confirmPassword.classList.remove('border-red-500');
+      }
+    }
+
+    // Form validation
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      let isValid = true;
+      
+      // Validate email
+      const loginEmail = document.getElementById('loginEmail');
+      const loginEmailError = document.getElementById('loginEmailError');
+      if (!loginEmail.value || !/^\S+@\S+\.\S+$/.test(loginEmail.value)) {
+        loginEmailError.classList.remove('hidden');
+        loginEmail.classList.add('border-red-500');
+        isValid = false;
+      } else {
+        loginEmailError.classList.add('hidden');
+        loginEmail.classList.remove('border-red-500');
+      }
+      
+      // Validate password
+      const loginPassword = document.getElementById('loginPassword');
+      const loginPasswordError = document.getElementById('loginPasswordError');
+      if (!loginPassword.value) {
+        loginPasswordError.classList.remove('hidden');
+        loginPassword.classList.add('border-red-500');
+        isValid = false;
+      } else {
+        loginPasswordError.classList.add('hidden');
+        loginPassword.classList.remove('border-red-500');
+      }
+      
+      if (isValid) {
+        // Submit form (you would replace this with actual form submission)
+        alert('Login successful!');
+      }
+    });
+
+    signupForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      let isValid = true;
+      
+      // Validate first name
+      const firstName = document.getElementById('firstName');
+      const firstNameError = document.getElementById('firstNameError');
+      if (!firstName.value) {
+        firstNameError.classList.remove('hidden');
+        firstName.classList.add('border-red-500');
+        isValid = false;
+      } else {
+        firstNameError.classList.add('hidden');
+        firstName.classList.remove('border-red-500');
+      }
+      
+      // Validate email
+      const signupEmail = document.getElementById('signupEmail');
+      const signupEmailError = document.getElementById('signupEmailError');
+      if (!signupEmail.value || !/^\S+@\S+\.\S+$/.test(signupEmail.value)) {
+        signupEmailError.classList.remove('hidden');
+        signupEmail.classList.add('border-red-500');
+        isValid = false;
+      } else {
+        signupEmailError.classList.add('hidden');
+        signupEmail.classList.remove('border-red-500');
+      }
+      
+      // Validate mobile
+      const mobile = document.getElementById('mobile');
+      const mobileError = document.getElementById('mobileError');
+      if (!mobile.value || !/^\d{10}$/.test(mobile.value)) {
+        mobileError.classList.remove('hidden');
+        mobile.classList.add('border-red-500');
+        isValid = false;
+      } else {
+        mobileError.classList.add('hidden');
+        mobile.classList.remove('border-red-500');
+      }
+      
+      // Validate password
+      const signupPassword = document.getElementById('signupPassword');
+      const signupPasswordError = document.getElementById('signupPasswordError');
+      const password = signupPassword.value;
+      const hasMinLength = password.length >= 8;
+      const hasUpperCase = /[A-Z]/.test(password);
+      const hasLowerCase = /[a-z]/.test(password);
+      const hasNumber = /[0-9]/.test(password);
+      const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+      
+      if (!hasMinLength || !hasUpperCase || !hasLowerCase || !hasNumber || !hasSpecialChar) {
+        signupPasswordError.classList.remove('hidden');
+        signupPassword.classList.add('border-red-500');
+        isValid = false;
+      } else {
+        signupPasswordError.classList.add('hidden');
+        signupPassword.classList.remove('border-red-500');
+      }
+      
+      // Validate confirm password
+      validatePasswordMatch();
+      if (signupPassword.value !== confirmPassword.value) {
+        isValid = false;
+      }
+      
+      // Validate terms
+      const terms = document.getElementById('terms');
+      const termsError = document.getElementById('termsError');
+      if (!terms.checked) {
+        termsError.classList.remove('hidden');
+        isValid = false;
+      } else {
+        termsError.classList.add('hidden');
+      }
+      
+      if (isValid) {
+        // Submit form (you would replace this with actual form submission)
+        alert('Account created successfully!');
+      }
+    });
+  </script>
+</body>
+</html>
