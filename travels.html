@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saee Holidays - Car Rental</title>
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f766e',
+                        secondary: '#14b8a6',
+                        accent: '#f97316'
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out',
+                        'fade-in-left': 'fadeInLeft 0.8s ease-out',
+                        'fade-in-right': 'fadeInRight 0.8s ease-out',
+                        'bounce-slow': 'bounce 3s infinite',
+                        'pulse-slow': 'pulse 4s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f766e 0%, #14b8a6 50%, #06b6d4 100%);
+        }
+
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Mobile menu animation */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .mobile-menu.active {
+            max-height: 500px;
+            transition: max-height 0.5s ease-in;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 overflow-x-hidden">
+    <!-- Top Bar with Contact and Social -->
+    <div class="bg-gray-900 text-white py-2">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <!-- Phone Numbers -->
+                <div class="flex space-x-4 mb-2 md:mb-0">
+                    <div class="flex items-center">
+                        <i class="fas fa-phone-alt mr-2 text-orange-500"></i>
+                        <span>+91 1234567890</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-phone-alt mr-2 text-orange-500"></i>
+                        <span>+91 9876543210</span>
+                    </div>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="flex space-x-4">
+                    <a href="#" class="text-white hover:text-orange-500 transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-orange-500 transition duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-orange-500 transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-orange-500 transition duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-orange-500 transition duration-300">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+<!-- Main Header - Fixed -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+          <img src="IMAGES/LOGO.png" alt="Logo" class="h-16 w-auto"> <!-- Slightly smaller logo for mobile -->
+        </div>
+
+        <!-- Desktop Navigation (hidden on mobile) -->
+        <nav class="hidden md:flex space-x-8 lg:space-x-12 text-xl text-gray-900">
+          <a href="../index.html" class="hover:text-orange-500 transition duration-300">Home</a>
+
+<a href="../INDIA/india.html" class="hover:text-orange-500 transition duration-300">India</a>
+          <a href="/WORLD/WORLD.html" class="hover:text-orange-500 transition duration-300">World</a>
+          <a href="../travels.html" class="hover:text-orange-500 transition duration-300">Travels</a>
+          <a href="../about.html" class="hover:text-orange-500 transition duration-300">About</a>
+          <a href="../contact.html" class="hover:text-orange-500 transition duration-300">Contact</a>
+        </nav>
+
+      <!-- Right side items -->
+<div class="flex items-center space-x-4">
+  <!-- Desktop Sign In (hidden on mobile) -->
+  <a href="login.html" class="text-orange-500 hover:text-orange-600 text-2xl hidden md:block" title="Sign In">
+    <i class="fa-solid fa-user"></i>
+  </a>
+</div>
+
+          <!-- Mobile menu button (visible only on mobile) -->
+          <button id="mobile-menu-button" class="md:hidden text-gray-900 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu (hidden by default) -->
+      <div id="mobile-menu" class="mobile-menu md:hidden bg-white w-full">
+        <div class="px-2 py-4 space-y-3 border-t">
+          <a href="../index.html" class="hover:text-orange-500 transition duration-300">Home</a>
+
+<a href="../INDIA/india.html" class="hover:text-orange-500 transition duration-300">India</a>
+          <a href="../WORLD/WORLD.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">World</a>
+          <a href="../travels.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">Travels</a>
+          <a href="../about.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">About</a>
+          <a href="../contact.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">Contact</a>
+          <a href="../login.html" class="block px-3 py-2 rounded-md text-orange-500 font-medium">
+            <i class="fa-solid fa-user mr-2"></i> Sign In
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <!-- Hero Banner Section -->
+    <section class="relative min-h-[80vh] bg-gradient-to-r from-[#FF4F0F] via-[#FFA673] to-[#FF7601] overflow-hidden">
+
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <!-- Floating Circles -->
+            <div class="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full animate-float"></div>
+            <div class="absolute top-40 right-20 w-16 h-16 bg-white/10 rounded-full animate-bounce-slow"></div>
+            <div class="absolute bottom-40 left-20 w-12 h-12 bg-white/10 rounded-full animate-pulse-slow"></div>
+
+            <!-- Travel Icons -->
+            <!-- <div class="absolute top-32 right-32 animate-float">
+                <svg class="w-16 h-16 text-white/20" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
+                </svg>
+            </div>
+
+            <div class="absolute bottom-32 right-16 animate-bounce-slow">
+                <svg class="w-12 h-12 text-white/20" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z" />
+                </svg>
+            </div>
+        </div> -->
+
+            <!-- Themed Travel Icons -->
+            <!-- Car Icon -->
+            <div class="absolute top-28 right-48 animate-float">
+                <svg class="w-14 h-14 text-white/40" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M5 11h14l-1.5-4.5H6.5L5 11zm14.5 1h-15c-.28 0-.5.22-.5.5v2c0 .28.22.5.5.5H5c0 .83.67 1.5 1.5 1.5S8 15.83 8 15h8c0 .83.67 1.5 1.5 1.5S19 15.83 19 15h.5c.28 0 .5-.22.5-.5v-2c0-.28-.22-.5-.5-.5z" />
+                </svg>
+            </div>
+
+            <!-- Bus Icon -->
+            <div class="absolute bottom-28 left-20 animate-bounce-slow">
+                <svg class="w-12 h-12 text-white/40" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M4 16V5c0-1.1.9-2 2-2h12c1.1 0 2 .9 2 2v11H4zm0 2h16v2H4v-2zm2.5-11c-.83 0-1.5.67-1.5 1.5S5.67 10 6.5 10s1.5-.67 1.5-1.5S7.33 7 6.5 7zm11 0c-.83 0-1.5.67-1.5 1.5S16.67 10 17.5 10s1.5-.67 1.5-1.5S18.33 7 17.5 7z" />
+                </svg>
+            </div>
+
+            <!-- Steering Wheel Icon -->
+            <div class="absolute top-48 left-60 animate-pulse-slow">
+                <svg class="w-10 h-10 text-white/40" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2C6.48 2 2 6.48 2 12h2c0-3.9 3.1-7 7-7s7 3.1 7 7h2c0-5.52-4.48-10-10-10zm0 16c-1.85 0-3.41-1.28-3.86-3h7.72c-.45 1.72-2.01 3-3.86 3zm-5.9-5c.45-1.72 2.01-3 3.9-3s3.45 1.28 3.9 3H6.1z" />
+                </svg>
+            </div>
+
+            <!-- Additional Icon: Location Pin -->
+            <div class="absolute bottom-16 right-24 animate-float">
+                <svg class="w-10 h-10 text-white/40" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" />
+                </svg>
+            </div>
+
+
+            <!-- Main Content -->
+            <div
+                class="relative z-10 container mx-auto px-4 py-16 flex flex-col items-center justify-center min-h-[80vh] text-center">
+
+                <!-- Main Heading -->
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-in-up text-shadow">
+                    Car Rental
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8 animate-fade-in-up leading-relaxed">
+                    Discover the freedom of the road with our premium car rental services.
+                    Your journey begins here.
+                </p>
+
+                <!-- CTA Button -->
+                <button
+                    class="bg-accent hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-full text-lg transition-all duration-300 transform hover:scale-105 animate-fade-in-up shadow-lg">
+                    Explore Our Fleet
+                </button>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3">
+                    </path>
+                </svg>
+            </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="py-16 md:py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-12 animate-fade-in-up">
+                <h2
+                    class="text-2xl md:text-3xl lg:text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#FF7601] via-[#EA2F14] to-[#FF7601]">
+                    Here are the Best Car rental packages
+                </h2>
+                <h3 class="text-2xl md:text-3xl font-semibold text-gray-600 mb-8">
+                    List of Cars and best rates for our valuable customers
+                </h3>
+                <p class="text-gray-600 text-lg max-w-4xl mx-auto leading-relaxed">
+                    Saee Holidays – Pune’s trusted travel agency – offers reliable car rental services and unforgettable
+                    travel experiences across India and around the world. Discover the beauty and adventure that awaits
+                    when you travel with us.
+                </p>
+            </div>
+
+            <!-- Car Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Card 1 - Compact Car -->
+                <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                    <!-- Car Image Section with Increased Height -->
+                    <div class="h-64 bg-gray-100 relative overflow-hidden"> <!-- Changed from h-48 to h-64 -->
+                        <!-- Car Image -->
+                        <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                            alt="Compact Car" class="w-full h-full object-cover object-center">
+
+                        <!-- Category Badge -->
+                        <div
+                            class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 shadow-sm">
+                            <span class="text-gray-800 text-sm font-semibold">Sedan</span>
+                        </div>
+                    </div>
+
+                    <!-- Card Content -->
+                    <div class="p-6">
+                        <h4
+                            class="text-xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-[#C83F12] via-[#EA2F14] to-[#FF7601]">
+                            Compact Cars
+                        </h4>
+
+                        <p class="text-gray-600 mb-4">Perfect for city drives and short trips. Fuel efficient and easy
+                            to park.</p>
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-center text-gray-700">
+                                <svg class="w-5 h-5 mr-2 text-[#C83F12]" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                                <span>₹3,300/day (Outstation)</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <svg class="w-5 h-5 mr-2 text-[#C83F12]" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Minimum 1 day booking</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-[#E67514]">₹1,200/day</span>
+                            <button
+                                class="bg-primary hover:bg-teal-700 text-white px-4 py-2 rounded-lg transition-colors">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 - Premium Mini SUV -->
+                <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                    <!-- Car Image Section with Increased Height -->
+                    <div class="h-64 bg-gray-100 relative overflow-hidden"> <!-- Changed from h-48 to h-64 -->
+                        <!-- Mini SUV Image -->
+                        <img src="Images/minisuv.png" alt="Premium Mini SUV"
+                            class="w-full h-full object-cover object-center">
+
+                        <!-- Category Badge -->
+                        <div
+                            class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 shadow-sm">
+                            <span class="text-gray-800 text-sm font-semibold">Mini SUV</span>
+                        </div>
+                    </div>
+
+                    <!-- Card Content -->
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Mini SUV</h4>
+                        <p class="text-gray-600 mb-4">Spacious yet compact, perfect for both city and highway driving
+                            with extra ground clearance.</p>
+
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-center text-gray-700">
+                                <svg class="w-5 h-5 mr-2 text-primary" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                                <span>₹3,300/day (Outstation)</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <svg class="w-5 h-5 mr-2 text-primary" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Minimum 1 day booking</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-primary">₹1,500/day</span>
+                            <button
+                                class="bg-primary hover:bg-teal-700 text-white px-4 py-2 rounded-lg transition-colors">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 - SUV -->
+                <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                    <!-- Car Image Section with Increased Height -->
+                    <div class="h-64 bg-gray-100 relative overflow-hidden group"> <!-- Changed from h-48 to h-64 -->
+                        <!-- Image Carousel -->
+                        <div class="relative h-full w-full">
+                            <!-- Image 1 -->
+                            <img src="Images/SUV.png" alt="Family SUV Front View"
+                                class="absolute w-full h-full object-cover object-center transition-opacity duration-500 opacity-100">
+
+                            <!-- Image 2 -->
+                            <img src="Images/SUV2.png" alt="Family SUV Interior View"
+                                class="absolute w-full h-full object-cover object-center transition-opacity duration-500 opacity-0">
+                        </div>
+
+                        <!-- Carousel Arrows -->
+                        <button
+                            class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <button
+                            class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+
+                        <!-- Category Badge -->
+                        <div
+                            class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 shadow-sm">
+                            <span class="text-gray-800 text-sm font-semibold">Family SUV</span>
+                        </div>
+                    </div>
+
+                    <!-- Card Content (Remains Exactly The Same) -->
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">7-Seater SUV</h4>
+                        <p class="text-gray-600 mb-4">Spacious family vehicle with comfortable seating for 7 and ample
+                            luggage space.</p>
+
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-center text-gray-700">
+                                <svg class="w-5 h-5 mr-2 text-primary" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                                <span>₹4,500/day (Outstation)</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <svg class="w-5 h-5 mr-2 text-primary" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Minimum 1 day booking</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-primary">₹2,200/day</span>
+                            <button
+                                class="bg-primary hover:bg-teal-700 text-white px-4 py-2 rounded-lg transition-colors">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    // Simple carousel functionality
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const cards = document.querySelectorAll('.card-hover');
+
+                        cards.forEach(card => {
+                            const images = card.querySelectorAll('.relative img');
+                            const prevBtn = card.querySelector('button:first-of-type');
+                            const nextBtn = card.querySelector('button:last-of-type');
+                            let currentIndex = 0;
+
+                            if (images.length > 1) {
+                                function showImage(index) {
+                                    images.forEach((img, i) => {
+                                        img.classList.toggle('opacity-0', i !== index);
+                                        img.classList.toggle('opacity-100', i === index);
+                                    });
+                                }
+
+                                nextBtn.addEventListener('click', () => {
+                                    currentIndex = (currentIndex + 1) % images.length;
+                                    showImage(currentIndex);
+                                });
+
+                                prevBtn.addEventListener('click', () => {
+                                    currentIndex = (currentIndex - 1 + images.length) % images.length;
+                                    showImage(currentIndex);
+                                });
+                            } else {
+                                // Hide arrows if only one image
+                                prevBtn.style.display = 'none';
+                                nextBtn.style.display = 'none';
+                            }
+                        });
+                    });
+                </script>
+                <!-- Card 1 - Economy -->
+                <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <svg class="w-24 h-24 text-white/80" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" />
+                            </svg>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
+                            <span class="text-white text-sm font-semibold">Economy</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Compact Cars</h4>
+                        <p class="text-gray-600 mb-4">Perfect for city drives and short trips. Fuel efficient and easy
+                            to park.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-primary">₹1,200/day</span>
+                            <button
+                                class="bg-primary hover:bg-teal-700 text-white px-4 py-2 rounded-lg transition-colors">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 - Premium -->
+                <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <svg class="w-24 h-24 text-white/80" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" />
+                            </svg>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
+                            <span class="text-white text-sm font-semibold">Premium</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Luxury Sedans</h4>
+                        <p class="text-gray-600 mb-4">Experience comfort and style with our premium sedan collection.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-primary">₹2,500/day</span>
+                            <button
+                                class="bg-primary hover:bg-teal-700 text-white px-4 py-2 rounded-lg transition-colors">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 - SUV -->
+                <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <svg class="w-24 h-24 text-white/80" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" />
+                            </svg>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
+                            <span class="text-white text-sm font-semibold">SUV</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Family SUVs</h4>
+                        <p class="text-gray-600 mb-4">Spacious and powerful vehicles perfect for family adventures.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-primary">₹3,200/day</span>
+                            <button
+                                class="bg-primary hover:bg-teal-700 text-white px-4 py-2 rounded-lg transition-colors">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+
+            <h2 class="text-3xl font-bold text-[#FF4F0F] text-center mb-2">Our Commitment to Your Comfort</h2>
+            <p class="text-base text-[#FFA673] text-center mb-10">Experience seamless travel with top-rated features</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <!-- Feature 1 -->
+                <div class="text-center animate-fade-in-left">
+                    <div class="w-16 h-16 bg-[#FFECE5] rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-[#FF4F0F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h5 class="text-lg font-semibold text-gray-800 mb-2">24/7 Support</h5>
+                    <p class="text-gray-600 text-sm">Round the clock customer support for all your needs</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="text-center animate-fade-in-up">
+                    <div class="w-16 h-16 bg-[#FFF3E0] rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-[#FFA000]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                        </svg>
+                    </div>
+                    <h5 class="text-lg font-semibold text-gray-800 mb-2">Best Prices</h5>
+                    <p class="text-gray-600 text-sm">Competitive rates with no hidden charges</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="text-center animate-fade-in-up">
+                    <div class="w-16 h-16 bg-[#E8F5E9] rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-[#4CAF50]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h5 class="text-lg font-semibold text-gray-800 mb-2">Quick Booking</h5>
+                    <p class="text-gray-600 text-sm">Fast and easy online booking process</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="text-center animate-fade-in-right">
+                    <div class="w-16 h-16 bg-[#EDE7F6] rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-[#7E57C2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h5 class="text-lg font-semibold text-gray-800 mb-2">Safe & Secure</h5>
+                    <p class="text-gray-600 text-sm">Well-maintained vehicles with comprehensive insurance</p>
+                </div>
+            </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-16 bg-gradient-to-r from-[#FF4F0F] via-[#FFA673] to-[#FF7601]">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-3xl md:text-4xl font-bold text-white mb-6 animate-fade-in-up">
+                Ready to Start Your Journey?
+            </h3>
+            <p class="text-white/90 text-lg mb-8 max-w-2xl mx-auto animate-fade-in-up">
+                Book your perfect car today and experience the freedom of the road with our premium rental services.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up">
+                <button
+                    class="bg-white text-primary hover:bg-gray-100 font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105">
+                    Book Now
+                </button>
+                <button
+                    class="border-2 border-white text-white hover:bg-white hover:text-primary font-bold py-3 px-8 rounded-full text-lg transition-all duration-300">
+                    Contact Us
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- About Column -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4 border-b border-gray-700 pb-2">About Saee Holidays</h4>
+                    <p class="text-gray-400">
+                        We are a premier travel agency providing exceptional car rental services and travel experiences
+                        across India and beyond.
+                    </p>
+                </div>
+
+                <!-- Quick Links Column -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4 border-b border-gray-700 pb-2">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Car Rental</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Tour Packages</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Column -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4 border-b border-gray-700 pb-2">Contact Us</h4>
+                    <address class="text-gray-400 not-italic">
+                        <p class="mb-2"><i class="fas fa-map-marker-alt mr-2 text-orange-500"></i> 123 Travel Street,
+                            Pune, India</p>
+                        <p class="mb-2"><i class="fas fa-phone-alt mr-2 text-orange-500"></i> +91 1234567890</p>
+                        <p class="mb-2"><i class="fas fa-envelope mr-2 text-orange-500"></i> info@saeeholidays.com</p>
+                    </address>
+                </div>
+
+                <!-- Newsletter Column -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4 border-b border-gray-700 pb-2">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to get updates on offers and deals</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your Email"
+                            class="px-4 py-2 rounded-l focus:outline-none text-gray-900 w-full">
+                        <button type="submit" class="bg-orange-500 hover:bg-orange-600 px-4 py-2 rounded-r">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+                <p>&copy; 2023 Saee Holidays. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0');
+
+                    if (entry.target.classList.contains('animate-fade-in-up')) {
+                        entry.target.classList.remove('translate-y-8');
+                    }
+                    if (entry.target.classList.contains('animate-fade-in-left')) {
+                        entry.target.classList.remove('-translate-x-8');
+                    }
+                    if (entry.target.classList.contains('animate-fade-in-right')) {
+                        entry.target.classList.remove('translate-x-8');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('[class*="animate-fade-in"]');
+            animatedElements.forEach(el => {
+                el.classList.add('opacity-0');
+
+                if (el.classList.contains('animate-fade-in-up')) {
+                    el.classList.add('translate-y-8');
+                }
+                if (el.classList.contains('animate-fade-in-left')) {
+                    el.classList.add('-translate-x-8');
+                }
+                if (el.classList.contains('animate-fade-in-right')) {
+                    el.classList.add('translate-x-8');
+                }
+
+                observer.observe(el);
+            });
+
+            // Smooth scrolling for CTA button
+            document.querySelector('button[class*="bg-accent"]').addEventListener('click', () => {
+                document.querySelector('section:nth-of-type(2)').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+
+            // Card hover effects
+            document.querySelectorAll('.card-hover').forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

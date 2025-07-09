@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Saee Holidays</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white">
+
+
+
+
+    <!-- Top Bar with Contact and Social -->
+    <div class="bg-gray-900 text-white py-2">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <!-- Phone Numbers -->
+                <div class="flex space-x-4 mb-2 md:mb-0">
+                    <div class="flex items-center">
+                        <i class="fas fa-phone-alt mr-2 text-orange-500"></i>
+                        <span>+91 1234567890</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-phone-alt mr-2 text-orange-500"></i>
+                        <span>+91 9876543210</span>
+                    </div>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="flex space-x-4">
+                    <a href="#" class="text-white hover:text-orange-500 transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-orange-500 transition duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-orange-500 transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-orange-500 transition duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-orange-500 transition duration-300">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+  <!-- Main Header - Fixed -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+          <img src="IMAGES/LOGO.png" alt="Logo" class="h-16 w-auto"> <!-- Slightly smaller logo for mobile -->
+        </div>
+
+        <!-- Desktop Navigation (hidden on mobile) -->
+        <nav class="hidden md:flex space-x-8 lg:space-x-12 text-xl text-gray-900">
+          <a href="../index.html" class="hover:text-orange-500 transition duration-300">Home</a>
+
+<a href="../INDIA/india.html" class="hover:text-orange-500 transition duration-300">India</a>
+          <a href="/WORLD/WORLD.html" class="hover:text-orange-500 transition duration-300">World</a>
+          <a href="../travels.html" class="hover:text-orange-500 transition duration-300">Travels</a>
+          <a href="../about.html" class="hover:text-orange-500 transition duration-300">About</a>
+          <a href="../contact.html" class="hover:text-orange-500 transition duration-300">Contact</a>
+        </nav>
+
+      <!-- Right side items -->
+<div class="flex items-center space-x-4">
+  <!-- Desktop Sign In (hidden on mobile) -->
+  <a href="login.html" class="text-orange-500 hover:text-orange-600 text-2xl hidden md:block" title="Sign In">
+    <i class="fa-solid fa-user"></i>
+  </a>
+</div>
+
+          <!-- Mobile menu button (visible only on mobile) -->
+          <button id="mobile-menu-button" class="md:hidden text-gray-900 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu (hidden by default) -->
+      <div id="mobile-menu" class="mobile-menu md:hidden bg-white w-full">
+        <div class="px-2 py-4 space-y-3 border-t">
+          <a href="../index.html" class="hover:text-orange-500 transition duration-300">Home</a>
+
+<a href="../INDIA/india.html" class="hover:text-orange-500 transition duration-300">India</a>
+          <a href="../WORLD/WORLD.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">World</a>
+          <a href="../travels.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">Travels</a>
+          <a href="../about.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">About</a>
+          <a href="../contact.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-orange-500">Contact</a>
+          <a href="../login.html" class="block px-3 py-2 rounded-md text-orange-500 font-medium">
+            <i class="fa-solid fa-user mr-2"></i> Sign In
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+    <!-- India Travel Video Banner Section -->
+    <section class="relative h-[500px] overflow-hidden">
+        <!-- Background Video -->
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+            <source src="VIDEOS/banenr2.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Dark overlay -->
+        <div class="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+
+        <!-- Text Content -->
+        <div class="relative z-20 flex items-center justify-center h-full">
+            <div class="text-center text-white px-6 md:px-12" style="font-family: 'Nunito', sans-serif;">
+                <h1 class="text-3xl md:text-5xl font-bold mb-4">
+                    Explore the world beyond boundaries
+                </h1>
+                <p class="text-lg md:text-2xl font-medium max-w-3xl mx-auto">
+                    Embrace the wonders of the world — from ancient cities to untamed landscapes, each step writes your
+                    story.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Title -->
+    <section class="max-w-7xl mx-auto px-4 py-10">
+        <h2 class="text-3xl font-bold text-center mb-10">Explore Our World Travel Packages</h2>
+
+        <!-- Cards Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+            <!-- DUBAI -->
+            <div onclick="openPackages('DUBAI')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/dubai.jpeg" alt="DUBAI"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold"> DUBAI </h3>
+                    <p class="text-white text-sm">8 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- PARIS  -->
+            <div onclick="openPackages('PARIS')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/Paris.jpeg" alt="PARIS"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">PARIS</h3>
+                    <p class="text-white text-sm">3 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- BALI -->
+            <div onclick="openPackages('BALI')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/Bali.jpeg" alt="BALI"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">BALI</h3>
+                    <p class="text-white text-sm">6 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- THAILAND -->
+            <div onclick="openPackages('THAILAND')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/Thailand.jpeg" alt="THAILAND"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">THAILAND</h3>
+                    <p class="text-white text-sm">6 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- Cambodia -->
+            <div onclick="openPackages('cambodia')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/Cambodia.jpeg" alt="Cambodia"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">CAMBODIA</h3>
+                    <p class="text-white text-sm">10 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- Vietnam -->
+            <div onclick="openPackages('vietnam')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/viteman.jpeg" alt="Vietnam"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">VIETNAM</h3>
+                    <p class="text-white text-sm">8 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- Japan -->
+            <div onclick="openPackages('japan')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/Japan.jpeg" alt="Japan"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">JAPAN</h3>
+                    <p class="text-white text-sm">12 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- Italy -->
+            <div onclick="openPackages('italy')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/Italy.jpeg" alt="Italy"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">ITALY</h3>
+                    <p class="text-white text-sm">9 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- SOUTH AFRICA -->
+            <div onclick="openPackages('SOUTH AFRICA')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/South africa.jpeg" alt="SOUTH AFRICA"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">SOUTH AFRICA</h3>
+                    <p class="text-white text-sm">7 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- NEPAL -->
+            <div onclick="openPackages('NEPAL')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/Nepal.jpeg" alt="NEPAL"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">NEPAL</h3>
+                    <p class="text-white text-sm">5 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- RUSSIA -->
+            <div onclick="openPackages('RUSSIA')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/Russia.jpeg" alt="RUSSIA"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">RUSSIA</h3>
+                    <p class="text-white text-sm">2 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- EAST EUROPE -->
+            <div onclick="openPackages('EAST EUROPE')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/East europe.jpeg" alt="EAST EUROPE"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">EAST EUROPE</h3>
+                    <p class="text-white text-sm">6 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- SOUTH KOREA -->
+            <div onclick="openPackages('SOUTH KOREA')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/South Korea.jpeg" alt="SOUTH KOREA"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">SOUTH KOREA</h3>
+                    <p class="text-white text-sm">6 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- MAURITIUS -->
+            <div onclick="openPackages('MAURITIUS')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/mauritis.jpeg" alt="MAURITIUS"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">MAURITIUS</h3>
+                    <p class="text-white text-sm">10 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- FIJI -->
+            <div onclick="openPackages(' FIJI')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/fiji.jpeg" alt=" FIJI"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold"> FIJI</h3>
+                    <p class="text-white text-sm">8 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- SLOVENIA -->
+            <div onclick="openPackages('SLOVENIA')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/solvenia.jpeg" alt="SLOVENIA"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">SLOVENIA</h3>
+                    <p class="text-white text-sm">12 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- Germany -->
+            <div onclick="openPackages('germany')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/germany.jpeg" alt="Germany"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">GERMANY</h3>
+                    <p class="text-white text-sm">7 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- Turkey -->
+            <div onclick="openPackages('turkey')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/turkey.jpeg" alt="Turkey"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">TURKEY</h3>
+                    <p class="text-white text-sm">6 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- New Zealand -->
+            <div onclick="openPackages('New Zealand')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/New zealand.jpeg" alt="New Zealand"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">NEW ZEALAND</h3>
+                    <p class="text-white text-sm">6 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- Bhutan -->
+            <div onclick="openPackages('Bhutan')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/bhutan .jpeg" alt="Bhutan "
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">BHUTAN </h3>
+                    <p class="text-white text-sm">7 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- SWITZERLAND -->
+            <div onclick="openPackages('SWITZERLAND')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/switzerland.jpeg" alt="SWITZERLAND "
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold"> SWITZERLAND </h3>
+                    <p class="text-white text-sm">8 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- TAIWAN-->
+            <div onclick="openPackages('TAIWAN')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/taiwan.jpeg" alt="TAIWAN"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">TAIWAN</h3>
+                    <p class="text-white text-sm">5 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- USA -->
+            <div onclick="openPackages('USA')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/USA .jpeg" alt="USA"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">USA </h3>
+                    <p class="text-white text-sm">7 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- EGYPT -->
+            <div onclick="openPackages('EGYPT')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/egypt.jpeg" alt="EGYPT"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold"> EGYPT </h3>
+                    <p class="text-white text-sm">8 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- PHILIPPINES-->
+            <div onclick="openPackages('PHILIPPINES')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/philippines.jpeg" alt="PHILIPPINES"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">PHILIPPINES</h3>
+                    <p class="text-white text-sm">3 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- UZBEKISTAN -->
+            <div onclick="openPackages('UZBEKISTAN')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/uzbekstan.jpeg" alt="UZBEKISTAN"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">UZBEKISTAN</h3>
+                    <p class="text-white text-sm">6 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- GEORGIA-->
+            <div onclick="openPackages('GEORGIA')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/georgia.jpeg" alt="GEORGIA"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">GEORGIA </h3>
+                    <p class="text-white text-sm">7 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- PORTUGAL -->
+            <div onclick="openPackages('PORTUGAL')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/portugal.jpeg" alt="PORTUGAL"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold"> PORTUGAL </h3>
+                    <p class="text-white text-sm">8 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- ESTONIA -->
+            <div onclick="openPackages('ESTONIA')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/estonia.jpeg" alt="ESTONIA"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">ESTONIA</h3>
+                    <p class="text-white text-sm">6 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- LATVIA -->
+            <div onclick="openPackages('LATVIA')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/latvia.jpeg" alt="LATVIA"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">LATVIA </h3>
+                    <p class="text-white text-sm">7 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- MEXICO -->
+            <div onclick="openPackages('MEXICO')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/Mexcio.jpeg" alt="MEXICO"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold"> MEXICO </h3>
+                    <p class="text-white text-sm">8 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- ARMENIA-->
+            <div onclick="openPackages('ARMENIA')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/Armenia.jpeg" alt="ARMENIA"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">ARMENIA</h3>
+                    <p class="text-white text-sm">3 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- CANADA -->
+            <div onclick="openPackages('CANADA')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/canada.jpeg" alt="CANADA"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">CANADA</h3>
+                    <p class="text-white text-sm">6 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- MOROCCO -->
+            <div onclick="openPackages('MOROCCO')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/morcoo.jpeg" alt="MOROCCO"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">MOROCCO </h3>
+                    <p class="text-white text-sm">7 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- IRELAND -->
+            <div onclick="openPackages('IRELAND')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/ireland.jpeg" alt="IRELAND"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold"> IRELAND </h3>
+                    <p class="text-white text-sm">8 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- LITHUANIA -->
+            <div onclick="openPackages('LITHUANIA')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/lithuania.jpeg" alt="LITHUANIA"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">LITHUANIA</h3>
+                    <p class="text-white text-sm">3 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- NORWAY -->
+            <div onclick="openPackages('NORWAY')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/norway.jpeg" alt="NORWAY"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">NORWAY</h3>
+                    <p class="text-white text-sm">6 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- CZECH REPUBLIC -->
+            <div onclick="openPackages('CZECH REPUBLIC')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/republic.jpeg" alt="CZECH REPUBLIC"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">CZECH REPUBLIC </h3>
+                    <p class="text-white text-sm">7 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- AJERBAIJAN -->
+            <div onclick="openPackages('AJERBAIJAN')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/azarbaijan.jpeg" alt="AJERBAIJAN"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold"> AJERBAIJAN </h3>
+                    <p class="text-white text-sm">8 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- HUNGRAY -->
+            <div onclick="openPackages('HUNGRAY')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/hungray.jpeg" alt="HUNGRAY"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">HUNGRAY</h3>
+                    <p class="text-white text-sm">3 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- DENMARK -->
+            <div onclick="openPackages('DENMARK')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/denmark.jpeg" alt="DENMARK"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">DENMARK</h3>
+                    <p class="text-white text-sm">6 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- BELGIUM -->
+            <div onclick="openPackages('BELGIUM')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/belgium.jpeg" alt="BELGIUM"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">BELGIUM</h3>
+                    <p class="text-white text-sm">7 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- KYRGYZSTAN -->
+            <div onclick="openPackages('KYRGYZSTAN')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/kyrgyzstan.jpeg" alt="KYRGYZSTAN"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold"> KYRGYZSTAN </h3>
+                    <p class="text-white text-sm">8 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- CHINA -->
+            <div onclick="openPackages('CHINA')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/china.jpeg" alt="CHINA"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">CHINA</h3>
+                    <p class="text-white text-sm">3 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- GREECE -->
+            <div onclick="openPackages('GREECE')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/greece.jpeg" alt="GREECE"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">GREECE</h3>
+                    <p class="text-white text-sm">6 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- KAZAKHSTAN -->
+            <div onclick="openPackages('KAZAKHSTAN')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/kazaksthan.jpeg" alt="KAZAKHSTAN"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">KAZAKHSTAN</h3>
+                    <p class="text-white text-sm">6 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- UNITED ARAB EMIRATES -->
+            <div onclick="openPackages('UNITED ARAB EMIRATES')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/united arab.jpeg" alt="UNITED ARAB EMIRATES"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">UNITED ARAB EMIRATES</h3>
+                    <p class="text-white text-sm">7 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!--  NETHERLANDS -->
+            <div onclick="openPackages('NETHERLANDS')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/netehrlands.jpeg" alt="NETHERLANDS"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">NETHERLANDS</h3>
+                    <p class="text-white text-sm">7 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- TANZANIA -->
+            <div onclick="openPackages('TANZANIA')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/tanazania.jpeg" alt="TANZANIA"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">TANZANIA</h3>
+                    <p class="text-white text-sm">6 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- SWEDEN  -->
+            <div onclick="openPackages('SWEDEN ')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/sweden.jpeg" alt="SWEDEN "
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">SWEDEN </h3>
+                    <p class="text-white text-sm">6 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- Australia -->
+            <div onclick="openPackages('AUSTRALIA')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/austrlia.jpeg" alt="AUSTRALIA "
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">AUSTRALIA</h3>
+                    <p class="text-white text-sm">7 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- KENYA -->
+            <div onclick="openPackages('KENYA')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/kenaya.jpg" alt="KENYA"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold"> KENYA </h3>
+                    <p class="text-white text-sm">8 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+            <!-- JEWELS OF AUSTRIA PRAUGE AND BUDAPEST -->
+            <div onclick="openPackages('JEWELS OF AUSTRIA PRAUGE AND BUDAPEST')"
+                class="rounded-xl overflow-hidden cursor-pointer shadow-lg relative group h-[300px]">
+                <img src="IMAGES/JEWELS OF AUSTRIA PRAUGE AND BUDAPEST.jpeg" alt="JEWELS OF AUSTRIA PRAUGE AND BUDAPEST"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 class="text-white text-lg font-bold">JEWELS OF AUSTRIA PRAUGE AND BUDAPEST</h3>
+                    <p class="text-white text-sm">5 PACKAGES FOUND</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Script -->
+    <script>
+        function openPackages(region) {
+            window.location.href = region + "-packages.html";
+        }
+    </script>
+
+    <section class="relative h-[80vh] flex items-center justify-end p-4 sm:p-8 overflow-hidden">
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+    <source src="VIDEOS/contact.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Overlay (optional) -->
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 z-10"></div>
+
+  <!-- Foreground Content -->
+  <div class="relative z-20 text-white">
+
+        <!-- Form Container - Made more compact -->
+        <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-6 w-full max-w-md shadow-2xl">
+            <!-- Header - Made more compact -->
+            <div class="bg-slate-800 text-white p-3 rounded-t-xl -mx-6 -mt-6 mb-4">
+                <h2 class="text-lg font-semibold">Still didn't find what you were looking for?</h2>
+                <p class="text-orange-400 text-sm font-medium">Let our experts guide you!!</p>
+            </div>
+
+            <!-- Compact Form -->
+            <form class="space-y-3">
+                <!-- Name Field -->
+                <div>
+                    <input type="text" placeholder="Name*"
+                        class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        required>
+                </div>
+
+                <!-- Phone and Date Row - Made more compact -->
+                <div class="flex gap-3">
+                    <div class="flex-1">
+                        <div class="flex">
+                            <select
+                                class="px-2 py-2 text-sm border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+                                <option>+91</option>
+                            </select>
+                            <input type="tel" placeholder="Your Number*"
+                                class="flex-1 px-3 py-2 text-sm border-t border-r border-b border-gray-300 rounded-r-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                required>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <input type="text" placeholder="Travel Date*"
+                            class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            required>
+                    </div>
+                </div>
+
+                <!-- Email and Traveller Count Row -->
+                <div class="flex gap-3">
+                    <div class="flex-1">
+                        <input type="email" placeholder="Email*"
+                            class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            required>
+                    </div>
+                    <div class="flex-1">
+                        <input type="number" placeholder="Travelers*"
+                            class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            required>
+                    </div>
+                </div>
+
+                <!-- Trip Type Radio Buttons - Made more compact -->
+                <div>
+                    <label class="block text-sm text-gray-700 font-medium mb-1">Trip Type:</label>
+                    <div class="flex gap-4">
+                        <label class="flex items-center">
+                            <input type="radio" name="trip_type" value="international"
+                                class="mr-1 text-blue-600 scale-90">
+                            <span class="text-sm text-gray-700">International</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="trip_type" value="domestic" class="mr-1 text-blue-600 scale-90">
+                            <span class="text-sm text-gray-700">Domestic</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Message Field - Reduced height -->
+                <div>
+                    <textarea placeholder="Message" rows="3"
+                        class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"></textarea>
+                </div>
+
+                <!-- Submit Button - Made more compact -->
+                <button type="submit"
+                    class="w-full bg-slate-800 text-white py-2 px-4 rounded-lg text-sm font-semibold hover:bg-slate-700 transition-colors duration-200">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </section>
+          
+
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-500 {
+            animation-delay: 0.5s;
+        }
+    </style>
+
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+                <!-- Logo + Tagline -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-2xl font-bold text-orange-500 mb-2">Saee Holidays</h3>
+                    <p class="text-gray-300">Discover Your Perfect Getaway</p>
+                </div>
+
+                <!-- Quick Links (Hidden on mobile) -->
+                <div class="hidden md:block">
+                    <h3 class="text-lg font-semibold mb-3">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-orange-500 transition">India Tours</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition">International</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition">Custom Packages</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-3">Contact</h3>
+                    <div class="space-y-2">
+                        <p class="flex items-center gap-2">
+                            <i class="fas fa-phone-alt text-orange-500"></i>
+                            +91 1234567890
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i class="fas fa-envelope text-orange-500"></i>
+                            info@saeeholidays.com
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-3">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-xl hover:text-blue-400 transition" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-xl hover:text-pink-500 transition" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-xl hover:text-blue-400 transition" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-xl hover:text-red-500 transition" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Quick Links (Accordion) -->
+            <div class="mt-6 md:hidden">
+                <details class="border-b border-gray-800 pb-4">
+                    <summary class="font-semibold text-lg cursor-pointer focus:outline-none">
+                        Quick Links
+                    </summary>
+                    <ul class="mt-3 space-y-2 pl-4">
+                        <li><a href="#" class="hover:text-orange-500">India Tours</a></li>
+                        <li><a href="#" class="hover:text-orange-500">International</a></li>
+                        <li><a href="#" class="hover:text-orange-500">Custom Packages</a></li>
+                        <li><a href="#" class="hover:text-orange-500">About Us</a></li>
+                    </ul>
+                </details>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-8 pt-6 border-t border-gray-800 text-center text-sm text-gray-400">
+                <p>© 2025 Saee Holidays. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Simple form submission handler
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry! We will contact you soon.');
+        });
+
+        // WhatsApp button click handler
+        document.querySelector('.fixed').addEventListener('click', function () {
+            window.open('https://wa.me/919999999999', '_blank');
+        });
+    </script>
+
+    <script>
+        // Toggle mobile menu visibility
+        const mobileMenuBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>
